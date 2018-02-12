@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Modulo Riesgos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" href="#" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        <li class="nav-item dropdown" routerLinkActive="active">
+          <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Proyecciones y Antecedentes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['proyecciones']" href="#">Proyecciones</a>
+            <a class="dropdown-item" [routerLink]="['pntecedentes']" href="#">Antecedentes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Salir</a>
+          </div>
+        </li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link disabled" [routerLink]="['admin']" href="#">Admin</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+          <button (click)="logIn()"
+          *ngIf="!auth.isAuthenticated()"
+          type="button"  
+          class="btn btn-outline-primary btn-sm">
+            Iniciar Sesion</button>
+
+          <button (click)="logOut()" 
+          *ngIf="auth.isAuthenticated()"
+          type="button"  c
+          class="btn btn-outline-primary btn-sm">
+          Cerrar Sesion</button>
+        
+        </span>
+    </div>
+  </nav>
