@@ -1,15 +1,78 @@
 import { Component, OnInit } from '@angular/core';
+import { DataserviceService } from '../../services/dataservice.service';
+
+import { dataDemo } from '../../Models/data.model';
+
+
 
 @Component({
   selector: 'app-proyecciones',
   templateUrl: './proyecciones.component.html',
   styleUrls: ['./proyecciones.component.css']
 })
-export class ProyeccionesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class ProyeccionesComponent {
+  dataDemo:dataDemo[];
+  dataSource:any;
+  item:any
+  
+  constructor(private data:DataserviceService){
+  console.log(data)
+  this.item=this.data.getdataDemo();
+  console.log(this.item);
+  
+  
   }
+
+
+  
+  
+
+ // Doughnut
+ public doughnutChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+ public doughnutChartData:number[] = [3, 4,5,6];
+ public doughnutChartType:string = 'doughnut';
+
+ // events
+ public chartClicked(e:any):void {
+   console.log(e);
+ }
+
+ public chartHovered(e:any):void {
+   console.log(e);
+ }
+
+  // PolarArea
+  public polarAreaChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
+  public polarAreaChartData:number[] = [300, 500, 100, 40, 120];
+  public polarAreaLegend:boolean = true;
+ 
+  public polarAreaChartType:string = 'polarArea';
+ 
+  // events
+  public chartClickedPolar(e:any):void {
+    console.log(e);
+  }
+ 
+  public chartHoveredPolar(e:any):void {
+    console.log(e);
+  }
+
+   // Radar
+   public radarChartLabels:string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+ 
+   public radarChartData:any = [
+     {data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A'},
+     {data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B'}
+   ];
+   public radarChartType:string = 'radar';
+  
+   // events
+   public chartClickedRadar(e:any):void {
+     console.log(e);
+   }
+  
+   public chartHoveredRadar(e:any):void {
+     console.log(e);
+   }
 
 }
