@@ -18,7 +18,7 @@
             <a class="dropdown-item" [routerLink]="['proyecciones']" href="#">Indice de Riesgos</a>
             <a class="dropdown-item" [routerLink]="['antecedentes']" href="#">Analisis Demográfico</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Salir</a>
+            <a class="dropdown-item" href="#"[routerLink]="['tabladatos']">Datos Sociodemograficos</a>
           </div>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">

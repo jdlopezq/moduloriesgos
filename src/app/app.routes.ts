@@ -4,12 +4,14 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
 import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: AdminComponent, canActivate:[AuthGuardService] },
   { path: 'proyecciones', component: ProyeccionesComponent },
   { path: 'antecedentes', component: AntecedentesComponent },
+  { path: 'tabladatos', component: TabladatosComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

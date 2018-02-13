@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
+import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
 import {HttpModule} from '@angular/http/'
 
 
@@ -34,7 +35,8 @@ import { ChartsModule } from "ng2-charts";
     HomeComponent,
     AdminComponent,
     ProyeccionesComponent,
-    AntecedentesComponent
+    AntecedentesComponent,
+    TabladatosComponent
   ],
   imports: [
     BrowserModule,

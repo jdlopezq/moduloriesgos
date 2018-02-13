@@ -1,0 +1,73 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar Registro" (keyup.enter)="buscarRegistro(buscartexto.value)" #buscartexto>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarRegistro(buscartexto.value)">Buscar</button>
+    </form>
+  </nav>
+<div class="margen">
+<table class="table table-hover">
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Tipo Documento</th>
+        <th scope="col">Numero Identificación</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Linea Credito</th>
+        <th scope="col">Estado Actual</th>
+        <th scope="col">Monto Aprobado</th>
+        <th scope="col">Fecha Aprobación</th>
+        <th scope="col">Analista</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Nivel Formación</th>
+        <th scope="col">Fecha Contratación</th>
+        <th scope="col">Clasificacion</th>
+        <th scope="col">Empresa Trabaja</th>
+        <th scope="col">Estado Civil</th>
+        <th scope="col">Personas Cargo</th>
+        <th scope="col">Tipo Vivienda</th>
+        <th scope="col">Total Ingresos</th>
+        <th scope="col">Gastos Personales</th>
+        <th scope="col">Cuota CentralRiesgo</th>
+        <th scope="col">Oficina Entrega</th>
+        <th scope="col">Score</th>
+        <th scope="col">Convenio</th>
+        <th scope="col">EtapaActual</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let datos of dataDemo">
+      <tr>
+        <th scope="row">{{datos.id}}</th>
+        <td scope="row">{{datos.TipoDocumento}}</td>
+        <td scope="row">{{datos.NumeroIdentificacion}}</td>
+        <td scope="row">{{datos.NombreCompleto}}</td>
+        <td scope="row">{{datos.LineaCredito}}</td>
+        <td scope="row">{{datos.EstadoActual}}</td>
+        <td scope="row">{{datos.MontoAprobado}}</td>
+        <td scope="row">{{datos.FechaAprobacion}}</td>
+        <td scope="row">{{datos.Analista}}</td>
+        <td scope="row">{{datos.Edad}}</td>
+        <td scope="row">{{datos.Genero}}</td>
+        <td scope="row">{{datos.NivelFormacion}}</td>
+        <td scope="row">{{datos.Ocupacion}}</td>
+        <td scope="row">{{datos.Clasificacion}}</td>
+        <td scope="row">{{datos.EmpresaTrabaja}}</td>
+        <td scope="row">{{datos.FechaContratacion}}</td>
+        <td scope="row">{{datos.EstadoCivil}}</td>
+        <td scope="row">{{datos.PersonasCargo}}</td>
+        <td scope="row">{{datos.TipoVivienda}}</td>
+        <td scope="row">{{datos.Ciudad}}</td>
+        <td scope="row">{{datos.Estrato}}</td>
+        <td scope="row">{{datos.TotalIngresos}}</td>
+        <td scope="row">{{datos.GastosPersonales}}</td>
+        <td scope="row">{{datos.CuotaCentralRiesgo}}</td>
+        <td scope="row">{{datos.OficinaEntrega}}</td>
+        <td scope="row">{{datos.Score}}</td>
+        <td scope="row">{{datos.Convenio}}</td>
+        <td scope="row">{{datos.EtapaActual}}</td>
+      </tr>
+      
+       
+    </tbody>
+  </table>
+</div>

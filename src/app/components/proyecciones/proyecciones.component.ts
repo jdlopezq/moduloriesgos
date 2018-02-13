@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { LocaldataService } from '../../services/localdata.service';
+import { dataFake } from '../../Models/dataFake.model';
 
 
 
@@ -15,43 +16,43 @@ import { LocaldataService } from '../../services/localdata.service';
   styleUrls: ['./proyecciones.component.css']
 })
 export class ProyeccionesComponent {
-  dataDemo: any[]=[];
-  datalocal:any;
-  Rango2030: number = 30;
-
-  constructor(private dataService:DataserviceService) {
-    this.dataService.getData()
-    .subscribe(resData => {
-      this.dataDemo = resData;
-      console.log(this.dataDemo);
-      for (var i in this.dataDemo) {
-        console.log(this.dataDemo[i].Analista)
-      }
-    
-    })
+  dataDemo: dataDemo[];
+  datalocal: any;
+  rango1830: number;
 
 
-   }
-
-
-
-
+  constructor(private dataService: DataserviceService) { 
+   
+  }
 
   ngOnInit() {
-    
-   
+    this.dataService.getData()
+      .subscribe(resData => {
+        this.dataDemo = resData;
+        console.log(this.dataDemo);
+      })
+
   }
 
 
   conteoDatos() {
-for (let i of this.datalocal) {
-  console.log(this.datalocal[i])
-}
+    let numero = 0;
+    for (let contador of this.dataDemo) {
+      let edad = contador.Edad
+      if (edad > 18 && edad < 30) {
+        numero++;
+      }
+    } 
+    console.log(numero)
+    return numero;
+    
   }
+
+
 
   // Doughnut
   public doughnutChartLabels: string[] = ['Tarjeta RIS', 'Mattis', 'CrediMoto', 'Libranza'];
-  public doughnutChartData: number[] = [this.Rango2030, 4, 5, 6];
+  public doughnutChartData: number[] = [30, 4, 5, 6];
   public doughnutChartType: string = 'doughnut';
 
   // events
@@ -98,3 +99,7 @@ for (let i of this.datalocal) {
   }
 
 }
+function newFunction(rango1830: number) {
+  console.log(rango1830);
+}
+
