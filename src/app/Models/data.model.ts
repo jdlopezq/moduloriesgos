@@ -1,4 +1,4 @@
-export interface dataDemo{
+export interface dataDemo {
     TipoDocumento:string,
     NumeroIdentificación:number,
     NombreCompleto:string,
