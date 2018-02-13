@@ -11,7 +11,7 @@ export class DataserviceService {
   dataHttp: string;
   subject = new BehaviorSubject<dataDemo[]>(this.dataDemo)
   constructor(private http: Http) {
-    this.dataHttp = ' http://localhost:3000/demoData'
+    this.dataHttp = ' http://localhost:3000/datos'
     this.http.get(this.dataHttp).map(response=>response.json()).subscribe(res=>{
       console.log(res);
       this.dataDemo=res;

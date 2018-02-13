@@ -20,8 +20,8 @@ export class ProyeccionesComponent {
   
   constructor(private dataService: DataserviceService) {
 this.dataService.getData().subscribe(data => 
-      {console.log(data); this.datoDemografico = data.[];})
-  console.log(this.datoDemografico[1])
+      {console.log(data); this.datoDemografico = data;})
+  console.log(this.datoDemografico)
 }
   
 

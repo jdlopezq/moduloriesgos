@@ -28,8 +28,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 1
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "NIT",
@@ -59,8 +58,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 2
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "NIT",
@@ -90,8 +88,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Verificación",
-            "id": 3
+            "EtapaActual": "Verificación"
         },
         {
             "TipoDocumento": "NIT",
@@ -121,8 +118,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 4
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "NIT",
@@ -152,8 +148,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Verificación",
-            "id": 5
+            "EtapaActual": "Verificación"
         },
         {
             "TipoDocumento": "NIT",
@@ -183,8 +178,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 6
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -214,8 +208,7 @@
             "OficinaEntrega": "PALERMO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 7
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -245,8 +238,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Radicación",
-            "id": 8
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -276,8 +268,7 @@
             "OficinaEntrega": "GANA SERVICIOS REPOSO",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 9
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -307,8 +298,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 10
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -338,8 +328,7 @@
             "OficinaEntrega": "ADMON ZONA BAJO CAUCA",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 11
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -369,8 +358,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 12
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -400,8 +388,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 13
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -431,8 +418,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 14
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -462,8 +448,7 @@
             "OficinaEntrega": "MATRIX TECH (RED MIA)",
             "Score": 0,
             "Convenio": "LAMINAS Y HIERROS - ASOFERRO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 15
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -493,8 +478,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 16
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -524,8 +508,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 17
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -555,8 +538,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 18
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -586,8 +568,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 19
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -617,8 +598,7 @@
             "OficinaEntrega": "PROYECTO INFRAESTRUCTURA",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 20
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -648,8 +628,7 @@
             "OficinaEntrega": "PROYECTO INFRAESTRUCTURA",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 21
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -679,8 +658,7 @@
             "OficinaEntrega": "GANA SERVICIOS REPOSO",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 22
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -710,8 +688,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 23
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -741,8 +718,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 24
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -772,8 +748,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 25
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -803,8 +778,7 @@
             "OficinaEntrega": "CALDAS",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 26
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -834,8 +808,7 @@
             "OficinaEntrega": "ZARAGOZA",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 27
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -865,8 +838,7 @@
             "OficinaEntrega": "CHANCE MOVIL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 28
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -896,8 +868,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 29
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -927,8 +898,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 30
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -958,8 +928,7 @@
             "OficinaEntrega": "PALERMO",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 31
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -989,8 +958,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "PreScoring",
-            "id": 32
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1020,8 +988,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 33
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1051,8 +1018,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 34
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1082,8 +1048,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 35
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1113,8 +1078,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 36
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1144,8 +1108,7 @@
             "OficinaEntrega": "PROYECTO INFRAESTRUCTURA",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 37
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1175,8 +1138,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 38
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1206,8 +1168,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 39
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1237,8 +1198,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 40
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1268,8 +1228,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 41
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1299,8 +1258,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Verificación",
-            "id": 42
+            "EtapaActual": "Verificación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1330,8 +1288,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 43
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1361,8 +1318,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 44
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1392,8 +1348,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 45
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1423,8 +1378,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MERCAFRUVER",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 46
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1454,8 +1408,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 47
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1485,8 +1438,7 @@
             "OficinaEntrega": "GANA REDMIA  CVS PRINCIPAL NUE",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 48
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1516,8 +1468,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 49
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1547,8 +1498,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 50
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1578,8 +1528,7 @@
             "OficinaEntrega": "GANA SERVICIOS REPOSO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 51
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1609,8 +1558,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 52
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1640,8 +1588,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "ASOCIACION MUTUAL SANTA",
-            "EtapaActual": "PreScoring",
-            "id": 53
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1671,8 +1618,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 54
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1702,8 +1648,7 @@
             "OficinaEntrega": "PALERMO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 55
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1733,8 +1678,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 56
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1764,8 +1708,7 @@
             "OficinaEntrega": "CALDAS",
             "Score": 0,
             "Convenio": "ASOCIACION MUTUAL SANTA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 57
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1795,8 +1738,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 58
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1826,8 +1768,7 @@
             "OficinaEntrega": "EL PINAL",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 59
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1857,8 +1798,7 @@
             "OficinaEntrega": "EBEJICO",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 60
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1888,8 +1828,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 61
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1919,8 +1858,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "AVANCES",
-            "EtapaActual": "Portafolio",
-            "id": 62
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1950,8 +1888,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 63
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -1981,8 +1918,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Portafolio",
-            "id": 64
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2012,8 +1948,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Radicación",
-            "id": 65
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2043,8 +1978,7 @@
             "OficinaEntrega": "SALA HISPANIA",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Radicación",
-            "id": 66
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2074,8 +2008,7 @@
             "OficinaEntrega": "SALA HISPANIA",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Radicación",
-            "id": 67
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2105,8 +2038,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "",
-            "EtapaActual": "Portafolio",
-            "id": 68
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2136,8 +2068,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 69
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2167,8 +2098,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 70
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2198,8 +2128,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 71
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2229,8 +2158,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "AVANCES",
-            "EtapaActual": "Portafolio",
-            "id": 72
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2260,8 +2188,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 73
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2291,8 +2218,7 @@
             "OficinaEntrega": "ADMON ZONA BAJO CAUCA",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 74
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2322,8 +2248,7 @@
             "OficinaEntrega": "CALDAS",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 75
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2353,8 +2278,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 76
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2384,8 +2308,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 77
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2415,8 +2338,7 @@
             "OficinaEntrega": "GANA SERVICIOS REPOSO",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 78
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2446,8 +2368,7 @@
             "OficinaEntrega": "KENEDY",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 79
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2477,8 +2398,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 80
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2508,8 +2428,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 81
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2539,8 +2458,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "PreScoring",
-            "id": 82
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2570,8 +2488,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "PreScoring",
-            "id": 83
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2601,8 +2518,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "DISTRIMATERIALES MOLINA - ASOFERRO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 84
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2632,8 +2548,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 85
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2663,8 +2578,7 @@
             "OficinaEntrega": "SAN RAFAEL",
             "Score": 0,
             "Convenio": "FERRETERIA EL FARO - ASOFERRO",
-            "EtapaActual": "Portafolio",
-            "id": 86
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2694,8 +2608,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 87
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2725,8 +2638,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 88
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2756,8 +2668,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 89
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2787,8 +2698,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 90
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2818,8 +2728,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 91
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2849,8 +2758,7 @@
             "OficinaEntrega": "ADMON ZONA BAJO CAUCA",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 92
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2880,8 +2788,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 93
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2911,8 +2818,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Portafolio",
-            "id": 94
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2942,8 +2848,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Verificación",
-            "id": 95
+            "EtapaActual": "Verificación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -2973,8 +2878,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 96
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3004,8 +2908,7 @@
             "OficinaEntrega": "CRDINTEGRAL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 97
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3035,8 +2938,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 98
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3066,8 +2968,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 99
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3097,8 +2998,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 100
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3128,8 +3028,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 101
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3159,8 +3058,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 102
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3190,8 +3088,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 103
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3221,8 +3118,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 104
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3252,8 +3148,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 105
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3283,8 +3178,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Portafolio",
-            "id": 106
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3314,8 +3208,7 @@
             "OficinaEntrega": "FORMACION PRIMER INFANCIA",
             "Score": 0,
             "Convenio": "ASOCIACION MUTUAL SANTA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 107
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3345,8 +3238,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 108
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3376,8 +3268,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 109
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3407,8 +3298,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 110
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3438,8 +3328,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 111
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3469,8 +3358,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 112
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3500,8 +3388,7 @@
             "OficinaEntrega": "CREDINTEGRAL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 113
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3531,8 +3418,7 @@
             "OficinaEntrega": "FIDUCIA BBVA",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 114
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3562,8 +3448,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 115
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3593,8 +3478,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 116
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3624,8 +3508,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 117
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3655,8 +3538,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 118
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3686,8 +3568,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 119
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3717,8 +3598,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 120
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3748,8 +3628,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 121
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3779,8 +3658,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 122
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3810,8 +3688,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 123
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3841,8 +3718,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "PreScoring",
-            "id": 124
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3872,8 +3748,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 125
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3903,8 +3778,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 126
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3934,8 +3808,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 127
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3965,8 +3838,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 128
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -3996,8 +3868,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 129
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4027,8 +3898,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 130
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4058,8 +3928,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 131
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4089,8 +3958,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 132
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4120,8 +3988,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 133
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4151,8 +4018,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 134
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4182,8 +4048,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 135
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4213,8 +4078,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 136
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4244,8 +4108,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 137
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4275,8 +4138,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 138
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4306,8 +4168,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 139
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4337,8 +4198,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 140
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4368,8 +4228,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 141
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4399,8 +4258,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 142
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4430,8 +4288,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 143
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4461,8 +4318,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 144
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4492,8 +4348,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 145
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4523,8 +4378,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 146
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4554,8 +4408,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 147
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4585,8 +4438,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 148
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4616,8 +4468,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 149
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4647,8 +4498,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 150
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4678,8 +4528,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 151
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4709,8 +4558,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 152
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4740,8 +4588,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 153
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4771,8 +4618,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 154
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4802,8 +4648,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "ASOCIACION MUTUAL SANTA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 155
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4833,8 +4678,7 @@
             "OficinaEntrega": "GESTIONES ADTVAS Y LEGALES",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 156
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4864,8 +4708,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 157
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4895,8 +4738,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "BANAFÉ",
-            "EtapaActual": "Portafolio",
-            "id": 158
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4926,8 +4768,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Portafolio",
-            "id": 159
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4957,8 +4798,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MERCAPUNTO",
-            "EtapaActual": "Portafolio",
-            "id": 160
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -4988,8 +4828,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MERCAPUNTO",
-            "EtapaActual": "Portafolio",
-            "id": 161
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5019,8 +4858,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 162
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5050,8 +4888,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 163
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5081,8 +4918,7 @@
             "OficinaEntrega": "ADMON ZONA BAJO CAUCA",
             "Score": 0,
             "Convenio": "EL PUNTO DEL UNIFORME",
-            "EtapaActual": "Portafolio",
-            "id": 164
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5112,8 +4948,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 165
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5143,8 +4978,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "BANAFÉ",
-            "EtapaActual": "Radicación",
-            "id": 166
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5174,8 +5008,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 167
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5205,8 +5038,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 168
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5236,8 +5068,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 169
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5267,8 +5098,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 170
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5298,8 +5128,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 171
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5329,8 +5158,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 172
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5360,8 +5188,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 173
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5391,8 +5218,7 @@
             "OficinaEntrega": "ABEJORRAL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 174
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5422,8 +5248,7 @@
             "OficinaEntrega": "SALA SN JOSE DE LA MONTAÑA",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 175
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5453,8 +5278,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 176
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5484,8 +5308,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MERCAPUNTO",
-            "EtapaActual": "Portafolio",
-            "id": 177
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5515,8 +5338,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 178
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5546,8 +5368,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Radicación",
-            "id": 179
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5577,8 +5398,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 180
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5608,8 +5428,7 @@
             "OficinaEntrega": "PRINCIPAL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 181
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5639,8 +5458,7 @@
             "OficinaEntrega": "GESTION DE CREDITOS (CREDINTEG",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 182
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5670,8 +5488,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 183
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5701,8 +5518,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "COOTRANSMEDE",
-            "EtapaActual": "Radicación",
-            "id": 184
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5732,8 +5548,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 185
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5763,8 +5578,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 186
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5794,8 +5608,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 187
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5825,8 +5638,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "AVANCES",
-            "EtapaActual": "Radicación",
-            "id": 188
+            "EtapaActual": "Radicación"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5856,8 +5668,7 @@
             "OficinaEntrega": "SDKLJSL",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 189
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5887,8 +5698,7 @@
             "OficinaEntrega": "SDKLJSL",
             "Score": 0,
             "Convenio": "MOTOCAMPO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 190
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5918,8 +5728,7 @@
             "OficinaEntrega": "SDKLJSL",
             "Score": 0,
             "Convenio": "AUTOMOTRIZ SIMA",
-            "EtapaActual": "Portafolio",
-            "id": 191
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5949,8 +5758,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 192
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -5980,8 +5788,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "GENERAL",
-            "EtapaActual": "Portafolio",
-            "id": 193
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6011,8 +5818,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 194
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6042,8 +5848,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CERAMICAS EL RODEO - ASOFERRO",
-            "EtapaActual": "PreScoring",
-            "id": 195
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6073,8 +5878,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 196
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6104,8 +5908,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 197
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6135,8 +5938,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 198
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6166,8 +5968,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 199
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6197,8 +5998,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 200
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6228,8 +6028,7 @@
             "OficinaEntrega": "GESTION DE CREDITOS (CREDINTEG",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Portafolio",
-            "id": 201
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6259,8 +6058,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 202
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6290,8 +6088,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 203
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6321,8 +6118,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "",
-            "EtapaActual": "Desembolso",
-            "id": 204
+            "EtapaActual": "Desembolso"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6352,8 +6148,7 @@
             "OficinaEntrega": "SONSÓN",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 205
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6383,8 +6178,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 206
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6414,8 +6208,7 @@
             "OficinaEntrega": "FORMACION PRIMER INFANCIA",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 207
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6445,8 +6238,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 208
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6476,8 +6268,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 209
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6507,8 +6298,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "ASOCIACION MUTUAL SANTA",
-            "EtapaActual": "Portafolio",
-            "id": 210
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6538,8 +6328,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "PreScoring",
-            "id": 211
+            "EtapaActual": "PreScoring"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6569,8 +6358,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "AGENCIA EL DORADO",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 212
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6600,8 +6388,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MERCAPUNTO",
-            "EtapaActual": "Portafolio",
-            "id": 213
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6631,8 +6418,7 @@
             "OficinaEntrega": "S. PEDRO DE LOS MILAGROS",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 214
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6662,8 +6448,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 215
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6693,8 +6478,7 @@
             "OficinaEntrega": "PARQUE BERRIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 216
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6724,8 +6508,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 217
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6755,8 +6538,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 218
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6786,8 +6568,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 219
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6817,8 +6598,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 220
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6848,8 +6628,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 221
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6879,8 +6658,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 222
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6910,8 +6688,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 223
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6941,8 +6718,7 @@
             "OficinaEntrega": "PALERMO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 224
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -6972,8 +6748,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 225
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7003,8 +6778,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Análisis y Decisión",
-            "id": 226
+            "EtapaActual": "Análisis y Decisión"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7034,8 +6808,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "MEDIA NARANJA",
-            "EtapaActual": "Portafolio",
-            "id": 227
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7065,8 +6838,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 228
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7096,8 +6868,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 229
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7127,8 +6898,7 @@
             "OficinaEntrega": "",
             "Score": 0,
             "Convenio": "SIN CONVENIO",
-            "EtapaActual": "Portafolio",
-            "id": 230
+            "EtapaActual": "Portafolio"
         },
         {
             "TipoDocumento": "CEDULA DE CIUDADANIA",
@@ -7158,8 +6928,7 @@
             "OficinaEntrega": "ESTADIO",
             "Score": 0,
             "Convenio": "CONSUMAX",
-            "EtapaActual": "Finalizado/Archivo",
-            "id": 231
+            "EtapaActual": "Finalizado/Archivo"
         },
         {
             "TipoDocumento": "",
@@ -7189,8 +6958,7 @@
             "OficinaEntrega": "",
             "Score": null,
             "Convenio": "",
-            "EtapaActual": "",
-            "id": null
+            "EtapaActual": ""
         }
     ]
 }

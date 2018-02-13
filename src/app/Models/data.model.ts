@@ -1,4 +1,5 @@
 export interface dataDemo {
+    id:any,
     TipoDocumento:string,
     NumeroIdentificación:number,
     NombreCompleto:string,
