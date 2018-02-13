@@ -15,15 +15,25 @@ import { DataserviceService } from '../../services/dataservice.service';
   styleUrls: ['./proyecciones.component.css']
 })
 export class ProyeccionesComponent {
-  datoDemografico: any[];
+  dataDemo: dataDemo[];
   dato: any;
   
   constructor(private dataService: DataserviceService) {
-this.dataService.getData().subscribe(data => 
-      {console.log(data); this.datoDemografico = data;})
-  console.log(this.datoDemografico)
 }
+
+  ngOnInit() {
+    this.dataService.getData()
+      .subscribe(resData => {
+        console.log(resData),
+        this.dato=resData} )
+        
+  }
+    
+
   
+conteoDatos(){
+
+}
 
   // Doughnut
   public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales','Hola'];
