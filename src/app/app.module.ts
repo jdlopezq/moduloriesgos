@@ -19,10 +19,11 @@ import { AntecedentesComponent } from './components/antecedentes/antecedentes.co
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { DataserviceService } from './services/dataservice.service';
-
+import { LocaldataService } from './services/localdata.service';
 
 //graficos
 import { ChartsModule } from "ng2-charts";
+
 
 
 
@@ -41,7 +42,7 @@ import { ChartsModule } from "ng2-charts";
     HttpModule,
     APP_ROUTING
   ],
-  providers: [AuthService, AuthGuardService, DataserviceService],
+  providers: [AuthService, AuthGuardService, DataserviceService,LocaldataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

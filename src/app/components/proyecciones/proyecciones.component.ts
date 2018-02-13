@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
 import { dataDemo } from '../../Models/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
+import { LocaldataService } from '../../services/localdata.service';
 
 
 
@@ -15,29 +15,43 @@ import { DataserviceService } from '../../services/dataservice.service';
   styleUrls: ['./proyecciones.component.css']
 })
 export class ProyeccionesComponent {
-  dataDemo: dataDemo[];
-  dato: any;
-  
-  constructor(private dataService: DataserviceService) {
-}
+  dataDemo: any[]=[];
+  datalocal:any;
+  Rango2030: number = 30;
+
+  constructor(private dataService:DataserviceService) {
+    this.dataService.getData()
+    .subscribe(resData => {
+      this.dataDemo = resData;
+      console.log(this.dataDemo);
+      for (var i in this.dataDemo) {
+        console.log(this.dataDemo[i].Analista)
+      }
+    
+    })
+
+
+   }
+
+
+
+
 
   ngOnInit() {
-    this.dataService.getData()
-      .subscribe(resData => {
-        console.log(resData),
-        this.dato=resData} )
-        
-  }
     
+   
+  }
 
-  
-conteoDatos(){
 
+  conteoDatos() {
+for (let i of this.datalocal) {
+  console.log(this.datalocal[i])
 }
+  }
 
   // Doughnut
-  public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales','Hola'];
-  public doughnutChartData: number[] = [3, 4, 5, 6];
+  public doughnutChartLabels: string[] = ['Tarjeta RIS', 'Mattis', 'CrediMoto', 'Libranza'];
+  public doughnutChartData: number[] = [this.Rango2030, 4, 5, 6];
   public doughnutChartType: string = 'doughnut';
 
   // events
