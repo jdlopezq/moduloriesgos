@@ -72,7 +72,7 @@ conteoDataFiltro(data:any[]){
   // events
   public chartClicked(e: any): void {
 
-    //console.log(e);
+    console.log(e);
   }
 
   public chartHovered(e: any): void {
@@ -85,7 +85,7 @@ conteoDataFiltro(data:any[]){
   public polarAreaLegend: boolean = true;
 
   public polarAreaChartType: string = 'polarArea';
-
+ 
   // events
   public chartClickedPolar(e: any): void {
     console.log(e);
