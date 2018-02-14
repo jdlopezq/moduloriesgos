@@ -28,6 +28,7 @@ import { ChartsModule } from "ng2-charts";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { ChartsModule } from "ng2-charts";
     AdminComponent,
     ProyeccionesComponent,
     AntecedentesComponent,
-    TabladatosComponent
+    TabladatosComponent,
+   
   ],
   imports: [
     BrowserModule,

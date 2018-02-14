@@ -14,7 +14,7 @@ import { dataFake } from '../../Models/dataFake.model';
 })
 export class TabladatosComponent implements OnInit {
 
-  dataDemo:dataFake[];
+  dataDemo:dataDemo[];
   constructor(private dataService:DataserviceService) { }
 
   ngOnInit() {

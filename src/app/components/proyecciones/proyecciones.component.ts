@@ -15,14 +15,16 @@ import { dataFake } from '../../Models/dataFake.model';
   templateUrl: './proyecciones.component.html',
   styleUrls: ['./proyecciones.component.css']
 })
-export class ProyeccionesComponent {
+export class ProyeccionesComponent implements OnInit {
   dataDemo: dataDemo[];
   datalocal: any;
-  rango1830: number;
+  rango1830: any;
 
 
-  constructor(private dataService: DataserviceService) { 
-   
+
+  constructor(private dataService: DataserviceService) {
+
+
   }
 
   ngOnInit() {
@@ -30,10 +32,11 @@ export class ProyeccionesComponent {
       .subscribe(resData => {
         this.dataDemo = resData;
         console.log(this.dataDemo);
+        this.rango1830 = this.conteoDatos();
+    console.log(this.rango1830);
+    this.doughnutChartData=[this.rango1830,2,3,3];
       })
-
   }
-
 
   conteoDatos() {
     let numero = 0;
@@ -42,22 +45,22 @@ export class ProyeccionesComponent {
       if (edad > 18 && edad < 30) {
         numero++;
       }
-    } 
-    console.log(numero)
+    }
+
     return numero;
-    
   }
 
 
 
   // Doughnut
   public doughnutChartLabels: string[] = ['Tarjeta RIS', 'Mattis', 'CrediMoto', 'Libranza'];
-  public doughnutChartData: number[] = [30, 4, 5, 6];
+  public doughnutChartData: number[] = [20, 4, 5, 6];
   public doughnutChartType: string = 'doughnut';
 
   // events
   public chartClicked(e: any): void {
-    console.log(e);
+    
+    //console.log(e);
   }
 
   public chartHovered(e: any): void {
@@ -99,7 +102,5 @@ export class ProyeccionesComponent {
   }
 
 }
-function newFunction(rango1830: number) {
-  console.log(rango1830);
-}
+
 
