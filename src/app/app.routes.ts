@@ -5,6 +5,7 @@ import { ProyeccionesComponent } from './components/proyecciones/proyecciones.co
 import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
+import { PhpComponentComponent } from './components/php-component/php-component.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const APP_ROUTES: Routes = [
   { path: 'proyecciones', component: ProyeccionesComponent },
   { path: 'antecedentes', component: AntecedentesComponent },
   { path: 'tabladatos', component: TabladatosComponent },
+  { path: 'phpcomponent', component: PhpComponentComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
