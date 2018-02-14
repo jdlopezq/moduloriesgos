@@ -1,12 +1,14 @@
-<nav class="navbar navbar-light bg-light">
+<div class="container-fluid">
+  <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar Registro" (keyup.enter)="buscarRegistro(buscartexto.value)" #buscartexto>
       <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarRegistro(buscartexto.value)">Buscar</button>
     </form>
   </nav>
-<div class="margen">
-<table class="table table-hover">
-    <thead class="thead-dark" >
+</div>
+<div class="container-fluid margen">
+<table class="table table-hover margen">
+    <thead class="thead-dark margen" >
       <tr>
         <th scope="col">id</th>
         <th scope="col">Tipo Documento</th>
@@ -35,7 +37,7 @@
         <th scope="col">EtapaActual</th>
       </tr>
     </thead>
-    <tbody *ngFor="let datos of dataDemo">
+    <tbody *ngFor="let datos of dataDemo margen" >
       <tr>
         <th scope="row">{{datos.id}}</th>
         <td scope="row">{{datos.TipoDocumento}}</td>
