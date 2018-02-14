@@ -1,15 +1,15 @@
 
 <div class="container">
-<div class="row">
-<div class="column" style="display: block" >
+
+
   <canvas baseChart
               [data]="doughnutChartData"
               [labels]="doughnutChartLabels"
               [chartType]="doughnutChartType"
               (chartHover)="chartHovered($event)"
               (chartClick)="chartClicked($event)"></canvas>
-</div>
-<div class="column" style="display: block" >
+
+
   <canvas baseChart
           [data]="polarAreaChartData"
           [labels]="polarAreaChartLabels"
@@ -17,20 +17,19 @@
           [chartType]="polarAreaChartType"
           (chartHoverPolar)="chartHovered($event)"
           (chartClickPolar)="chartClicked($event)"></canvas>     
-</div>
 
-<div class="column" style="display: block">
+
+
   <canvas baseChart
           [datasets]="radarChartData"
           [labels]="radarChartLabels"
           [chartType]="radarChartType"
           (chartHoverRadar)="chartHovered($event)"
           (chartClickRadar)="chartClicked($event)"></canvas>
-</div>
 
 </div>
 
-<div>
+
 
 
 

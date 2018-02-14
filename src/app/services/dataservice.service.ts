@@ -11,7 +11,7 @@ import { dataFake } from '../Models/dataFake.model';
 export class DataserviceService implements OnInit {
   dataDemo: dataDemo;
   dataHttp: string = "http://localhost:3000/datos";
-  dataFile: string = "/assets/data/fake.json"
+  dataFile: string = "../../assets/data/fake.json"
 
   
 
@@ -19,7 +19,7 @@ export class DataserviceService implements OnInit {
   }
 
   getData() {
-    return this.http.get(this.dataHttp)
+    return this.http.get(this.dataFile)
     .map(result => result.json())
   }
 
