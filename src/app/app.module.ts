@@ -24,6 +24,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { DataserviceService } from './services/dataservice.service';
 import { LocaldataService } from './services/localdata.service';
+import { PhpService } from './services/php.service';
 
 //graficos
 import { ChartsModule } from "ng2-charts";
@@ -42,6 +43,7 @@ import { ChartsModule } from "ng2-charts";
     AntecedentesComponent,
     TabladatosComponent,
     PhpComponentComponent,
+ 
    
   ],
   imports: [
@@ -50,7 +52,7 @@ import { ChartsModule } from "ng2-charts";
     HttpModule,
     APP_ROUTING
   ],
-  providers: [AuthService, AuthGuardService, DataserviceService,LocaldataService],
+  providers: [AuthService, AuthGuardService, DataserviceService,LocaldataService, PhpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
