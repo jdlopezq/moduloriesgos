@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { dataDemo } from '../../Models/data.model';
+import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { LocaldataService } from '../../services/localdata.service';
-import { dataFake } from '../../Models/dataFake.model';
+import { dataFake } from '../../shared/dataFake.model';
+
 
 @Component({
   selector: 'app-tabladatos',
@@ -13,9 +14,14 @@ import { dataFake } from '../../Models/dataFake.model';
   styleUrls: ['./tabladatos.component.css']
 })
 export class TabladatosComponent implements OnInit {
+  datos:dataDemo[];
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource();
 
   dataDemo:dataDemo[];
-  constructor(private dataService:DataserviceService) { }
+  constructor(private dataService:DataserviceService) {
+    
+   }
 
   ngOnInit() {
      this.dataService.getData().subscribe(datos=>{

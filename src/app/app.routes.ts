@@ -6,6 +6,7 @@ import { AntecedentesComponent } from './components/antecedentes/antecedentes.co
 import { AuthGuardService } from './services/auth-guard.service';
 import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
 import { PhpComponentComponent } from './components/php-component/php-component.component';
+import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const APP_ROUTES: Routes = [
   { path: 'antecedentes', component: AntecedentesComponent },
   { path: 'tabladatos', component: TabladatosComponent },
   { path: 'phpcomponent', component: PhpComponentComponent },
+  { path: 'selectvariables', component:  SelecvariablesComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { dataDemo } from '../../Models/data.model';
+import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { LocaldataService } from '../../services/localdata.service';
-import { dataFake } from '../../Models/dataFake.model';
+import { dataFake } from '../../shared/dataFake.model';
 
 
 
@@ -105,7 +105,7 @@ export class ProyeccionesComponent implements OnInit {
   }
 
   // PolarArea
-  public polarAreaChartLabels: string[] = ['Cedula', 'NIT'];
+  public polarAreaChartLabels: string[] = ['NIT', 'Cedula'];
   public polarAreaChartData: number[] = [300, 500];
   public polarAreaLegend: boolean = true;
 

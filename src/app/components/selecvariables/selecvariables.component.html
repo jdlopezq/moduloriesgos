@@ -1,0 +1,28 @@
+
+<div class="mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="NombreCampo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="NombreQuery">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Query </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!--Borrar Column -->
+      <ng-container matColumnDef="Borrar">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Borar Campo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> <i class="material-icons">delete</i> </mat-cell>
+      </ng-container>
+  
+    
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>

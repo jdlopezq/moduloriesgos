@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { dataDemo } from '../Models/data.model';
+import { dataDemo } from '../shared/data.model';
 
 @Injectable()
 export class LocaldataService {

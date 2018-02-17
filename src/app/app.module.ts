@@ -2,6 +2,7 @@
 import {HttpModule} from '@angular/http/'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from './shared/material.module';
 
 //Components
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { PhpComponentComponent } from './components/php-component/php-component.component';
 import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
 import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
-
+import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 
 
 
@@ -33,6 +34,8 @@ import { ChartsModule } from "ng2-charts";
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +46,8 @@ import { ChartsModule } from "ng2-charts";
     AntecedentesComponent,
     TabladatosComponent,
     PhpComponentComponent,
+    SelecvariablesComponent,
+    
  
    
   ],
@@ -50,7 +55,8 @@ import { ChartsModule } from "ng2-charts";
     BrowserModule,
     ChartsModule,
     HttpModule,
-    APP_ROUTING
+    APP_ROUTING,
+    MaterialModule
   ],
   providers: [AuthService, AuthGuardService, DataserviceService,LocaldataService, PhpService],
   bootstrap: [AppComponent]

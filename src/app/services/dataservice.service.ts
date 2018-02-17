@@ -1,10 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
-import { dataDemo } from "../Models/data.model"
+import { dataDemo } from "../shared/data.model"
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http, Headers } from '@angular/http';
 import { Observable } from "rxjs/observable"
 import 'rxjs/add/operator/map';
-import { dataFake } from '../Models/dataFake.model';
+import { dataFake } from '../shared/dataFake.model';
 
 
 @Injectable()

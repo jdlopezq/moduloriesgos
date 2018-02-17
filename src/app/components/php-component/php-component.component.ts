@@ -1,35 +1,53 @@
-import {Component } from '@angular/core';
-import {Http, Headers, Response} from '@angular/http';
+import { Component } from '@angular/core';
+import { Http, Headers, Response } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { PhpService } from '../../services/php.service';
+import { dataDemo } from "../../shared/data.model";
 
 @Component({
   selector: 'app-php-component',
   templateUrl: './php-component.component.html',
   styleUrls: ['./php-component.component.css']
 })
-export class PhpComponentComponent{
- data: any;
-  dataPHP:any;
-  
+export class PhpComponentComponent {
+  data: any;
+  dataPHP: any;
 
-  public constructor(private dataImport:PhpService) {
-     
-  }
+  //dataSend: number =JSON.stringify({}) ;
+
+
+
+  private constructor(private dataImport: PhpService,
+    private router: Router) { }
+  model=new dataDemo();
+  prueba:any = {name: 'funciona',
+    position:'juan',
+    department: 'string',
+    salary: 'string',
+  code: '12'}
   ngOnInit() {
-    this.dataImport.getDataPHP().subscribe(data => {
-      this.dataPHP = data.arrayBuffer();
-     console.log(this.dataPHP)
-      
-      
-    }); 
+    this.dataImport.addEmployee(JSON.stringify(this.model))
+      .subscribe((hola) => {
+        this.dataPHP=hola;
+        console.log(this.prueba)
+      });
   
-   this.dataImport.sendDataPHP(265)
-  }
-
-
-
+  this.dataImport.getEmployees()
+    .subscribe(employees => {
+     // this.model = employees;
+      console.log(this.model)
+    })
 }
+    // this.dataImport.sendDataPHP(this.dataSend)
+    //this.dataImport.aend(this.dataSend)
+
+    //this.dataImport.getDataPHP().subscribe(data => {
+    //this.dataPHP = data;
+    //console.log(this.dataPHP)
+    //});
+  }
+  
+
