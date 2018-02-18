@@ -22,7 +22,7 @@ export class PhpComponentComponent {
 
   constructor(private dataImport: PhpService,
     private router: Router) { }
-  model=new dataDemo();
+  model:dataDemo[];
   prueba:any = {name: 'funciona',
     position:'juan',
     department: 'string',

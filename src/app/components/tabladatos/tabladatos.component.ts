@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
+import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA, MatPaginator } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { LocaldataService } from '../../services/localdata.service';
 
@@ -14,8 +14,11 @@ import { LocaldataService } from '../../services/localdata.service';
   styleUrls: ['./tabladatos.component.css']
 })
 export class TabladatosComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  
   datos:dataDemo[];
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns = [];
   dataSource = new MatTableDataSource();
 
   dataDemo:dataDemo[];
@@ -23,16 +26,27 @@ export class TabladatosComponent implements OnInit {
     
    }
 
+   applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
   ngOnInit() {
      this.dataService.getData().subscribe(datos=>{
       console.log(datos);
       this.dataDemo=datos;
-    })
+      this.displayedColumns=datos.length>0?Object.keys(datos[0]):[];
+      this.dataSource = new MatTableDataSource(datos);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.dataSource.filterPredicate
+      
+    });
+    
   }
 
-  buscarRegistro(termino:string){
-    console.log(termino);
-  }
+ 
 
   
 }
