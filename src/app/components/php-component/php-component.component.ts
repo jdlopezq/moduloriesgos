@@ -20,7 +20,7 @@ export class PhpComponentComponent {
 
 
 
-  private constructor(private dataImport: PhpService,
+  constructor(private dataImport: PhpService,
     private router: Router) { }
   model=new dataDemo();
   prueba:any = {name: 'funciona',
