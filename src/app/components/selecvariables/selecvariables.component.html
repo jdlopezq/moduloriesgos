@@ -1,13 +1,17 @@
-<div>
+<div class="form-horizontal">
 <mat-form-field>
-  <textarea matInput placeholder="Nombre Variable" matTextareaAutosize matAutosizeMinRows="2"
+  <textarea matInput placeholder="Nombre Variable" [(ngModel)]="cargaVariables.name" matTextareaAutosize matAutosizeMinRows="2"
             matAutosizeMaxRows="5"></textarea>
+            
 </mat-form-field>
 <mat-form-field>
-  <textarea matInput placeholder="Uso Query" matTextareaAutosize matAutosizeMinRows="2"
+  <textarea matInput placeholder="Uso Query" [(ngModel)]="cargaVariables.qname" matTextareaAutosize matAutosizeMinRows="2"
             matAutosizeMaxRows="5"></textarea>
 </mat-form-field>
+<button type="submit" class="btn btn-success" (click)='AgregarVariable(element)'>Guardar</button>
 </div>
+
+
 <div class="mat-elevation-z8" class="mat-form-field">
     <mat-table #table [dataSource]="dataSource" matSort>
   
@@ -25,7 +29,7 @@
   
       <!--Borrar Column -->
       <ng-container matColumnDef="Borrar">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Borar Campo </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Borrar Campo </mat-header-cell>
         <mat-cell *matCellDef="let element"> <i class="material-icons">delete</i> </mat-cell>
       </ng-container>
   

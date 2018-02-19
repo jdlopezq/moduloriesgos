@@ -14,8 +14,8 @@ export class SelecvariablesComponent{
 displayedColumns = ['NombreCampo', 'NombreQuery', 'Borrar',];
 dataSource = new MatTableDataSource(ELEMENT_DATA);
 dataPHP:any;
-cargaVariables:any ;
-obtencionVariables:any;
+cargaVariables=new Element() ; 
+obtencionVariables:any ;
 
 constructor(private dataImport:PhpService){
  
@@ -45,13 +45,14 @@ ngOnInit() {
       console.log(this.obtencionVariables)
     })
 }
-
+AgregarVariable(){
+  this.dataImport.addEmployee(this.cargaVariables).subscribe((res)=>{res; console.log(res)})}
 
 
 
 }
 
-export interface Element {
+export class Element {
   name: string;
   qname: string; 
 }
