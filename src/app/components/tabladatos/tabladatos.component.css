@@ -9,13 +9,19 @@
   }
   .mat-table {
     overflow: auto;
-    max-height: 800px;
+   max-height: 800px;
   }
   .mat-form-field {
     font-size: 20px;
     width: 50%;
+    
   }
+  .mat-row, .mat-header-row{
+    min-width: 3700px;
   
+    flex: 0 0 5%
+  }
   .mat-header-cell.mat-sort-header-sorted {
     color: black;
+
   }
