@@ -18,9 +18,13 @@ import {
     MatInputModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    MatProgressBarModule    
+    MatProgressBarModule,
+    MatCardModule,
+    MatStepperModule, 
+    
+    
 } from '@angular/material';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule, } from '@angular/forms'
 import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
     imports: [MatButtonModule,
@@ -41,7 +45,9 @@ import {MatMenuModule} from '@angular/material/menu';
         MatInputModule,
         MatSlideToggleModule,
         MatSnackBarModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatStepperModule, 
+        ReactiveFormsModule
        ],
     exports: [MatButtonModule,
         MatCheckboxModule,
@@ -62,7 +68,10 @@ import {MatMenuModule} from '@angular/material/menu';
         MatInputModule,
         MatSlideToggleModule,
         MatSnackBarModule,
-        MatProgressBarModule
+        MatProgressBarModule, 
+        MatCardModule,
+        MatStepperModule,
+        ReactiveFormsModule 
     ],
     providers: [],
 })

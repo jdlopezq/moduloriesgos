@@ -29,13 +29,13 @@ export class PhpComponentComponent {
     salary: 'string',
   code: '12'}
   ngOnInit() {
-    this.dataImport.addEmployee(JSON.stringify(this.model))
+    this.dataImport.addItem(JSON.stringify(this.model))
       .subscribe((hola) => {
         this.dataPHP=hola;
         console.log(this.prueba)
       });
   
-  this.dataImport.getEmployees()
+  this.dataImport.getItem()
     .subscribe(employees => {
      // this.model = employees;
       console.log(this.model)

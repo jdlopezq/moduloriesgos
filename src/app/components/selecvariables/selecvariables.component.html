@@ -1,46 +1,74 @@
-<div class="form-horizontal">
-<mat-form-field>
-  <textarea matInput placeholder="Nombre Variable" [(ngModel)]="cargaVariables.name" matTextareaAutosize matAutosizeMinRows="2"
-            matAutosizeMaxRows="5"></textarea>
-            
-</mat-form-field>
-<mat-form-field>
-  <textarea matInput placeholder="Uso Query" [(ngModel)]="cargaVariables.qname" matTextareaAutosize matAutosizeMinRows="2"
-            matAutosizeMaxRows="5"></textarea>
-</mat-form-field>
-<button type="submit" class="btn btn-success" (click)='AgregarVariable(element)'>Guardar</button>
+<div class="container-fluid">
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Nombre Variable</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Nombre Variable" formControlName="firstCtrl" required [(ngModel)]="cargaVariables.name">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Siguiente<i class="material-icons">navigate_next</i></button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Nombre Query</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Uso Query" [(ngModel)]="cargaVariables.qname" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
+        <button mat-button matStepperNext color=accent>Siguiente<i class="material-icons">navigate_next</i></button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Listo</ng-template>
+    Agregar Variable?
+    <div>
+      <br>
+      <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
+      <button mat-button (click)='AgregarVariable(element) ' (click)="openSnackBar(message, action)">Guardar <i class="material-icons">check</i></button>
+      <button mat-button (click)="stepper.reset()">Limpiar<i class="material-icons">close</i></button>
+
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
 </div>
 
-
+<div class="container-fluid">
 <div class="mat-elevation-z8" class="mat-form-field">
-    <mat-table #table [dataSource]="dataSource" matSort>
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="NombreCampo">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="NombreQuery">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Query </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.qname}} </mat-cell>
-      </ng-container>
-  
-      <!--Borrar Column -->
-      <ng-container matColumnDef="Borrar">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Borrar Campo </mat-header-cell>
-        <mat-cell *matCellDef="let element"> <i class="material-icons">delete</i> </mat-cell>
-      </ng-container>
-  
-    
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-    <mat-paginator #paginator
-    [pageSize]="10"
-    [pageSizeOptions]="[5, 10, 20]"
-    [showFirstLastButtons]="true">
-</mat-paginator>
-  </div>
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="NombreCampo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nombrec}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="NombreQuery">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Query </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nombreq}} </mat-cell>
+    </ng-container>
+
+    <!--Borrar Column -->
+    <ng-container matColumnDef="Borrar">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Borrar Campo </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)='deleteItem(element)'>
+          <i class="material-icons">delete</i>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+</div>
