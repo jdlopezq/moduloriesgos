@@ -1,0 +1,24 @@
+<br>
+
+<div class="container">
+ 
+    <mat-toolbar class='margin' >Inicio Sesion</mat-toolbar>
+    <br>
+<div class="example-container margin">
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="example-container margin">
+  <mat-form-field>
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+   </div>
+</div>
+
+

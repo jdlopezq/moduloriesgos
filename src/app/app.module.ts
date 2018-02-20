@@ -26,6 +26,8 @@ import { PhpService } from './services/php.service';
 //graficos
 import { ChartsModule } from "ng2-charts";
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
+import { LogscreenComponent } from './components/logscreen/logscreen.component';
+
 
 
 
@@ -44,9 +46,7 @@ import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
     TabladatosComponent,
     SelecvariablesComponent,
     SelctgrafComponent,
-
-
-
+    LogscreenComponent,
   ],
   imports: [
     BrowserModule,

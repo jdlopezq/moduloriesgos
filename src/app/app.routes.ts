@@ -7,6 +7,7 @@ import { TabladatosComponent } from './components/tabladatos/tabladatos.componen
 
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
+import { LogscreenComponent } from './components/logscreen/logscreen.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const APP_ROUTES: Routes = [
   { path: 'tabladatos', component: TabladatosComponent },
   { path: 'selectvariables', component:  SelecvariablesComponent },
   { path: 'selctgraficos', component:  SelctgrafComponent },
+  { path: 'logscreen', component:  LogscreenComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

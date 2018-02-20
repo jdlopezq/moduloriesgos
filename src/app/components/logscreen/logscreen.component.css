@@ -1,0 +1,8 @@
+.margin{
+    text-align: center
+}
+
+.example-container > * {
+    align-items: center;
+    width: 80%;
+  }

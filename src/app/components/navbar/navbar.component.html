@@ -10,7 +10,7 @@
           <a class="nav-link" href="#" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="#" [routerLink]="['phpcomponent']">PHP <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#" [routerLink]="['logscreen']">Log In <span class="sr-only">(current)</span></a>
         </li>
        
         <li class="nav-item dropdown" routerLinkActive="active">
@@ -31,17 +31,15 @@
         </li>
       </ul>
       <span class="navbar-text">
-          <button (click)="logIn()"
-          *ngIf=""
-          type="button"  
+          <button [routerLink]="['logscreen']"
           class="btn btn-outline-primary btn-sm">
             Iniciar Sesion</button>
 
-          <button (click)="logOut()" 
-          *ngIf="true"
+          <!-- <button (click)="logOut()" 
+          *ngIf="false"
           type="button"
           class="btn btn-outline-primary btn-sm">
-          Cerrar Sesion</button>
+          Cerrar Sesion</button> -->
         
         </span>
     </div>
