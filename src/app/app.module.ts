@@ -21,10 +21,7 @@ import { APP_ROUTING } from './app.routes';
 import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
 
 //servicios
-import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
 import { DataserviceService } from './services/dataservice.service';
-import { LocaldataService } from './services/localdata.service';
 import { PhpService } from './services/php.service';
 
 //graficos
@@ -60,7 +57,7 @@ import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
     APP_ROUTING,
     MaterialModule
   ],
-  providers: [AuthService, AuthGuardService, DataserviceService,LocaldataService, PhpService],
+  providers: [DataserviceService, PhpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

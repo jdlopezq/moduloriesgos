@@ -1,10 +1,17 @@
+
+
 <div class="container-fluid">
 <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Nombre Variable</ng-template>
+      <ng-template matStepLabel>Nombar Variable</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Nombre Variable" formControlName="firstCtrl" required [(ngModel)]="cargaVariables.name">
+        <input placeholder="Nombre Variable"  formControlName="firstCtrl" required matInput [formControl]="myControl" [(ngModel)]="cargaVariables.name" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
       <div>
         <button mat-button matStepperNext>Siguiente<i class="material-icons">navigate_next</i></button>
@@ -19,18 +26,18 @@
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-        <button mat-button matStepperNext color=accent>Siguiente<i class="material-icons">navigate_next</i></button>
+        <button mat-button matStepperNext color=success>Siguiente<i class="material-icons">navigate_next</i></button>
       </div>
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Listo</ng-template>
+    <ng-template matStepLabel>Agregar</ng-template>
     Agregar Variable?
     <div>
       <br>
       <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-      <button mat-button (click)='AgregarVariable(element) ' (click)="openSnackBar(message, action)">Guardar <i class="material-icons">check</i></button>
-      <button mat-button (click)="stepper.reset()">Limpiar<i class="material-icons">close</i></button>
+      <button mat-button (click)='AgregarVariable(element)' (click)="openSnackBar(message, action)">Guardar <i class="material-icons">check</i></button>
+      <button mat-button color=accent (click)="stepper.reset()">Limpiar<i class="material-icons">close</i></button>
 
     </div>
   </mat-step>
@@ -57,7 +64,7 @@
     <ng-container matColumnDef="Borrar">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Borrar Campo </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <button mat-icon-button (click)='deleteItem(element)'>
+        <button mat-icon-button (click)='deleteItem(element.id)'>
           <i class="material-icons">delete</i>
         </button>
       </mat-cell>

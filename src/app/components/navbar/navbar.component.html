@@ -26,20 +26,20 @@
             <a class="dropdown-item" href="#"[routerLink]="['selctgraficos']">Seleccion de Graficos</a>
           </div>
         </li>
-        <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+        <li class="nav-item" routerLinkActive="active" *ngIf="">
           <a class="nav-link disabled" [routerLink]="['admin']" href="#">Admin</a>
         </li>
       </ul>
       <span class="navbar-text">
           <button (click)="logIn()"
-          *ngIf="!auth.isAuthenticated()"
+          *ngIf=""
           type="button"  
           class="btn btn-outline-primary btn-sm">
             Iniciar Sesion</button>
 
           <button (click)="logOut()" 
-          *ngIf="auth.isAuthenticated()"
-          type="button"  c
+          *ngIf="true"
+          type="button"
           class="btn btn-outline-primary btn-sm">
           Cerrar Sesion</button>
         

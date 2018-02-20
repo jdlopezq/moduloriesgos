@@ -20,7 +20,8 @@ import {
     MatSnackBarModule,
     MatProgressBarModule,
     MatCardModule,
-    MatStepperModule, 
+    MatStepperModule,
+    MatAutocompleteModule, 
     
     
 } from '@angular/material';
@@ -47,7 +48,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSnackBarModule,
         MatProgressBarModule,
         MatStepperModule, 
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatAutocompleteModule
        ],
     exports: [MatButtonModule,
         MatCheckboxModule,
@@ -71,7 +73,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatProgressBarModule, 
         MatCardModule,
         MatStepperModule,
-        ReactiveFormsModule 
+        ReactiveFormsModule,
+        MatAutocompleteModule 
     ],
     providers: [],
 })

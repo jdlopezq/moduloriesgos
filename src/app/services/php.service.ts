@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response, RequestOptionsArgs, RequestOptions, RequestMethod } from '@angular/http';
-import { BehaviorSubject } from 'rxjs';
+import { Http, Headers, Response } from '@angular/http';
 import { dataDemo } from '../shared/data.model';
 
 
@@ -23,48 +22,28 @@ export class PhpService {
 
   addItem(info) {
     return this.http.post("http://10.191.225.154/logoogle/prueba.php", info)
-      .map((res) => { res; console.log(res); this.httpCall(); console.log(res.status); if (res.status==200) {
-        console.log('No cargo')
-      } });
+      .map((res) => { res; console.log(res), console.log(res.statusText)});
   }
 
-  getItem() {
-    return this.http.get("http://10.191.225.154/logoogle/prueba2.php")
+  getItem(carpeta) {
+    return this.http.get("http://10.191.225.154/logoogle/"+carpeta)
       .map(res => {
         this.checkMe = res.json();
         console.log(res);
         
-
         if (this.checkMe._body !== "0") {
           return res.json()
-        };
-        this.httpCall()
-
-      }
-
-      );
+        }else{
+          return
+        }});
   }
 
   deleteItem(id){
-    return this.http.post("http://10.191.225.154/logoogle/prueba2.php", id)
-      .map((res)=>{this.getItem(), res, console.log(res)});
+    let body={"id":id};
+    return this.http.post("http://10.191.225.154/logoogle/prueba3.php",body )
+      .map((res)=>{this.getItem("prueba2.php"), res, console.log(res), console.log(body)});
   }
 
- 
-  
-  deleteItemtes(id: string) {
-    this.http.delete(this.dataHttp+ '/' + id).map(response => response.json()).subscribe(res => {
-      this.httpCall();
-    });
-  }
-
-
-  httpCall() {
-    this.http.get(this.dataHttp).map(response => response.json()).subscribe(res => {
-      console.log(res)
-      this.dataImport=res
-    });
-  }
 
 
 }

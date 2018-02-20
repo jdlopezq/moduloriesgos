@@ -35,7 +35,7 @@ export class PhpComponentComponent {
         console.log(this.prueba)
       });
   
-  this.dataImport.getItem()
+  this.dataImport.getItem("prueba2.php")
     .subscribe(employees => {
      // this.model = employees;
       console.log(this.model)
