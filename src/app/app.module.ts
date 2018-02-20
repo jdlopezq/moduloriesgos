@@ -1,5 +1,5 @@
 //Modulos
-import {HttpModule} from '@angular/http/'
+import { HttpModule } from '@angular/http/'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './shared/material.module';
@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { PhpComponentComponent } from './components/php-component/php-component.component';
 import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
 import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
@@ -43,12 +42,11 @@ import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
     ProyeccionesComponent,
     AntecedentesComponent,
     TabladatosComponent,
-    PhpComponentComponent,
     SelecvariablesComponent,
     SelctgrafComponent,
-    
- 
-   
+
+
+
   ],
   imports: [
     BrowserModule,

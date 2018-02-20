@@ -4,7 +4,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
 import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
 import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
-import { PhpComponentComponent } from './components/php-component/php-component.component';
+
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
 
@@ -14,7 +14,6 @@ const APP_ROUTES: Routes = [
   { path: 'proyecciones', component: ProyeccionesComponent },
   { path: 'antecedentes', component: AntecedentesComponent },
   { path: 'tabladatos', component: TabladatosComponent },
-  { path: 'phpcomponent', component: PhpComponentComponent },
   { path: 'selectvariables', component:  SelecvariablesComponent },
   { path: 'selctgraficos', component:  SelctgrafComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
