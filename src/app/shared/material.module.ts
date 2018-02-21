@@ -22,6 +22,8 @@ import {
     MatCardModule,
     MatStepperModule,
     MatAutocompleteModule, 
+ MatChipsModule,
+ MatExpansionModule
     
     
 } from '@angular/material';
@@ -49,7 +51,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatProgressBarModule,
         MatStepperModule, 
         ReactiveFormsModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        MatExpansionModule
        ],
     exports: [MatButtonModule,
         MatCheckboxModule,
@@ -74,7 +77,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatCardModule,
         MatStepperModule,
         ReactiveFormsModule,
-        MatAutocompleteModule 
+        MatAutocompleteModule,
+        MatExpansionModule
     ],
     providers: [],
 })

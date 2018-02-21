@@ -1,8 +1,26 @@
 .margin{
     text-align: center
 }
-
+.mat-toolbar{
+    text-align: center;
+    width: 100%
+    
+}
 .example-container > * {
     align-items: center;
     width: 80%;
+  }
+
+  .positionABS{
+    width: 100%;
+    margin-right: 1rem;
+  }
+
+  .containerBkg{
+    background: #A5D6A7;
+ width: 500px    
+  }
+  
+  .fill-remaining-space {
+    flex: 1 1 auto;
   }

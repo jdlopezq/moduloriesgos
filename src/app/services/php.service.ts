@@ -12,7 +12,7 @@ export class PhpService {
   constructor(private http: Http) { }
   dataHttp: string = "http://10.191.225.154/logoogle/prueba.php";
   dataHttpTest: string = "http://localhost/test.php";
-  respuesta: any;
+  respuestaInfo: any[];
 
   getDataPHP() {
     return this.http.get(this.dataHttp)
@@ -20,28 +20,34 @@ export class PhpService {
   }
 
 
-  addItem(info) {
-    return this.http.post("http://10.191.225.154/logoogle/prueba.php", info)
-      .map((res) => { res; console.log(res), console.log(res.statusText)});
+  addItem(info, page:string) {
+    return this.http.post("http://10.191.225.154/server/"+page, info)
+      .map((res) => {
+        res;
+        console.log(res)
+        console.log(res.json());
+        this.respuestaInfo = res.json();
+        return this.respuestaInfo;
+      });
   }
 
   getItem(carpeta) {
-    return this.http.get("http://10.191.225.154/logoogle/"+carpeta)
+    return this.http.get("http://10.191.225.154/logoogle/" + carpeta)
       .map(res => {
         this.checkMe = res.json();
-        console.log(res);
-        
+
         if (this.checkMe._body !== "0") {
           return res.json()
-        }else{
+        } else {
           return
-        }});
+        }
+      });
   }
 
-  deleteItem(id){
-    let body={"id":id};
-    return this.http.post("http://10.191.225.154/logoogle/prueba3.php",body )
-      .map((res)=>{this.getItem("prueba2.php"), res, console.log(res), console.log(body)});
+  deleteItem(id) {
+    let body = { "id": id };
+    return this.http.post("http://10.191.225.154/logoogle/prueba3.php", body)
+      .map((res) => { this.getItem("prueba2.php"), res, console.log(res), console.log(body) });
   }
 
 

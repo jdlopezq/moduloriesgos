@@ -27,6 +27,10 @@ import { PhpService } from './services/php.service';
 import { ChartsModule } from "ng2-charts";
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
 import { LogscreenComponent } from './components/logscreen/logscreen.component';
+import { RegistuserComponent } from './components/registuser/registuser.component';
+import { LoadarchComponent } from './components/loadarch/loadarch.component';
+import { ChangePassComponent } from './components/change-pass/change-pass.component';
+import { ModifyUserComponent } from './components/modify-user/modify-user.component';
 
 
 
@@ -47,6 +51,10 @@ import { LogscreenComponent } from './components/logscreen/logscreen.component';
     SelecvariablesComponent,
     SelctgrafComponent,
     LogscreenComponent,
+    RegistuserComponent,
+    LoadarchComponent,
+    ChangePassComponent,
+    ModifyUserComponent,
   ],
   imports: [
     BrowserModule,

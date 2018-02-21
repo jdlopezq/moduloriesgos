@@ -21,7 +21,6 @@ export class SelecvariablesComponent {
   displayedColumns = ['NombreCampo', 'NombreQuery', 'Borrar',];
   obtencionVariables: any
   dataSource: any
-  dataPHP: any;
   dataAutoComple: any
   cargaVariables = new Element();
   isLinear = false;
@@ -88,18 +87,19 @@ this.getAutoInf();
       .subscribe(Qvar => {
         this.obtencionVariables = Qvar;
         this.dataSource = this.obtencionVariables;
-        console.log(Qvar)
         console.log(this.obtencionVariables)
       })
   }
 
   AgregarVariable() {
-    this.dataImport.addItem(JSON.stringify(this.cargaVariables))
+    this.dataImport.addItem(JSON.stringify(this.cargaVariables),"prueba.php")
       .subscribe(
         (res) => {
-          res;
+          res;  
           this.obtencionVariables = res;
           this.getVariables()
+          console.log(this.dataImport.respuestaInfo)
+          this.openSnackBar("¡Atención!", this.dataImport.respuestaInfo[1].info)
         });
 
 

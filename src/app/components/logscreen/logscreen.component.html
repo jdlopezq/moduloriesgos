@@ -1,12 +1,15 @@
 <br>
+<br>
 
-<div class="container">
+<div class="container containerBkg mat-elevation-z8 ">
  
-    <mat-toolbar class='margin' >Inicio Sesion</mat-toolbar>
+    <mat-toolbar style="background-color:#3B6D91">
+        <span class="fill-remaining-space">Iniciar Sesion </span>
+      </mat-toolbar>
     <br>
 <div class="example-container margin">
     <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <input matInput placeholder="Enter your email" [formControl]="email"  [(ngModel)]="login.user" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </div>
@@ -15,10 +18,17 @@
   <br>
   <div class="example-container margin">
   <mat-form-field>
-      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [(ngModel)]="login.password">
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-    </mat-form-field>
+    </mat-form-field> 
+    <div><button mat-raised-button 
+                 style="margin-left:20%; background-color: #C5CAE9"
+                 (click)="SendUser(element)">
+      Iniciar Sesion </button></div>
+   <br>
    </div>
+  
 </div>
+
 
 
