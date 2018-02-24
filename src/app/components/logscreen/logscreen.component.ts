@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { PhpService } from '../../services/php.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { UtilityService } from '../../services/utility.service';
 
 @Component({
   selector: 'app-logscreen',
@@ -11,9 +12,9 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
 export class LogscreenComponent implements OnInit {
-  login = new User
+  login = new User();
 
-  constructor(public dataSend: PhpService, private router: Router) { }
+  constructor(public dataSend: PhpService, private router: Router, private utility:UtilityService) { }
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
@@ -22,20 +23,25 @@ export class LogscreenComponent implements OnInit {
         '';
   }
   ngOnInit() {
-  }
+
+
+   }
 
   SendUser() {
-    this.dataSend.addItem(JSON.stringify(this.login), "php/login.php").subscribe(
+    this.dataSend.addItem(JSON.stringify(this.login), "login.php").subscribe(
       (res) => {
         res;
         console.log(this.login);
-        console.log(this.dataSend.respuestaInfo[1].info)
-        console.log(this.dataSend.respuestaInfo[0].rol)
-        if (this.dataSend.respuestaInfo[1].info == "Datos Correctos" &&
-          this.dataSend.respuestaInfo[0].rol == "Administrador") {
-          this.goAdmin()
-        } else if (this.dataSend.respuestaInfo[1].info == "Datos Correctos" &&
-          this.dataSend.respuestaInfo[0].rol == "Usuario") {
+        console.log(this.dataSend.answerInfo[1].info)
+        console.log(this.dataSend.answerInfo[0].rol)
+        if (this.dataSend.answerInfo[1].info == "Datos Correctos." &&
+          this.dataSend.answerInfo[0].rol == "Administrador") {
+            sessionStorage.setItem('user', this.login.username)
+            console.log("logueado")
+            this.goAdmin()
+        } else if (this.dataSend.answerInfo[1].info == "Datos Correctos" &&
+          this.dataSend.answerInfo[0].rol == "Usuario") {
+            this.goUser();
         }
 
       });
@@ -53,6 +59,7 @@ export class LogscreenComponent implements OnInit {
 
 }
 class User {
-  user: any;
-  password: any;
+  username: string
+  password: string
+  company: string="CRE"
 }

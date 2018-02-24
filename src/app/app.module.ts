@@ -9,28 +9,30 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
-import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
+import { ProyeccionesComponent } from './components/var-graph/proyecciones.component';
+import { TabladatosComponent } from './components/data-table/tabladatos.component';
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
+import { AntecedentesComponent } from './components/loans-index/antecedentes.component';
 
 
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
-import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
 
 //servicios
 import { DataserviceService } from './services/dataservice.service';
 import { PhpService } from './services/php.service';
+import { UtilityService } from './services/utility.service';
 
 //graficos
 import { ChartsModule } from "ng2-charts";
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
 import { LogscreenComponent } from './components/logscreen/logscreen.component';
-import { RegistuserComponent } from './components/registuser/registuser.component';
+import { RegistuserComponent } from './components/regist-user/registuser.component';
 import { LoadarchComponent } from './components/loadarch/loadarch.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
 import { ModifyUserComponent } from './components/modify-user/modify-user.component';
+
 
 
 
@@ -63,7 +65,7 @@ import { ModifyUserComponent } from './components/modify-user/modify-user.compon
     APP_ROUTING,
     MaterialModule
   ],
-  providers: [DataserviceService, PhpService],
+  providers: [DataserviceService, PhpService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

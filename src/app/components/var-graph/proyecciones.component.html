@@ -1,0 +1,59 @@
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Selcecionar Graficas
+        </mat-panel-title>
+        <mat-panel-description>
+         Seleccionar los graficos que se mostraran a los usuarios
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-checkbox *ngFor='let data of dataDB'>
+        {{dataDB[0]}}</mat-checkbox>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+<h1>Informacion
+                <small>Fabrica y Core</small>
+              </h1>
+              <hr>
+              
+              <div class="card-columns size">
+                <div class="card animated fadeIn fast" *ngFor="let graficas of dataDB" >
+                  <img class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">hola</h5>
+                    
+
+                    <div class="container">
+                        <canvas baseChart
+                                    [data]="doughnutChartData"
+                                    [labels]="doughnutChartLabels"
+                                    [chartType]="doughnutChartType"
+                                    (chartHover)="chartHovered($event)"
+                                    (chartClick)="chartClicked($event)"></canvas>
+ 
+                  </div>
+                </div>
+              </div>
+
+
+
+
+<!--  <canvas baseChart
+          [data]="polarAreaChartData"
+          [labels]="polarAreaChartLabels"
+          [legend]="polarAreaLegend"
+          [chartType]="polarAreaChartType"
+          (chartHoverPolar)="chartHovered($event)"
+          (chartClickPolar)="chartClicked($event)"></canvas>-->
+
+</div>
+
+
+
+
+

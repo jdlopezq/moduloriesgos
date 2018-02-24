@@ -1,9 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { ProyeccionesComponent } from './components/proyecciones/proyecciones.component';
-import { AntecedentesComponent } from './components/antecedentes/antecedentes.component';
-import { TabladatosComponent } from './components/tabladatos/tabladatos.component';
+import { ProyeccionesComponent } from './components/var-graph/proyecciones.component';
+import { AntecedentesComponent } from './components/loans-index/antecedentes.component';
+import { TabladatosComponent } from './components/data-table/tabladatos.component';
 
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';

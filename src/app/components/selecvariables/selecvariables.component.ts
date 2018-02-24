@@ -7,9 +7,10 @@ import {
 import { PhpService } from '../../services/php.service';
 import { dataDemo } from '../../shared/data.model';
 import { Observable } from 'rxjs/Rx';
-import {startWith} from 'rxjs/operators/startWith';
-import {map} from 'rxjs/operators/map';
+import { startWith } from 'rxjs/operators/startWith';
+import { map } from 'rxjs/operators/map';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { UtilityService } from '../../services/utility.service';
 
 
 @Component({
@@ -28,11 +29,12 @@ export class SelecvariablesComponent {
   secondFormGroup: FormGroup;
   myControl: FormControl = new FormControl();
   filteredOptions: Observable<string[]>;
-  options = [ ];
-  
+  options = [];
 
 
-  constructor(private dataImport: PhpService, public snackBar: MatSnackBar, private _formBuilder: FormBuilder) {
+
+  constructor(private dataImport: PhpService, public snackBar: MatSnackBar,
+    private router: Router, private utility: UtilityService, private _formBuilder: FormBuilder) {
   }
 
   @ViewChild(MatSort) sort: MatSort;
@@ -43,7 +45,7 @@ export class SelecvariablesComponent {
 
 
 
-  
+
   /**
    * Set the sort after the view init since this component will
    * be able to query its view for the initialized sort.
@@ -51,20 +53,27 @@ export class SelecvariablesComponent {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-     
+
   }
 
+
   ngOnInit() {
+    //asigancion de datos
     this.dataSource = new MatTableDataSource();
     this.getVariables();
-this.getAutoInf();
+    this.getAutoInf();
     this.filteredOptions = this.myControl.valueChanges
-    .pipe(
-      startWith(''),
-      map(val => this.filter(val))
-    );
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+    //control de sesion
+    this.utility.isLogged().then((result:boolean)=>{
+      if (result) {
+      console.log("esta log")
+    }});
 
-
+    //validacioes de formulario
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -74,7 +83,7 @@ this.getAutoInf();
 
   }
 
-
+  //filtro de autocompletado
   filter(val: string): string[] {
     return this.options.filter(option =>
       option.toLowerCase().indexOf(val.toLowerCase()) === 0);
@@ -92,14 +101,14 @@ this.getAutoInf();
   }
 
   AgregarVariable() {
-    this.dataImport.addItem(JSON.stringify(this.cargaVariables),"prueba.php")
+    this.dataImport.addItem(JSON.stringify(this.cargaVariables), "prueba.php")
       .subscribe(
         (res) => {
-          res;  
+          res;
           this.obtencionVariables = res;
           this.getVariables()
-          console.log(this.dataImport.respuestaInfo)
-          this.openSnackBar("¡Atención!", this.dataImport.respuestaInfo[1].info)
+          console.log(this.dataImport.answerInfo)
+          this.openSnackBar("¡Atención!", this.dataImport.answerInfo[1].info)
         });
 
 

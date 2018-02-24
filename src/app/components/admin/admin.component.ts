@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatExpansionPanelTitle } from '@angular/material';
 import { PhpService } from '../../services/php.service';
+import { UtilityService } from '../../services/utility.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -10,9 +12,13 @@ import { PhpService } from '../../services/php.service';
 export class AdminComponent implements OnInit {
 UserRegister= new UserReg();
 
-  constructor(private dataSend: PhpService) { }
+  constructor(private dataSend: PhpService, private utility:UtilityService, private router: Router) { }
 
   ngOnInit() {
+    this.utility.isLogged().then((result:boolean)=>{
+      if (!result) {
+      this.router.navigate(['/home'])
+    }});
   }
 
   resgUser() {

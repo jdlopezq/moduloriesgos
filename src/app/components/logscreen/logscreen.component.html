@@ -9,7 +9,7 @@
     <br>
 <div class="example-container margin">
     <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email"  [(ngModel)]="login.user" required>
+      <input matInput placeholder="Enter your email" [formControl]="email"  [(ngModel)]="login.username" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </div>

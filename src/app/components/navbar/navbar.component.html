@@ -27,13 +27,17 @@
         </li>
       </ul>
       <span class="navbar-text">
-          <button mat-raised-button [routerLink]="['logscreen']"style="background-color: #8C8C2A">Iniciar Sesion</button>
+          <button mat-raised-button 
+           style="background-color: #8C8C2A"
+           (click)="logIn()"
+           *ngIf="true">
+           Iniciar Sesion</button>
 
-          <!-- <button (click)="logOut()" 
-          *ngIf="false"
-          type="button"
-          class="btn btn-outline-primary btn-sm">
-          Cerrar Sesion</button> -->
+           <button (click)="logOut()" 
+           *ngIf=""
+           type="button"
+           class="btn btn-outline-primary btn-sm">
+           Cerrar Sesion</button>
         
         </span>
     </div>

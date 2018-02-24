@@ -10,29 +10,34 @@ export class PhpService {
   checkMe: any
 
   constructor(private http: Http) { }
-  dataHttp: string = "http://10.191.225.154/logoogle/prueba.php";
+  dataHttp: string = "http://10.191.225.154/server/";
   dataHttpTest: string = "http://localhost/test.php";
-  respuestaInfo: any[];
-
-  getDataPHP() {
-    return this.http.get(this.dataHttp)
-      .map(result => result.json());
-  }
+  answerInfo: any[];
+  answerGet: any[];
 
 
-  addItem(info, page:string) {
-    return this.http.post("http://10.191.225.154/server/"+page, info)
+  // getDataPHP(page) {
+  //   return this.http.get(this.dataHttp+page)
+  //     .map(Response => {
+  //       Response;
+  //       console.log(Response)
+  //       this.answerGet = Response.json();
+  //       return this.answerGet
+  //     });
+  // }
+
+
+  addItem(info, page: string) {
+    return this.http.post("http://10.191.225.154/server/" + page, info)
       .map((res) => {
         res;
-        console.log(res)
-        console.log(res.json());
-        this.respuestaInfo = res.json();
-        return this.respuestaInfo;
+        this.answerInfo = res.json(); 
+        return this.answerInfo;
       });
   }
 
-  getItem(carpeta) {
-    return this.http.get("http://10.191.225.154/logoogle/" + carpeta)
+  getItem(page) {
+    return this.http.get("http://10.191.225.154/server/" + page)
       .map(res => {
         this.checkMe = res.json();
 
