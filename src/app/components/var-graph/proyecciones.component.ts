@@ -21,7 +21,7 @@ export class ProyeccionesComponent implements OnInit {
   dataDB=[];
   totalVar=[];
   nameVar=[];
-  datalabel:any[]
+  datalabel=new label();
   chartsCount:any;
 
 
@@ -31,21 +31,22 @@ export class ProyeccionesComponent implements OnInit {
   ngOnInit() {
     this.dataPHP.getItem("graphics.php").subscribe(datos => {
       this.dataDB = datos.length > 0 ? Object.values(datos[0]) : [];
-      this.chartsCount=this.dataDB.length
-      this.datalabel=Object.values(datos[0])
-      console.log(datos[0][1])
-      console.log(this.datalabel)
+    for (let i in this.dataDB) {
+      this.datalabel.name[i]=this.dataDB[i]
+     
+      console.log(this.datalabel.name[i])
+    }
+      
+      console.log(this.datalabel.name)
+     //this.doughnutChartData=datos[1]['Total']
+     //this.doughnutChartLabels=datos[1]['CreditLine']
+      console.log(datos)
+      
       console.log(this.dataDB.length)
       
 
 
-  
 
-
-
-
-
-      
       //console.log(this.dataDB[0])
       for (let i = 1; i <= this.dataDB.length; i++) {
 
@@ -56,15 +57,15 @@ export class ProyeccionesComponent implements OnInit {
 
           console.log(this.nameVar[j]);
           console.log(this.totalVar[j]);
-        }
-      
-        
-      }
+        } }
+ })
 
-      
+  }
 
-    })
 
+  ngAfterViewInit() {
+    //this.datalabel.name=this.dataDB[0]
+    
   }
 
 
@@ -122,6 +123,6 @@ export class ProyeccionesComponent implements OnInit {
 
 
 export class label{
-  number:number;
-  name:string;
+  number:string;
+  name=[]
 }
