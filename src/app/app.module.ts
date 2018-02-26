@@ -32,6 +32,7 @@ import { RegistuserComponent } from './components/regist-user/registuser.compone
 import { LoadarchComponent } from './components/loadarch/loadarch.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
 import { ModifyUserComponent } from './components/modify-user/modify-user.component';
+import { VarGraphPipe } from './components/var-graph/var-graph.pipe';
 
 
 
@@ -57,6 +58,7 @@ import { ModifyUserComponent } from './components/modify-user/modify-user.compon
     LoadarchComponent,
     ChangePassComponent,
     ModifyUserComponent,
+    VarGraphPipe,
   ],
   imports: [
     BrowserModule,

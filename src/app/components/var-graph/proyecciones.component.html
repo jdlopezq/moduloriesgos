@@ -3,35 +3,34 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Selcecionar Graficas
+          Selcecionar Gráficas
         </mat-panel-title>
         <mat-panel-description>
-         Seleccionar los graficos que se mostraran a los usuarios
+         Seleccionar los gráficos que se mostraran a los usuarios
         </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-checkbox *ngFor='let data of dataDB'>
-        {{datalabel.name}}</mat-checkbox>
+        {{data}} .</mat-checkbox>
     </mat-expansion-panel>
   </mat-accordion>
 
 
 
-<h1>Informacion
-                <small>Fabrica y Core</small>
+<h1>Información
+                <small>Fábrica y Core</small>
               </h1>
               <hr>
               
               <div class="card-columns size">
-                <div class="card animated fadeIn fast" *ngFor="let graficas of dataDB" >
+                <div class="card animated fadeIn fast" *ngFor="let graficas of dataDB; let i = index" >
                   <img class="card-img-top">
                   <div class="card-body">
-                    <h5 class="card-title">hola</h5>
-                    
+                    <h5 class="card-title">{{graficas}}</h5>
 
                     <div class="container">
                         <canvas baseChart
-                                    [data]="doughnutChartData"
-                                    [labels]="doughnutChartLabels"
+                                    [data]="totalVar[i]"
+                                    [labels]="nameVar[i]"
                                     [chartType]="doughnutChartType"
                                     (chartHover)="chartHovered($event)"
                                     (chartClick)="chartClicked($event)"></canvas>
@@ -43,13 +42,13 @@
 
 
 
-<!--  <canvas baseChart
-          [data]="polarAreaChartData"
-          [labels]="polarAreaChartLabels"
+  <canvas baseChart
+          [data]="totalVar[i]"
+          [labels]="nameVar[i]"
           [legend]="polarAreaLegend"
           [chartType]="polarAreaChartType"
           (chartHoverPolar)="chartHovered($event)"
-          (chartClickPolar)="chartClicked($event)"></canvas>-->
+          (chartClickPolar)="chartClicked($event)"></canvas>
 
 </div>
 

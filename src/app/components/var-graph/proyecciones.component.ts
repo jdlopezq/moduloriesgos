@@ -18,11 +18,11 @@ import { PhpService } from '../../services/php.service';
 })
 export class ProyeccionesComponent implements OnInit {
   dataDemo: dataDemo[];
-  dataDB=[];
-  totalVar=[];
-  nameVar=[];
-  datalabel=new label();
-  chartsCount:any;
+  dataDB = [];
+  totalVar = [];
+  nameVar = [];
+  datalabel = new label();
+  chartsCount: any;
 
 
   constructor(private dataService: DataserviceService, private dataPHP: PhpService) {
@@ -31,41 +31,35 @@ export class ProyeccionesComponent implements OnInit {
   ngOnInit() {
     this.dataPHP.getItem("graphics.php").subscribe(datos => {
       this.dataDB = datos.length > 0 ? Object.values(datos[0]) : [];
-    for (let i in this.dataDB) {
-      this.datalabel.name[i]=this.dataDB[i]
-     
-      console.log(this.datalabel.name[i])
-    }
-      
-      console.log(this.datalabel.name)
-     //this.doughnutChartData=datos[1]['Total']
-     //this.doughnutChartLabels=datos[1]['CreditLine']
-      console.log(datos)
-      
-      console.log(this.dataDB.length)
-      
+      datos.shift();
+      this.dataDB.forEach((name, i) => {
+        this.nameVar.push(datos[i].map(it => it[name]))
+        this.totalVar.push(datos[i].map(it => it["Total"]))
+      })
+      console.log(this.nameVar);
+    
 
+  
 
+      // for (let i = 1; i <= this.dataDB.length; i++) {
 
-      //console.log(this.dataDB[0])
-      for (let i = 1; i <= this.dataDB.length; i++) {
+      //   for (let j = 0; j < datos[i+1].length; j++) {
 
-        for (let j = 0; j < datos[i].length; j++) {
+         // this.nameVar[j] = datos[i][j][this.dataDB[i - 1]];
+          //this.totalVar[j] = datos[i][j]["Total"]
 
-          this.nameVar[j] = datos[i][j][this.dataDB[i - 1]];
-          this.totalVar[j]=datos[i][j]["Total"]
-
-          console.log(this.nameVar[j]);
-          console.log(this.totalVar[j]);
-        } }
- })
+          //console.log(this.nameVar[j]);
+          //console.log(this.totalVar[j]);
+      //   }
+      // }
+    })
 
   }
 
 
   ngAfterViewInit() {
-    //this.datalabel.name=this.dataDB[0]
-    
+
+
   }
 
 
@@ -122,7 +116,7 @@ export class ProyeccionesComponent implements OnInit {
 }
 
 
-export class label{
-  number:string;
-  name=[]
+export class label {
+  labels: string;
+  name = []
 }
