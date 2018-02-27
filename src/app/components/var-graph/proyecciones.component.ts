@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA } from '@angular/material';
+import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA, } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService } from '../../services/php.service';
 
@@ -25,8 +25,11 @@ export class ProyeccionesComponent implements OnInit {
   chartsCount: any;
 
 
-  constructor(private dataService: DataserviceService, private dataPHP: PhpService) {
+  constructor( private dataPHP: PhpService) {
   }
+
+
+ 
 
   ngOnInit() {
     this.dataPHP.getItem("graphics.php").subscribe(datos => {
@@ -38,35 +41,17 @@ export class ProyeccionesComponent implements OnInit {
       })
       console.log(this.nameVar);
     
-
-  
-
-      // for (let i = 1; i <= this.dataDB.length; i++) {
-
-      //   for (let j = 0; j < datos[i+1].length; j++) {
-
-         // this.nameVar[j] = datos[i][j][this.dataDB[i - 1]];
-          //this.totalVar[j] = datos[i][j]["Total"]
-
-          //console.log(this.nameVar[j]);
-          //console.log(this.totalVar[j]);
-      //   }
-      // }
+    
     })
 
   }
 
 
-  ngAfterViewInit() {
-
-
-  }
-
 
 
   // Doughnut
-  public doughnutChartLabels: string[] = ['Entre 18-23', 'Entre 24-30', "Entre 31-40", 'Entre 41-50', 'Entre 51-67'];
-  public doughnutChartData: number[] = [20, 4, 5, 6, 9];
+  public doughnutChartLabels: string[] = [];
+  public doughnutChartData: number[] = [];
   public doughnutChartType: string = 'doughnut';
 
   // events
@@ -114,6 +99,8 @@ export class ProyeccionesComponent implements OnInit {
   }
 
 }
+
+
 
 
 export class label {

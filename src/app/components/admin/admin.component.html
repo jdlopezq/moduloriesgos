@@ -9,11 +9,11 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <i class="material-icons">assignment_ind</i>
+          <i class="material-icons" style="color:#3B6D91">assignment_ind</i>
           Registar Usuario
         </mat-panel-title>
         <mat-panel-description>
-          <i class="material-icons">assignment</i>
+          <i class="material-icons" style="color:#3B6D91">assignment</i>
           Nombre, usuario, correo, rol.
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -39,22 +39,46 @@
       <mat-form-field>
           <input matInput placeholder=" Confirmar Contraseña" [(ngModel)]="UserRegister.confirmpasswd"  >
         </mat-form-field>
-      <button mat-mini-fab (click)="resgUser()">
-        <i class="material-icons md-48">backup</i>
+      <button mat-mini-fab (click)="resgUser()"color=''>
+          <i class="material-icons md-36 "style="color:#3B6D91">backup</i>
       </button>
 
-
+      
     </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel >
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Self aware panel
+            <i class="material-icons" style="color:#3B6D91">mode_edit</i>
+          Editar Usuarios
         </mat-panel-title>
         <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            Nombre, usuario, correo, rol.
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <mat-form-field>
+          <input matInput placeholder="Nombres" [(ngModel)]="UserEdit.name">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Usuario"  [(ngModel)]="UserEdit.username">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Correo" [(ngModel)]="UserEdit.email">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Rol" [(ngModel)]="UserEdit.rol">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Contraseña" [(ngModel)]="UserEdit.passwd">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder=" Confirmar Contraseña" [(ngModel)]="UserEdit.confirmpasswd"  >
+          </mat-form-field>
+        <button mat-mini-fab (click)="resgUser()" color='' >
+          <i class="material-icons md-36 "style="color:#3B6D91">backup</i>
+        </button>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

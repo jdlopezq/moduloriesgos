@@ -14,12 +14,12 @@
             Tratamiento de Datos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['proyecciones']" href="#">Analisis Demográfico</a>
-            <a class="dropdown-item" [routerLink]="['antecedentes']" href="#">Indice de Riesgos</a>
-            <a class="dropdown-item" href="#"[routerLink]="['tabladatos']">Datos Sociodemograficos</a>
+            <a class="dropdown-item" [routerLink]="['proyecciones']" href="#">Análisis Demográfico</a>
+            <a class="dropdown-item" [routerLink]="['antecedentes']" href="#">Índice de Riesgos</a>
+            <a class="dropdown-item" href="#"[routerLink]="['tabladatos']">Datos Sociodemográficos</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"[routerLink]="['selectvariables']">Seleccion de Variables</a>
-            <a class="dropdown-item" href="#"[routerLink]="['selctgraficos']">Seleccion de Graficos</a>
+            <a class="dropdown-item" href="#"[routerLink]="['selectvariables']">Selección de Variables</a>
+            <a class="dropdown-item" href="#"[routerLink]="['selctgraficos']">Selección de Graficos</a>
           </div>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="true">
@@ -30,11 +30,11 @@
           <button mat-raised-button 
            style="background-color: #8C8C2A"
            (click)="logIn()"
-           *ngIf="true">
+           *ngIf="!islog">
            Iniciar Sesion</button>
 
            <button (click)="logOut()" 
-           *ngIf=""
+           *ngIf="islog"
            type="button"
            class="btn btn-outline-primary btn-sm">
            Cerrar Sesion</button>

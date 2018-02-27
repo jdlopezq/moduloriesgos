@@ -8,7 +8,7 @@
 
 
   <mat-table #table [dataSource]="dataSource" matSort>
-    <ng-container [matColumnDef]="columnName" *ngFor="let columnName of displayedColumns">
+    <ng-container [matColumnDef]="columnName" *ngFor="let columnName of displayedColumns, let i = index">
       <mat-header-cell *matHeaderCellDef mat-sort-header> {{columnName}} </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element[columnName]}} </mat-cell>
     </ng-container>

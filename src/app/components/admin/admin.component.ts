@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 UserRegister= new UserReg();
+UserEdit=new UserEdit
 
   constructor(private dataSend: PhpService, private utility:UtilityService, private router: Router) { }
 
@@ -31,7 +32,31 @@ UserRegister= new UserReg();
     )
   }
 
+
+ editUser() {
+    console.log(this.UserEdit)
+    this.dataSend.addItem(this.UserRegister,"/registro.php")
+    .subscribe(res=>{res;
+      console.log(res);
+      this.UserRegister.email
+    }
+    )
+  }
+
 }
+
+class UserEdit {
+  name: string
+  username: string
+  email: string
+  rol: string
+  rol2:string="Administrador"
+  passwd: string
+  confirmpasswd: string
+  company: string="CRE"
+}
+
+
 
 class UserReg {
   name: string

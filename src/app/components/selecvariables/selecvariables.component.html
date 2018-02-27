@@ -20,9 +20,9 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Nombre Query</ng-template>
+      <ng-template matStepLabel>Parametrizar Variable</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Uso Query" [(ngModel)]="cargaVariables.qname" formControlName="secondCtrl" required>
+        <input matInput placeholder="Parametros" [(ngModel)]="cargaVariables.qname" formControlName="secondCtrl" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
@@ -36,7 +36,7 @@
     <div>
       <br>
       <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-      <button mat-button (click)='AgregarVariable(element)'>Guardar <i class="material-icons">check</i></button>
+      <button mat-button (click)='AgregarVariable()'>Guardar <i class="material-icons">check</i></button>
       <button mat-button color=accent (click)="stepper.reset()">Limpiar<i class="material-icons">close</i></button>
 
     </div>
@@ -48,11 +48,17 @@
 <div class="mat-elevation-z8" class="mat-form-field">
   <mat-table #table [dataSource]="dataSource" matSort>
 
-    <!-- Position Column -->
+    <!-- Nombre Column -->
     <ng-container matColumnDef="NombreCampo">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.nombrec}} </mat-cell>
     </ng-container>
+
+      <!-- Parameter Column -->
+      <ng-container matColumnDef="Parametros">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Parametros </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.nombreq}} </mat-cell>
+        </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="NombreQuery">

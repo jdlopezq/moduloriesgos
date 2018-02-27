@@ -1,3 +1,38 @@
-<p>
-  selctgraf works!
-</p>
+<mat-tab-group >
+  <mat-tab label="Conocimeiento Del Cliente">
+
+        <button mat-button [matMenuTriggerFor]="menu"  *ngFor='let data of dataDB, let i=index'>{{data}}</button>
+        <mat-menu #menu="matMenu">
+          <div mat-menu-item *ngFor='let datos of nameVar, let j =index'>
+                <mat-slide-toggle></mat-slide-toggle>{{datos[j]}}</div> 
+        </mat-menu>
+  </mat-tab>
+  <mat-tab label="Capital">
+        <div class="card-columns">
+                <div class="card border-info mb-3" style="max-width: 18rem;" *ngFor='let data of dataDB, let i=index, let j =index'>
+                        <div class="card-header">{{data}}</div>
+                        <div class="card-body text-info" >
+                    <p class="card-text" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                      {{nameVar[i][j]}}</mat-slide-toggle></p>
+                  </div>
+                </div>
+                
+              </div>
+
+  </mat-tab>
+  <mat-tab label="Capital vencido"> 
+
+      <mat-form-field  *ngFor='let data of dataDB, let i=index'>
+          <mat-select placeholder="{{data}}" [formControl]="toppings" multiple >
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value[0] : ''}}
+              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                (+{{toppings.value.length - 1}} others)
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of nameVar[i], let j = index" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+       
+</mat-tab>
+</mat-tab-group>

@@ -6,7 +6,6 @@ import { AntecedentesComponent } from './components/loans-index/antecedentes.com
 import { TabladatosComponent } from './components/data-table/tabladatos.component';
 
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
-import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
 import { LogscreenComponent } from './components/logscreen/logscreen.component';
 
 const APP_ROUTES: Routes = [
@@ -16,7 +15,6 @@ const APP_ROUTES: Routes = [
   { path: 'antecedentes', component: AntecedentesComponent },
   { path: 'tabladatos', component: TabladatosComponent },
   { path: 'selectvariables', component:  SelecvariablesComponent },
-  { path: 'selctgraficos', component:  SelctgrafComponent },
   { path: 'logscreen', component:  LogscreenComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

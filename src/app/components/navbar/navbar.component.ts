@@ -12,27 +12,27 @@ export class NavbarComponent implements OnInit {
   islog:boolean;
 
   constructor(private utility:UtilityService, private router:Router) {
-    if (sessionStorage.length!== null) {
-      this.islog=true
-    } else {
-      this.islog=false
-    }
+   
+
+    console.log(this.islog)
    }
+   
 
   ngOnInit() {
   }
 
 logIn(){
   this.router.navigate(['/logscreen'])
-  console.log("LogIN")
+  this.islog=true;
   console.log(this.utility.isLogged())
 }
 logOut(){
   sessionStorage.clear();
   this.router.navigate(['/home'])
+  this.islog=false
   console.log("LogOut")
   console.log(this.islog)
-  return this.islog
+  
   
  
 }

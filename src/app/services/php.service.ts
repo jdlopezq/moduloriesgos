@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, HttpModule } from '@angular/http';
 import { dataDemo } from '../shared/data.model';
 
 
@@ -10,8 +10,8 @@ export class PhpService {
   checkMe: any
 
   constructor(private http: Http) { }
-  dataHttp: string = "http://10.191.225.154/server/";
-  dataHttpTest: string = "http://localhost/test.php";
+  dataHttp: string = "//10.191.225.154/server/";
+  dataHttpTest: string = "../backEnd/";
   answerInfo: any[];
   answerGet: any[];
 
@@ -28,7 +28,7 @@ export class PhpService {
 
 
   addItem(info, page: string) {
-    return this.http.post("http://10.191.225.154/server/" + page, info)
+    return this.http.post(this.dataHttp + page, info)
       .map((res) => {
         res;
         this.answerInfo = res.json(); 
@@ -37,7 +37,7 @@ export class PhpService {
   }
 
   getItem(page) {
-    return this.http.get("http://10.191.225.154/server/" + page)
+    return this.http.get(this.dataHttp + page)
       .map(res => {
         this.checkMe = res.json();
 
