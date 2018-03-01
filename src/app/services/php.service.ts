@@ -51,7 +51,7 @@ export class PhpService {
 
   deleteItem(id) {
     let body = { "id": id };
-    return this.http.post("http://10.191.225.154/logoogle/prueba3.php", body)
+    return this.http.post("http://10.191.225.154/", body)
       .map((res) => { this.getItem("prueba2.php"), res, console.log(res), console.log(body) });
   }
 

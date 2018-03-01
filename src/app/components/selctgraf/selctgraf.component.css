@@ -21,4 +21,6 @@
   
     flex: 0 0 5%
   }
- 
+  span {
+    padding-right: 50px;
+}

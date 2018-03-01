@@ -15,6 +15,7 @@ export class SelctgrafComponent implements OnInit {
   totalVar = [];
   nameVar = [];
   toppings = new FormControl();
+  dataDBn=[]
 
   constructor(private dataPHP: PhpService) { }
   displayedColumns = [];
@@ -22,7 +23,8 @@ export class SelctgrafComponent implements OnInit {
   
   ngOnInit() {
     this.dataPHP.getItem("graphics.php").subscribe(datos => {
-      this.dataDB = datos.length > 0 ? Object.values(datos[0]) : [];
+      this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
+      this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
       this.displayedColumns=this.dataDB;
       datos.shift();
       this.dataDB.forEach((name, i) => {

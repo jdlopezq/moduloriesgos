@@ -19,10 +19,11 @@ import { PhpService } from '../../services/php.service';
 export class ProyeccionesComponent implements OnInit {
   dataDemo: dataDemo[];
   dataDB = [];
+  dataDBn = [];
   totalVar = [];
   nameVar = [];
   datalabel = new label();
-  chartsCount: any;
+  chartsReady: boolean=true;
 
 
   constructor( private dataPHP: PhpService) {
@@ -33,7 +34,17 @@ export class ProyeccionesComponent implements OnInit {
 
   ngOnInit() {
     this.dataPHP.getItem("graphics.php").subscribe(datos => {
-      this.dataDB = datos.length > 0 ? Object.values(datos[0]) : [];
+
+if (datos.length==0) {
+  this.chartsReady=true;
+  console.log('sin respuesta')
+} else {
+  this.chartsReady=false
+  console.log('cargados')
+};
+
+      this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
+      this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
       datos.shift();
       this.dataDB.forEach((name, i) => {
         this.nameVar.push(datos[i].map(it => it[name]))
@@ -57,17 +68,18 @@ export class ProyeccionesComponent implements OnInit {
   // events
   public chartClicked(e: any): void {
 
-    console.log(e);
+    console.log(e+ "hola");
   }
 
   public chartHovered(e: any): void {
-    console.log(e);
+    console.log(e+ "adios");
   }
 
   // PolarArea
   public polarAreaChartLabels: string[] = ['NIT', 'Cedula'];
   public polarAreaChartData: number[] = [300, 500];
   public polarAreaLegend: boolean = true;
+
 
   public polarAreaChartType: string = 'polarArea';
 

@@ -51,8 +51,6 @@ class UserEdit {
   email: string
   rol: string
   rol2:string="Administrador"
-  passwd: string
-  confirmpasswd: string
   company: string="CRE"
 }
 

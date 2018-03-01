@@ -1,3 +1,8 @@
-.card-columns {
+.card-graphic-columns {
    column-count: 1;
   }
+  .scroll-box {
+    overflow-y: scroll;
+    height: 100px;
+    padding: 1rem
+}

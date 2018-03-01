@@ -47,6 +47,7 @@ public lineChartColors:Array<any> = [
 ];
 public lineChartLegend:boolean = true;
 public lineChartType:string = 'line';
+public lineChartshowLine:boolean=false;
 
 public randomize():void {
   let _lineChartData:Array<any> = new Array(this.lineChartData.length);
@@ -61,10 +62,10 @@ public randomize():void {
 
 // events
 public chartClicked(e:any):void {
-  console.log(e);
+  console.log(e + "hola");
 }
 
 public chartHovered(e:any):void {
-  console.log(e);
+  console.log(e+ "adios");
 }
 }

@@ -1,18 +1,20 @@
 
 
-<div class="container-fluid">
-<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+<div>
+<mat-horizontal-stepper class='input-size' [linear]="isLinear" #stepper="matHorizontalStepper">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Nombar Variable</ng-template>
+      <ng-template matStepLabel>Seleccionar Variable</ng-template>
+
       <mat-form-field>
-        <input placeholder="Nombre Variable"  formControlName="firstCtrl" required matInput [formControl]="myControl" [(ngModel)]="cargaVariables.name" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{ option }}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
+          <mat-select placeholder="Lista de Variables"  [(ngModel)]="cargaVariables.name" formControlName="firstCtrl" name="food">
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+    
       <div>
         <button mat-button matStepperNext>Siguiente<i class="material-icons">navigate_next</i></button>
       </div>
@@ -21,9 +23,15 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Parametrizar Variable</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Parametros" [(ngModel)]="cargaVariables.qname" formControlName="secondCtrl" required>
-      </mat-form-field>
+      <span>
+      <mat-slide-toggle formControlName="m1" [(ngModel)]="cargaVariables.m1" >Conociendo Mi Cliente</mat-slide-toggle>
+      </span>
+      <span>
+     <mat-slide-toggle formControlName="m2" [(ngModel)]="cargaVariables.m2" >Capital</mat-slide-toggle>
+       </span>
+       <span>
+       <mat-slide-toggle formControlName="m3" [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
+      </span>
       <div>
         <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
         <button mat-button matStepperNext color=success>Siguiente<i class="material-icons">navigate_next</i></button>
@@ -45,34 +53,36 @@
 </div>
 
 <div class="container-fluid">
-<div class="mat-elevation-z8" class="mat-form-field">
+<div class="mat-elevation-z8" class="mat-form-field" >
   <mat-table #table [dataSource]="dataSource" matSort>
 
     <!-- Nombre Column -->
     <ng-container matColumnDef="NombreCampo">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.nombrec}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.Names}} </mat-cell>
     </ng-container>
 
-      <!-- Parameter Column -->
-      <ng-container matColumnDef="Parametros">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Parametros </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nombreq}} </mat-cell>
-        </ng-container>
+     <!-- Name Column -->
+    <ng-container matColumnDef="Kclient">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Conociedo Mi cliente</mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <mat-slide-toggle color="primary"(click)="changeState(cargaVariables.m1)" >Activo</mat-slide-toggle> </mat-cell>
+      </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="NombreQuery">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Query </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.nombreq}} </mat-cell>
+    <ng-container matColumnDef="Capital" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-slide-toggle color="primary"(click)="changeState(cargaVariables.m2)">Activo</mat-slide-toggle> </mat-cell>
     </ng-container>
 
-    <!--Borrar Column -->
-    <ng-container matColumnDef="Borrar">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Borrar Campo </mat-header-cell>
+    <!--Borrar Column --> 
+    <ng-container matColumnDef="Capital Vencido">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <button mat-icon-button (click)='deleteItem(element.id)'>
-          <i class="material-icons">delete</i>
-        </button>
+          <mat-slide-toggle color="primary" (click)="changeState(cargaVariables.m3)">Activo</mat-slide-toggle>
+          
+       
       </mat-cell>
     </ng-container>
 

@@ -9,7 +9,62 @@
          Seleccionar los gráficos que se mostrarán a los usuarios
         </mat-panel-description>
       </mat-expansion-panel-header>
-<app-selctgraf></app-selctgraf>
+      <mat-tab-group >
+          <mat-tab label="Conocimeiento Del Cliente">
+            <mat-card style="height: 150px" *ngIf="chartsReady">
+              <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
+            </mat-card>   
+
+            <div class="card-columns">
+                <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                        <div class="card-header">{{data}}</div>
+                        <div class="card-body text-info scroll-box" >
+                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                      {{nameVar[i][j]}}</mat-slide-toggle></p>
+                  </div>
+                </div>
+                
+              </div>
+
+          </mat-tab>
+          <mat-tab label="Capital">
+              <mat-card style="height: 150px" *ngIf="chartsReady">
+                  <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
+                </mat-card>  
+              <div class="card-columns">
+                  <div class="card border-info mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                          <div class="card-header">{{data}}</div>
+                          <div class="card-body text-info scroll-box " >
+                      <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                        {{nameVar[i][j]}}</mat-slide-toggle></p>
+                    </div>
+                  </div>
+                  
+                </div>
+        
+               
+        
+          </mat-tab>
+          <mat-tab label="Capital vencido"> 
+                <mat-card style="height: 150px" *ngIf="chartsReady">
+              <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
+            </mat-card> 
+            
+            
+
+            <div class="card-columns">
+                <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                        <div class="card-header">{{data}}</div>
+                        <div class="card-body text-info scroll-box" >
+                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                      {{nameVar[i][j]}}</mat-slide-toggle></p>
+                  </div>
+                </div>
+                
+              </div>
+               
+        </mat-tab>
+        </mat-tab-group>
     </mat-expansion-panel>
   </mat-accordion>
 
@@ -17,10 +72,10 @@
 
 <h1>Información: <small>Fábrica y Core</small> </h1>
    <hr>   
-   <mat-spinner *ngIf="true" style="margin:0 auto;"></mat-spinner>
+   <mat-spinner *ngIf="chartsReady" style="margin:0 auto;"></mat-spinner>
       <div class="col-sm-15" >
-         <div class="card-columns" style="width:100%">
-             <div class="card animated fadeIn fast " *ngFor="let graficas of dataDB; let i = index" >
+         <div class="card-columns card-graphic-columns" style="width:100%">
+             <div class="card animated fadeIn fast " *ngFor="let graficas of dataDBn; let i = index" >
                <img class="card-img-top">
                 <div class="card-body ">
                    <h5 class="card-title">{{graficas}}</h5>
@@ -31,8 +86,8 @@
                                     [chartType]="doughnutChartType"
                                     (chartHover)="chartHovered($event)"
                                     (chartClick)="chartClicked($event)"></canvas>
-
-                        <!-- <canvas baseChart
+<!-- 
+                        <canvas baseChart
                                     [data]="totalVar[i]"
                                     [labels]="nameVar[i]"
                                     [legend]="polarAreaLegend"

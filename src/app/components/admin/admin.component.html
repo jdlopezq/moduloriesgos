@@ -13,7 +13,7 @@
           Registar Usuario
         </mat-panel-title>
         <mat-panel-description>
-          <i class="material-icons" style="color:#3B6D91">assignment</i>
+         <i class="material-icons" style="color:#3B6D91">assignment</i>
           Nombre, usuario, correo, rol.
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -40,9 +40,9 @@
           <input matInput placeholder=" Confirmar Contraseña" [(ngModel)]="UserRegister.confirmpasswd"  >
         </mat-form-field>
       <button mat-mini-fab (click)="resgUser()"color=''>
-          <i class="material-icons md-36 "style="color:#3B6D91">backup</i>
+          <i class="material-icons md-36 "style="color:#3B6D91">file_upload</i>
       </button>
-
+      
       
     </mat-expansion-panel>
     <mat-expansion-panel >
@@ -51,7 +51,8 @@
             <i class="material-icons" style="color:#3B6D91">mode_edit</i>
           Editar Usuarios
         </mat-panel-title>
-        <mat-panel-description>
+        <mat-panel-description> 
+            <i class="material-icons" style="color:#3B6D91">autorenew</i>
             Nombre, usuario, correo, rol.
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -70,15 +71,34 @@
         <mat-form-field>
           <input matInput placeholder="Rol" [(ngModel)]="UserEdit.rol">
         </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Contraseña" [(ngModel)]="UserEdit.passwd">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder=" Confirmar Contraseña" [(ngModel)]="UserEdit.confirmpasswd"  >
-          </mat-form-field>
+        
         <button mat-mini-fab (click)="resgUser()" color='' >
-          <i class="material-icons md-36 "style="color:#3B6D91">backup</i>
+          <i class="material-icons md-36 "style="color:#3B6D91">file_upload</i>
         </button>
     </mat-expansion-panel>
+    <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <i class="material-icons" style="color:#3B6D91">lock</i>
+           Cambio Contraseña
+          </mat-panel-title>
+        
+        </mat-expansion-panel-header>
+        <mat-form-field>
+            <input matInput placeholder="Contraseña Anterior" [(ngModel)]="UserEdit.name">
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput placeholder="Contraseña Nueva"  [(ngModel)]="UserEdit.username">
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput placeholder="Confirmar Contraseña" [(ngModel)]="UserEdit.email">
+          </mat-form-field>
+          
+          <button mat-mini-fab (click)="resgUser()" color='' >
+            <i class="material-icons md-36 "style="color:#3B6D91">file_upload</i>
+          </button>
+      </mat-expansion-panel>
   </mat-accordion>
 </div>
