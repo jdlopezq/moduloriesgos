@@ -24,13 +24,13 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Parametrizar Variable</ng-template>
       <span>
-      <mat-slide-toggle formControlName="m1" [(ngModel)]="cargaVariables.m1" >Conociendo Mi Cliente</mat-slide-toggle>
+      <mat-slide-toggle formControlName="m1" color="primary"  [(ngModel)]="cargaVariables.m1" >Conociendo Mi Cliente</mat-slide-toggle>
       </span>
       <span>
-     <mat-slide-toggle formControlName="m2" [(ngModel)]="cargaVariables.m2" >Capital</mat-slide-toggle>
+     <mat-slide-toggle formControlName="m2" color="primary"  [(ngModel)]="cargaVariables.m2" >Capital</mat-slide-toggle>
        </span>
        <span>
-       <mat-slide-toggle formControlName="m3" [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
+       <mat-slide-toggle formControlName="m3"  color="primary"  [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
       </span>
       <div>
         <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
@@ -54,7 +54,7 @@
 
 <div class="container-fluid">
 <div class="mat-elevation-z8" class="mat-form-field" >
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table #table [dataSource]="dataSource"  matSort>
 
     <!-- Nombre Column -->
     <ng-container matColumnDef="NombreCampo">
@@ -66,24 +66,33 @@
     <ng-container matColumnDef="Kclient">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Conociedo Mi cliente</mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-          <mat-slide-toggle color="primary"(click)="changeState(cargaVariables.m1)" >Activo</mat-slide-toggle> </mat-cell>
+          <mat-slide-toggle 
+          color="primary"
+          [(ngModel)]="!!element.m1" 
+          (click)="changeState(element.Id, element.m1)" >Activo</mat-slide-toggle> 
+        </mat-cell>
       </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="Capital" >
       <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <mat-slide-toggle color="primary"(click)="changeState(cargaVariables.m2)">Activo</mat-slide-toggle> </mat-cell>
+        <mat-slide-toggle 
+        color="primary" 
+        [(ngModel)]="element.m2" 
+        (click)="changeState(element.Id, element.m2)">Activo</mat-slide-toggle> 
+      </mat-cell>
     </ng-container>
 
     <!--Borrar Column --> 
     <ng-container matColumnDef="Capital Vencido">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
       <mat-cell *matCellDef="let element">
-          <mat-slide-toggle color="primary" (click)="changeState(cargaVariables.m3)">Activo</mat-slide-toggle>
-          
-       
-      </mat-cell>
+          <mat-slide-toggle 
+          color="primary"
+          [(ngModel)]="element.m3" 
+          (click)="changeState(element.Id, element.m3)">Activo</mat-slide-toggle>
+     </mat-cell>
     </ng-container>
 
 

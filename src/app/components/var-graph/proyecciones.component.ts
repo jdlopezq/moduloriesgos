@@ -22,26 +22,34 @@ export class ProyeccionesComponent implements OnInit {
   dataDBn = [];
   totalVar = [];
   nameVar = [];
-  datalabel = new label();
-  chartsReady: boolean=true;
+  changeChart: any
+
+  chartsReady: boolean = true;
 
 
-  constructor( private dataPHP: PhpService) {
+  constructor(private dataPHP: PhpService) {
   }
 
 
- 
+
 
   ngOnInit() {
-    this.dataPHP.getItem("graphics.php").subscribe(datos => {
 
-if (datos.length==0) {
-  this.chartsReady=true;
-  console.log('sin respuesta')
-} else {
-  this.chartsReady=false
-  console.log('cargados')
-};
+    this.getInfoCharts("graphics.php")
+  }
+
+
+
+  getInfoCharts(a:string) {
+    this.dataPHP.getItem(a).subscribe(datos => {
+
+      if (datos.length == 0) {
+        this.chartsReady = true;
+        console.log('sin respuesta')
+      } else {
+        this.chartsReady = false
+        console.log('cargados')
+      };
 
       this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
       this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
@@ -51,12 +59,10 @@ if (datos.length==0) {
         this.totalVar.push(datos[i].map(it => it["Total"]))
       })
       console.log(this.nameVar);
-    
-    
+
+
     })
-
   }
-
 
 
 
@@ -66,56 +72,28 @@ if (datos.length==0) {
   public doughnutChartType: string = 'doughnut';
 
   // events
-  public chartClicked(e: any): void {
+  public chartClicked(e: any, d: any): void {
+    this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
+    this.dataPHP.addItem(this.changeChart, "graphicsp.php").subscribe(
+      res => {
+        res;
+        console.log(res)
+        this.getInfoCharts("graphicsp.php")
+      }
+    )
+    console.log(this.changeChart)
+    console.log(this.dataPHP.answerInfo)
 
-    console.log(e+ "hola");
   }
 
   public chartHovered(e: any): void {
-    console.log(e+ "adios");
-  }
-
-  // PolarArea
-  public polarAreaChartLabels: string[] = ['NIT', 'Cedula'];
-  public polarAreaChartData: number[] = [300, 500];
-  public polarAreaLegend: boolean = true;
-
-
-  public polarAreaChartType: string = 'polarArea';
-
-  // events
-  public chartClickedPolar(e: any): void {
     console.log(e);
   }
 
-  public chartHoveredPolar(e: any): void {
-    console.log(e);
-  }
 
-  // Radar
-  public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
 
-  public radarChartData: any = [
-    { data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B' }
-  ];
-  public radarChartType: string = 'radar';
 
-  // events
-  public chartClickedRadar(e: any): void {
-    console.log(e);
-  }
-
-  public chartHoveredRadar(e: any): void {
-    console.log(e);
-  }
 
 }
 
 
-
-
-export class label {
-  labels: string;
-  name = []
-}

@@ -12,7 +12,7 @@ export class PhpService {
   constructor(private http: Http) { }
   dataHttp: string = "//10.191.225.154/server/";
   dataHttpTest: string = "../backEnd/";
-  answerInfo: any[];
+  answerInfo= new dataInfo;
   answerGet: any[];
 
 
@@ -57,4 +57,8 @@ export class PhpService {
 
 
 
+}
+
+export class dataInfo{
+  info:string
 }

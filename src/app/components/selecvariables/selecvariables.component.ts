@@ -19,17 +19,20 @@ import { UtilityService } from '../../services/utility.service';
   styleUrls: ['./selecvariables.component.css']
 })
 export class SelecvariablesComponent {
-  displayedColumns = ['NombreCampo', 'Kclient', "Capital","Capital Vencido" ];
+  displayedColumns = ['NombreCampo', 'Kclient', "Capital", "Capital Vencido"];
   obtencionVariables: any
+  editVar: any
   dataSource: any
   dataAutoComple: any
   cargaVariables = new addItem();
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
   myControl: FormControl = new FormControl();
   filteredOptions: Observable<string[]>;
   options = [];
+  myColor="#006400"
 
 
 
@@ -57,22 +60,18 @@ export class SelecvariablesComponent {
   }
 
 
-  ngOnInit() { 
-    //  this.filteredOptions = this.myControl.valueChanges
-    //   .pipe(
-    //     startWith(''),
-    //     map(val => this.filter(val))
-    //   );
-    //asigancion de datos
-    this.dataSource = new MatTableDataSource();
+  ngOnInit() {
     this.getVariables();
+    this.dataSource = new MatTableDataSource();
+
     // this.getAutoInf();
-  
+
     //control de sesion
-    this.utility.isLogged().then((result:boolean)=>{
+    this.utility.isLogged().then((result: boolean) => {
       if (result) {
-      console.log("is log")
-    }else{console.log("isnt log")}});
+        console.log("is log")
+      } else { console.log("isnt log") }
+    });
 
     //validacioes de formulario
     this.firstFormGroup = this._formBuilder.group({
@@ -84,20 +83,22 @@ export class SelecvariablesComponent {
       m3: [this.cargaVariables.m3, Validators.required],
     });
 
+
   }
 
-  //filtro de autocompletado
-  // filter(val: string): string[] {
-  //   return this.options.filter(option =>
-  //     option.toLowerCase().indexOf(val.toLowerCase()) === 0);
-  // }
 
+  changeState(e, a) {
 
- 
+    this.editVar = JSON.stringify({ "id": e, "state": a, "code": 10 })
+    this.dataImport.addItem(this.editVar, "select.php").subscribe(
+      res=>{
+        this.obtencionVariables=res;
+        
+        this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
 
-
-  changeState(e){
-  console.log(e)
+      }
+    )
+    console.log(this.editVar)
 
   }
 
@@ -107,7 +108,7 @@ export class SelecvariablesComponent {
       .getItem("select.php")
       .subscribe(Qvar => {
         console.log(Qvar)
-        this.options=Qvar[0]
+        this.options = Qvar[0]
         this.obtencionVariables = Qvar[1];
         this.dataSource = this.obtencionVariables;
         console.log(this.obtencionVariables)
@@ -139,12 +140,6 @@ export class SelecvariablesComponent {
 
   }
 
-  // getAutoInf() {
-  //   this.dataImport.getItem("select.php").subscribe((Response) => {
-  //     Response;
-  //     this.options = Response[0];
-  //   });
-  // }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
@@ -158,17 +153,17 @@ export class SelecvariablesComponent {
 
 export class editItem {
   Names: string;
-  m1: boolean=false;
-  m2:boolean=false;
-  m3:boolean=false;
+  m1: boolean = false;
+  m2: boolean = false;
+  m3: boolean = false;
   code: string = '12';
 }
 
 export class addItem {
   Names: string;
-  m1:number=0;
-  m2:number=0;
-  m3:number=0;
+  m1: boolean =new Boolean(this.m1).valueOf();
+  m2: boolean = false;
+  m3: boolean = false;
   code: string = '12';
 }
 
