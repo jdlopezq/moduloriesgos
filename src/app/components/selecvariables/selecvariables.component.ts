@@ -89,7 +89,7 @@ export class SelecvariablesComponent {
 
   changeState(e, a) {
 
-    this.editVar = JSON.stringify({ "id": e, "state": a, "code": 10 })
+    this.editVar = JSON.stringify({ "id": e, "m3": !a, "code": 10 })
     this.dataImport.addItem(this.editVar, "select.php").subscribe(
       res=>{
         this.obtencionVariables=res;
@@ -161,9 +161,9 @@ export class editItem {
 
 export class addItem {
   Names: string;
-  m1: boolean =new Boolean(this.m1).valueOf();
-  m2: boolean = false;
-  m3: boolean = false;
+  m1=0;
+  m2=0;
+  m3=0;
   code: string = '12';
 }
 

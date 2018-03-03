@@ -35,7 +35,7 @@ export class ProyeccionesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getInfoCharts("graphics.php")
+    this.getInfoCharts("graphics3.php")
   }
 
 
