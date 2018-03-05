@@ -8,6 +8,8 @@ import { TabladatosComponent } from './components/data-table/tabladatos.componen
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 import { LogscreenComponent } from './components/logscreen/logscreen.component';
 import { LoadarchComponent } from './components/loadarch/loadarch.component';
+import { TestComponent } from './components/test/test.component';
+
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +20,7 @@ const APP_ROUTES: Routes = [
   { path: 'selectvariables', component:  SelecvariablesComponent },
   { path: 'logscreen', component:  LogscreenComponent },
   { path: 'loadarch', component:  LoadarchComponent },
+  { path: 'selectgraph', component:  TestComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

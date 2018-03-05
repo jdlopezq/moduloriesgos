@@ -1,0 +1,13 @@
+
+<div>implenetacion en: https://github.com/amcharts/amcharts3-angular2</div>
+<div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>
+
+<div style="display: block">
+    <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [options]="chartOptions"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>

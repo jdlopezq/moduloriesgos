@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http/'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './shared/material.module';
+import { AmChartsModule } from "@amcharts/amcharts3-angular";
 
 //Components
 import { AppComponent } from './app.component';
@@ -26,20 +27,12 @@ import { UtilityService } from './services/utility.service';
 
 //graficos
 import { ChartsModule } from "ng2-charts";
-import { SelctgrafComponent } from './components/selctgraf/selctgraf.component';
 import { LogscreenComponent } from './components/logscreen/logscreen.component';
 import { RegistuserComponent } from './components/regist-user/registuser.component';
 import { LoadarchComponent } from './components/loadarch/loadarch.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
 import { ModifyUserComponent } from './components/modify-user/modify-user.component';
-
-
-
-
-
-
-
-
+import { TestComponent } from './components/test/test.component';
 
 
 @NgModule({
@@ -52,15 +45,16 @@ import { ModifyUserComponent } from './components/modify-user/modify-user.compon
     AntecedentesComponent,
     TabladatosComponent,
     SelecvariablesComponent,
-    SelctgrafComponent,
     LogscreenComponent,
     RegistuserComponent,
     LoadarchComponent,
     ChangePassComponent,
     ModifyUserComponent,
+    TestComponent,
     
   ],
   imports: [
+    AmChartsModule,
     BrowserModule,
     ChartsModule,
     HttpModule,
