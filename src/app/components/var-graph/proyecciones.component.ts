@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,7 +14,8 @@ import { PhpService } from '../../services/php.service';
 @Component({
   selector: 'app-proyecciones',
   templateUrl: './proyecciones.component.html',
-  styleUrls: ['./proyecciones.component.css']
+  styleUrls: ['./proyecciones.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProyeccionesComponent implements OnInit {
   dataDemo: dataDemo[];
@@ -23,6 +24,7 @@ export class ProyeccionesComponent implements OnInit {
   totalVar = [];
   nameVar = [];
   changeChart: any
+  dynamicHeight=true;
 
   chartsReady: boolean = true;
 
@@ -62,6 +64,10 @@ export class ProyeccionesComponent implements OnInit {
 
 
     })
+  }
+
+  useOrnot(e){
+    console.log(e)
   }
 
 

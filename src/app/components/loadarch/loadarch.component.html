@@ -1,15 +1,49 @@
 <br>
 
-<mat-card class="container containerBkg mat-elevation-z8 " > 
+<mat-card class="container containerBkg mat-elevation-z8 ">
   <mat-toolbar class='positionABS' style="background-color: #1C3D7F; font: Helvetica">
-        <span class="fill-remaining-space" style="color: rgb(255, 255, 255)">Carga de Archivos </span>  
+    <span class="fill-remaining-space" style="color: rgb(255, 255, 255)">Carga de Archivos </span>
   </mat-toolbar>
-    <br>
-  <div class="inputaling margin" >
-   <input type="file">
-   	<button mat-raised-button  value="val">val</button>
-  </div>
-  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Seleccione Archivos</h3>
+      <div appNgDropFiles class="well drop-zone" (mouseAbove)=" "[ngClass]="{'file-over':overDrop}">
+          <i class="material-icons" style="font-size: 80px">insert_drive_file</i>
+        <h4>Arrastre Aqui los Archivos</h4>
 
-  
-  </mat-card>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-8">
+      <h4>Cargar Archivos</h4>
+      <button mat-raised-button (click)="sendData()" [disabled]="archivos.length===0"><i class="material-icons">file_upload</i>Cargar</button>
+      <button mat-raised-button><i class="material-icons">clear</i>Limpiar</button>
+
+      <table class="table">
+        <thead class="thead=dark">
+          <tr>
+            <th>Nombre Archivo</th>
+            <th>Tamaño</th>
+            <th>Progreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>XYZ</td>
+            <td>23</td>
+            <td>
+              <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            </td>
+          </tr>
+        </tbody>
+
+
+      </table>
+
+
+
+    </div>
+</div>
+</mat-card>

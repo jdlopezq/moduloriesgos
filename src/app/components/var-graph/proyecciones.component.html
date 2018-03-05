@@ -9,8 +9,13 @@
          Seleccionar los gráficos que se mostrarán a los usuarios
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <mat-tab-group >
-          <mat-tab style="width: 33%" label="Conocimeiento Del Cliente" style="color: blue">
+      <mat-tab-group class="group">
+          <mat-tab class="group" >
+              <ng-template mat-tab-label>
+                  
+                  <i class="material-icons" style="font-size: 200px; color:#8C8C2A" >person</i>
+                  <div>Conocimeiento Del Cliente</div>
+                </ng-template>
             <mat-card style="height: 150px" *ngIf="chartsReady">
               <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
             </mat-card>   
@@ -19,7 +24,7 @@
                 <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                         <div class="card-header">{{data}}</div>
                         <div class="card-body text-info scroll-box" >
-                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot(nameVar[i][j])' >
                       {{nameVar[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
@@ -27,7 +32,11 @@
               </div>
 
           </mat-tab>
-          <mat-tab style="width: 33%" label="Capital">
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <i class="material-icons" style="font-size: 200px; color: #3A2A19" >credit_card</i>
+                  <div>Capital</div>
+                </ng-template>
               <mat-card style="height: 150px" *ngIf="chartsReady">
                   <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
                 </mat-card>  
@@ -35,7 +44,7 @@
                   <div class="card border-info mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                           <div class="card-header">{{data}}</div>
                           <div class="card-body text-info scroll-box " >
-                      <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                      <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot(nameVar[i][j])' >
                         {{nameVar[i][j]}}</mat-slide-toggle></p>
                     </div>
                   </div>
@@ -45,7 +54,11 @@
                
         
           </mat-tab>
-          <mat-tab label="Capital vencido" style="width: 33%"> 
+          <mat-tab class="group"  > 
+              <ng-template mat-tab-label>
+                  <i class="material-icons" style="font-size: 200px;  color: #75001F">priority_high</i>
+                  <div>Capital Vencido</div>
+                </ng-template>
                 <mat-card style="height: 150px" *ngIf="chartsReady">
               <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
             </mat-card> 
@@ -56,7 +69,7 @@
                 <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                         <div class="card-header">{{data}}</div>
                         <div class="card-body text-info scroll-box" >
-                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot()' >
+                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'><mat-slide-toggle (click)='useOrnot(nameVar[i][j])' >
                       {{nameVar[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>

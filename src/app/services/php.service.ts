@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, HttpModule } from '@angular/http';
 import { dataDemo } from '../shared/data.model';
+import { FileItem } from '../shared/file.model';
 
 
 
@@ -25,6 +26,12 @@ export class PhpService {
   //       return this.answerGet
   //     });
   // }
+
+loadFile(file:FileItem[]){
+console.log(file);
+
+}
+
 
 
   addItem(info, page: string) {

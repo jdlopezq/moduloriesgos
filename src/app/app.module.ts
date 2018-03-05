@@ -33,6 +33,7 @@ import { LoadarchComponent } from './components/loadarch/loadarch.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
 import { ModifyUserComponent } from './components/modify-user/modify-user.component';
 import { TestComponent } from './components/test/test.component';
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { TestComponent } from './components/test/test.component';
     ChangePassComponent,
     ModifyUserComponent,
     TestComponent,
+    NgDropFilesDirective,
     
   ],
   imports: [

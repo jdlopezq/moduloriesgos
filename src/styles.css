@@ -10,6 +10,17 @@
     animation-fill-mode: both;
   }
   
+.drop-zone{
+  border: dotted 3px lightblue;
+  opacity: 0.5;
+  color: #666;
+  text-align: center
+}
+
+.file-over{
+border: dotted 3px #1C3D7F
+
+}
   .fast {
     -webkit-animation-duration: 0.4s;
     animation-duration: 0.4s;
