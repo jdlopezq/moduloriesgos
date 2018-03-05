@@ -12,7 +12,7 @@ import { FileItem } from '../../shared/file.model';
 export class LoadarchComponent implements OnInit {
 
 
-overDrop:boolean=true;  
+overDrop:boolean=false;  
 archivos: FileItem[]=[]
 constructor(private dataSend: PhpService, private utility:UtilityService, private router: Router) { }
 
@@ -20,8 +20,15 @@ constructor(private dataSend: PhpService, private utility:UtilityService, privat
   }
 
   sendData(){
-this.dataSend.loadFile(this.archivos)
+this.dataSend.loadFile(this.archivos, "cargar.php").subscribe(res=>{
+  res;
+  console.log(res)
+})
 
+  }
+
+  pruebaEle(event){
+console.log(event)
   }
 
 

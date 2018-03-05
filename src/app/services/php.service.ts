@@ -27,9 +27,14 @@ export class PhpService {
   //     });
   // }
 
-loadFile(file:FileItem[]){
-console.log(file);
-
+loadFile(file:FileItem[], page:string){
+  console.log(file);
+  return this.http.post(this.dataHttp + page, file)
+  .map((res) => {
+    res;
+    this.answerInfo = res.json(); 
+    return this.answerInfo;
+  });
 }
 
 

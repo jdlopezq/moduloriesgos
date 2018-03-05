@@ -45,7 +45,7 @@
       <br>
       <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
       <button mat-button (click)='AgregarVariable()'>Guardar <i class="material-icons">check</i></button>
-      <button mat-button color=accent (click)="stepper.reset()">Limpiar<i class="material-icons">close</i></button>
+      <button mat-button  (click)="stepper.reset()"><i class="material-icons">add</i>Agregar una mas?</button>
 
     </div>
   </mat-step>
@@ -59,17 +59,19 @@
     <!-- Nombre Column -->
     <ng-container matColumnDef="NombreCampo">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Names}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
     </ng-container>
 
      <!-- Name Column -->
     <ng-container matColumnDef="Kclient">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Conociedo Mi cliente</mat-header-cell>
         <mat-cell *matCellDef="let element"> 
-          <mat-slide-toggle 
-          color="primary"
-          [(ngModel)]="!!element.m1" 
-          (click)="changeState(element.Id, element.m1)" >Activo</mat-slide-toggle> 
+            <mat-slide-toggle 
+            color="primary"
+            (click)="changeState(element.Id, element.m1, 1)" (click)="refershVar()" checked="{{element.m1==1}}" labelPosition="after">
+            <div *ngIf="element.m1==1">Activo</div>
+            <div *ngIf="element.m1==0">Inactivo</div>
+          </mat-slide-toggle> 
         </mat-cell>
       </ng-container>
 
@@ -77,10 +79,12 @@
     <ng-container matColumnDef="Capital" >
       <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <mat-slide-toggle 
-        color="primary" 
-        [(ngModel)]="element.m2" 
-        (click)="changeState(element.Id, element.m2)">Activo</mat-slide-toggle> 
+          <mat-slide-toggle 
+          color="primary"
+          (click)="changeState(element.Id, element.m2, 2)" (click)="refershVar()" checked="{{element.m2==1}}" labelPosition="after">
+          <div *ngIf="element.m2==1">Activo</div>
+          <div *ngIf="element.m2==0">Inactivo</div>
+        </mat-slide-toggle>
       </mat-cell>
     </ng-container>
 
@@ -90,8 +94,10 @@
       <mat-cell *matCellDef="let element">
           <mat-slide-toggle 
           color="primary"
-          [(ngModel)]="element.m3" 
-          (click)="changeState(element.Id, element.m3)">Activo</mat-slide-toggle>
+          (click)="changeState(element.Id, element.m3, 3)" (click)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
+          <div *ngIf="element.m3==1">Activo</div>
+          <div *ngIf="element.m3==0">Inactivo</div>
+        </mat-slide-toggle>
      </mat-cell>
     </ng-container>
 

@@ -6,8 +6,12 @@
   </mat-toolbar>
   <div class="row">
     <div class="col-md-4">
-      <h3>Seleccione Archivos</h3>
-      <div appNgDropFiles class="well drop-zone" (mouseAbove)=" "[ngClass]="{'file-over':overDrop}">
+      <h4>Seleccione Archivos</h4>
+      <div appNgDropFiles 
+      (mouseAbove)="overDrop=($event)"
+      [archivos]="archivos"
+       class="well drop-zone" 
+       [ngClass]="{'file-over':overDrop}">
           <i class="material-icons" style="font-size: 80px">insert_drive_file</i>
         <h4>Arrastre Aqui los Archivos</h4>
 
@@ -17,7 +21,8 @@
 
 
     <div class="col-md-8">
-      <h4>Cargar Archivos</h4>
+      <h5>Cargar Archivos</h5>
+      <div></div>
       <button mat-raised-button (click)="sendData()" [disabled]="archivos.length===0"><i class="material-icons">file_upload</i>Cargar</button>
       <button mat-raised-button><i class="material-icons">clear</i>Limpiar</button>
 
@@ -30,9 +35,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>XYZ</td>
-            <td>23</td>
+          <tr *ngFor="let archivo of archivos">
+            <td>{{archivo.fileName}}</td>
+            <td>{{archivo.file.size/1024 | number: '.2-2'}} Kb</td>
             <td>
               <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
             </td>

@@ -32,7 +32,8 @@ export class SelecvariablesComponent {
   myControl: FormControl = new FormControl();
   filteredOptions: Observable<string[]>;
   options = [];
-  myColor="#006400"
+  myColor = "#006400"
+  checked=false
 
 
 
@@ -75,7 +76,7 @@ export class SelecvariablesComponent {
 
     //validacioes de formulario
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: [this.cargaVariables.Names, Validators.required]
+      firstCtrl: [this.cargaVariables.Name, Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       m1: [this.cargaVariables.m1, Validators.required],
@@ -87,13 +88,33 @@ export class SelecvariablesComponent {
   }
 
 
-  changeState(e, a) {
+  changeState(e, a, i) {
+    if (a == true) {
+      a = 0
+    } else {
+      a = 1
+    }
 
-    this.editVar = JSON.stringify({ "id": e, "m3": !a, "code": 10 })
+    switch (i) {
+      case 1:
+        this.editVar = JSON.stringify({ "id": e, "m1": a, "code": 10 })
+        console.log("cliente")
+        break;
+      case 2:
+        this.editVar = JSON.stringify({ "id": e, "m2": a, "code": 10 })
+        console.log("capital")
+        break;
+      case 3:
+        this.editVar = JSON.stringify({ "id": e, "m3": a, "code": 10 })
+        console.log("vencido")
+        break;
+    }
+
+
     this.dataImport.addItem(this.editVar, "select.php").subscribe(
-      res=>{
-        this.obtencionVariables=res;
-        
+      res => {
+        this.obtencionVariables = res;
+        console.log(res)
         this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
 
       }
@@ -101,6 +122,11 @@ export class SelecvariablesComponent {
     console.log(this.editVar)
 
   }
+
+
+refershVar(){
+  this.getVariables()
+}
 
 
   getVariables() {
@@ -111,7 +137,11 @@ export class SelecvariablesComponent {
         this.options = Qvar[0]
         this.obtencionVariables = Qvar[1];
         this.dataSource = this.obtencionVariables;
-        console.log(this.obtencionVariables)
+
+
+
+
+        console.log(this.obtencionVariables[1].m2)
       })
   }
 
@@ -121,8 +151,10 @@ export class SelecvariablesComponent {
       .subscribe(
         (res) => {
           res;
+          // console.log(res[0])
           this.obtencionVariables = res;
           this.getVariables()
+          console.log(res)
           console.log(this.dataImport.answerInfo)
           this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
         });
@@ -152,7 +184,7 @@ export class SelecvariablesComponent {
 
 
 export class editItem {
-  Names: string;
+  Name: string;
   m1: boolean = false;
   m2: boolean = false;
   m3: boolean = false;
@@ -160,10 +192,10 @@ export class editItem {
 }
 
 export class addItem {
-  Names: string;
-  m1=0;
-  m2=0;
-  m3=0;
+  Name: string;
+  m1: boolean = false;
+  m2: boolean = false;
+  m3: boolean = false
   code: string = '12';
 }
 

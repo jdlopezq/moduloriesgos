@@ -13,11 +13,48 @@ import {Chart} from "chart.js"
 })
 export class TestComponent implements OnInit {
   private chart: AmChart;
+  dataDB = [];
+  dataDBn = [];
+  totalVar = [];
+  nameVar = [];
+  changeChart: any
+  dynamicHeight=[];
 
-  constructor(private AmCharts: AmChartsService) {}
+  chartsReady: boolean = true;
+  constructor(private AmCharts: AmChartsService, private dataPHP: PhpService) {}
 
   ngOnInit() {
+    this.getInfoCharts("graphics.php")
 }
+
+getInfoCharts(a:string) {
+  console.log(a)
+  this.dataPHP.getItem(a).subscribe(datos => {
+    this.dynamicHeight=datos
+console.log(JSON.stringify(this.dynamicHeight[1]))
+    if (datos.length == 0) {
+      this.chartsReady = true;
+      console.log('sin respuesta')
+    } else {
+      this.chartsReady = false
+      console.log('cargados')
+    };
+
+    this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
+    this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
+    datos.shift();
+    this.dataDB.forEach((name, i) => {
+      this.nameVar.push(datos[i].map(it => it[name]))
+      this.totalVar.push(datos[i].map(it => it["Total"]))
+    })
+    console.log(this.nameVar);
+    console.log(this.totalVar);
+
+
+  })
+}
+
+
 
   ngAfterViewInit() {
     this.chart = this.AmCharts.makeChart("chartdiv",{
@@ -54,9 +91,9 @@ export class TestComponent implements OnInit {
           }
         }]
       },
-      "dataProvider": data,
-      "valueField": "litres",
-      "titleField": "country",
+      "dataProvider":JSON.stringify(this.dynamicHeight[1]),
+      "valueField": "Total",
+      "titleField": "Type",
       "export": {
         "enabled": true
       }
@@ -66,10 +103,12 @@ export class TestComponent implements OnInit {
     
     this.chart.addListener("rollOverSlice", function(e) {
       handleRollOver(e);
+      
     });
     
     function handleInit(){
       this.chart.legend.addListener("rollOverItem", handleRollOver);
+      console.log("hola")
     }
     
     function handleRollOver(e){
@@ -209,5 +248,15 @@ const data=[{
 }, {
   "country": "The Netherlands",
   "litres": 50
+},{
+  "country": "Juan",
+  "litres": 150
 }]
 
+const data2=[{"Type": "Campo Vacio", "Total": "41"},
+
+
+{"Type": "CEDULA DE CIUDADANIA", "Total": "470"},
+
+
+{"Type": "NIT", "Total": "1"}]
