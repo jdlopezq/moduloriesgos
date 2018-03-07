@@ -9,6 +9,7 @@ import { FileItem } from '../shared/file.model';
 export class PhpService {
   dataImport: any;
   checkMe: any
+  graphResp:any
 
   constructor(private http: Http) { }
   dataHttp: string = "//10.191.225.154/server/";
@@ -35,6 +36,17 @@ loadFile(file:FileItem[], page:string){
     this.answerInfo = res.json(); 
     return this.answerInfo;
   });
+}
+
+
+graphRnew(info, page: string) {
+  return this.http.post(this.dataHttp + page, info)
+    .map((res) => {
+      res;
+      this.graphResp=res.json()
+     //console.log(this.graphResp)
+     return this.graphResp
+    });
 }
 
 

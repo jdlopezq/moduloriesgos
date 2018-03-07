@@ -1,30 +1,27 @@
 
-<mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Seleccionar Gráficas
-        </mat-panel-title>
-        <mat-panel-description>
-         Seleccionar los gráficos que se mostrarán a los usuarios
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
-          <mat-tab  (click)="getInfoCharts(graphics.php)" >
-              <ng-template mat-tab-label >  
-                  <i class="material-icons" style="font-size: 200px; color:#8C8C2A" >person</i>
+
+      <mat-tab-group #tabGroup (focusChange)="test($event)" (selectedTabChange)="tabChanged($event)">
+          <mat-tab>
+              <ng-template  mat-tab-label >  
+                  <i class="material-icons" (click)='getInfoCharts("graphics.php")' style="font-size: 200px; color:#8C8C2A" >person</i>
                   <div>Conocimeiento Del Cliente</div>
                 </ng-template>
-            <mat-card style="height: 150px" *ngIf="chartsReady">
+            <!-- <mat-card style="height: 150px" *ngIf="chartsReady">
               <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
-            </mat-card>   
-
+            </mat-card>    -->
+<br>
             <div class="card-columns">
                 <div class="card border-secondary example-container" style="color:#8C8C2A; max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
-                        <div class="card-header">{{data}}</div>
+                        <div class="card-header">
+                          <div class="row">
+                            <span class="fill-remaining-space">{{data}}</span>
+                            <span class="fill-remaining-space">
+                              <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                          </div>
+                        </div>
                         <div class="card-body scroll-box" >
                     <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-                      <mat-slide-toggle [color]="Scolor" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot("", data, nameVar[i][j])' >
+                      <mat-slide-toggle [color]="Scolor" checked="{{nameVar[i][j]!==null}}" (change)='useOrnot($event, "graphics.php", data, nameVar[i][j])' >
                       {{nameVar[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
@@ -32,20 +29,29 @@
               </div>
 
           </mat-tab>
-          <mat-tab  (click)=" getInfoCharts(graphics2.php)">
+          <mat-tab>
               <ng-template mat-tab-label>
                   <i class="material-icons" style="font-size: 200px; color: #3A2A19" >credit_card</i>
+                  
                   <div>Capital</div>
                 </ng-template>
               <mat-card style="height: 150px" *ngIf="chartsReady">
                   <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
                 </mat-card>  
+                <br>
               <div class="card-columns">
                   <div class="card border-info mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
-                          <div class="card-header">{{data}}</div>
+                          <div class="card-header">
+                            
+                              <div class="row">
+                                  <span class="fill-remaining-space">{{data}}</span>
+                                  <span class="fill-remaining-space">
+                                    <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                                </div>
+                          </div>
                           <div class="card-body text-info scroll-box " >
                       <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'>
-                        <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot("", data, nameVar[i][j])' >
+                        <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot($event, "graphicsc.php", data, nameVar[i][j])' >
                         {{nameVar[i][j]}}</mat-slide-toggle></p>
                     </div>
                   </div>
@@ -55,7 +61,7 @@
                
         
           </mat-tab>
-          <mat-tab   (click)=" getInfoCharts(graphics3.php)" > 
+          <mat-tab    > 
               <ng-template mat-tab-label>
                   <i class="material-icons" style="font-size: 200px;  color: #75001F">priority_high</i>
                   <div>Capital Vencido</div>
@@ -63,15 +69,19 @@
                 <mat-card style="height: 150px" *ngIf="chartsReady">
               <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
             </mat-card> 
-            
+            <br>
             
 
             <div class="card-columns">
                 <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
-                        <div class="card-header">{{data}}</div>
+                        <div class="card-header"> <div class="row">
+                            <span class="fill-remaining-space">{{data}} </span>
+                            <span class="fill-remaining-space">
+                              <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                          </div></div>
                         <div class="card-body text-info scroll-box" >
                     <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-                      <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot("", data, nameVar[i][j])' >
+                      <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot($event, "graphicscv.php", data, nameVar[i][j])' >
                       {{nameVar[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
@@ -80,29 +90,27 @@
                
         </mat-tab>
         </mat-tab-group>
-    </mat-expansion-panel>
-  </mat-accordion>
+   
 
 
-
+<div >
 <h1>Información: <small>Fábrica y Core</small> </h1>
-   <hr>   
-   <mat-spinner *ngIf="chartsReady" style="margin:0 auto;"></mat-spinner>
+   <hr> </div>  
+   
       <div class="col-sm-15" >
          <div class="card-columns card-graphic-columns" style="width:100%">
              <div class="card animated fadeIn fast " *ngFor="let graficas of dataDBn; let i = index">
                
               <img class="card-img-top" >
                 <div class="card-body "  >
-                   <h5 class="card-title">{{graficas}}</h5>
+                   <h5 class="card-title">{{graficas}}[nombres]= {{nameVar[i]}} [totales]={{totalVar[i]}}</h5>
                     <div class="container">
                       
                         <canvas baseChart 
                                     [data]="totalVar[i]"
-                                    [labels]="nameVar[i]"
+                                    [labels]= "nameVar[i]"
                                     [chartType]="doughnutChartType"
-                                    (chartHover)="chartHovered($event)"
-                                    (chartClick)="chartClicked(graficas, nameVar[i])"></canvas>
+                                    ></canvas>
 
 
  

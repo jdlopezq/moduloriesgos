@@ -3,8 +3,11 @@
   }
   .scroll-box {
     overflow-y: scroll;
-    height: 150px;
+    height: 130px;
     padding: 1rem
+}
+.fill-remaining-space {
+  flex: 3 1 auto;
 }
 
 .mat-tab-label {

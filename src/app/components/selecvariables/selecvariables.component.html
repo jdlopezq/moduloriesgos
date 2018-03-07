@@ -2,12 +2,12 @@
 
 <div>
 <mat-horizontal-stepper class='input-size' [linear]="isLinear" #stepper="matHorizontalStepper">
-  <mat-step [stepControl]="firstFormGroup">
+  <mat-step [stepControl]="firstFormGroup" completed="false">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Seleccionar Variable</ng-template>
 
       <mat-form-field>
-          <mat-select placeholder="Lista de Variables"  [(ngModel)]="cargaVariables.name" formControlName="firstCtrl" name="food">
+          <mat-select placeholder="Lista de Variables" (click)="refershVar()" [(ngModel)]="cargaVariables.name" formControlName="firstCtrl">
             <mat-option *ngFor="let option of options" [value]="option">
               {{option}}
             </mat-option>
@@ -68,7 +68,7 @@
         <mat-cell *matCellDef="let element"> 
             <mat-slide-toggle 
             color="primary"
-            (click)="changeState(element.Id, element.m1, 1)" (click)="refershVar()" checked="{{element.m1==1}}" labelPosition="after">
+            (change)="changeState(element.Id, element.m1, 1)" (change)="refershVar()" checked="{{element.m1==1}}" labelPosition="after">
             <div *ngIf="element.m1==1">Activo</div>
             <div *ngIf="element.m1==0">Inactivo</div>
           </mat-slide-toggle> 
@@ -81,7 +81,7 @@
       <mat-cell *matCellDef="let element">
           <mat-slide-toggle 
           color="primary"
-          (click)="changeState(element.Id, element.m2, 2)" (click)="refershVar()" checked="{{element.m2==1}}" labelPosition="after">
+          (change)="changeState(element.Id, element.m2, 2)" (change)="refershVar()" checked="{{element.m2==1}}" labelPosition="after">
           <div *ngIf="element.m2==1">Activo</div>
           <div *ngIf="element.m2==0">Inactivo</div>
         </mat-slide-toggle>
@@ -94,7 +94,7 @@
       <mat-cell *matCellDef="let element">
           <mat-slide-toggle 
           color="primary"
-          (click)="changeState(element.Id, element.m3, 3)" (click)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
+          (change)="changeState(element.Id, element.m3, 3)" (change)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
           <div *ngIf="element.m3==1">Activo</div>
           <div *ngIf="element.m3==0">Inactivo</div>
         </mat-slide-toggle>

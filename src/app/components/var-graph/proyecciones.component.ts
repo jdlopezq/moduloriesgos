@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, OnChanges } from '@angular/core';
 import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA, MatTabChangeEvent, } from '@angular/material';
+import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA, MatTabChangeEvent, MatSlideToggle, MatSlideToggleChange, } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService, dataInfo } from '../../services/php.service';
-import { get } from 'http';
+
 
 
 
@@ -19,13 +19,15 @@ import { get } from 'http';
   encapsulation: ViewEncapsulation.None
 })
 export class ProyeccionesComponent implements OnInit {
-  Scolor="primary"
+  Scolor = "primary"
   dataDB = [];
   dataDBn = [];
   totalVar = [];
   nameVar = [];
   changeChart: any
+  changeChartTab: number
   dynamicHeight = true;
+
 
   chartsReady: boolean = true;
 
@@ -33,14 +35,8 @@ export class ProyeccionesComponent implements OnInit {
   constructor(private dataPHP: PhpService) {
   }
 
-
-
-  ngAfterViewInit() {
-    //console.log('afterViewInit => ', this.tabGroup.selectedIndex);
-  }
   ngOnInit() {
 
-    //this.getInfoCharts("graphics.php")
   }
 
 
@@ -48,7 +44,7 @@ export class ProyeccionesComponent implements OnInit {
   getInfoCharts(a: string) {
     console.log(a)
     this.dataPHP.getItem(a).subscribe(datos => {
-    
+     // console.log(datos)
       if (datos.length == 0) {
         this.chartsReady = true;
         console.log('sin respuesta')
@@ -56,8 +52,8 @@ export class ProyeccionesComponent implements OnInit {
         this.chartsReady = false
         console.log('cargados')
       };
-      this.nameVar=[];
-      this.totalVar=[];
+      this.nameVar = [];
+      this.totalVar = [];
       this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
       this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
       datos.shift();
@@ -66,62 +62,67 @@ export class ProyeccionesComponent implements OnInit {
         this.totalVar.push(datos[i].map(it => it["Total"]))
       })
 
-      console.log(this.nameVar);
-      console.log(this.totalVar);
-      
-      
+      // console.log(this.nameVar);
+      // console.log(this.totalVar);
+
+
     })
   }
 
-  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {  
+
+
+
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
     if (tabChangeEvent.index == 0) {
+      this.changeChartTab = tabChangeEvent.index
       this.getInfoCharts("graphics.php")
     } else if (tabChangeEvent.index == 1) {
+      this.changeChartTab = tabChangeEvent.index
       this.getInfoCharts("graphicsc.php")
     } else if (tabChangeEvent.index == 2) {
+      this.changeChartTab = tabChangeEvent.index
       this.getInfoCharts("graphicscv.php")
     }
-    console.log('index => ', tabChangeEvent.index);
+    //console.log('index => ', tabChangeEvent);
   }
 
+  test(e) {
+    console.log(e)
+  }
 
-
-  useOrnot=(tabChangeEvent: MatTabChangeEvent, e:string, d:string)=> {
-    this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
-    
-    if (tabChangeEvent.index == 0) {
-      console.log("entro")
-      this.dataPHP.addItem(this.changeChart, "graphics.php").subscribe(
-        res => {
-          res;
-          console.log(res);
-  this.getInfoCharts("graphics.php")
-        }
-      )
-      
-    } else if (tabChangeEvent.index == 1) {
-      this.dataPHP.addItem(this.changeChart, "graphicsc.php").subscribe(
-        res => {
-          res;
-          console.log(res);
-  this.getInfoCharts("graphicsc.php")
-        }
-      )
-      
-    } else if (tabChangeEvent.index == 2) {
-      this.dataPHP.addItem(this.changeChart, "graphicscv.php").subscribe(
-        res => {
-          res;
-          console.log(res);
-        this.getInfoCharts("graphicscv.php")
-        }
-      )
-
+  useOrnot(f, a: string, e: string, d: string) {
+    this.changeChartTab
+   // console.log(f.checked)
+    if (f.checked) {
+      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 15 })
+    } else {
+      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
     }
 
 
-   
-    console.log("Post Enviado:" + this.changeChart)
+
+    this.dataPHP.graphRnew(this.changeChart, a).subscribe(
+      datos => {
+        
+       
+        console.log("Respuesta graficas: ")
+        console.log(datos);
+        this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
+        this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
+        this.nameVar = [];
+        this.totalVar = [];
+        datos.shift();
+        this.dataDB.forEach((name, i) => {
+          this.nameVar.push(datos[i].map(it=>it[name]))
+          this.totalVar.push(datos[i].map(it => it["Total"]))
+
+        })
+          console.log(this.nameVar.length);
+      console.log(this.totalVar.length);
+      })
+    console.log(this.dataDBn)
+    console.log(this.dataDB)
+    console.log(this.changeChart)
   }
 
 
@@ -132,23 +133,13 @@ export class ProyeccionesComponent implements OnInit {
   public doughnutChartType: string = 'doughnut';
 
   // events
-  public chartClicked(e: any, d: any): void {
-    // this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
-    // this.dataPHP.addItem(this.changeChart, "graphicsp.php").subscribe(
-    //   res => {
-    //     res;
-    //     console.log(res)
-    //     this.getInfoCharts("graphicsp.php")
-    //   }
-    // )
-    // console.log(this.changeChart)
-    // console.log(this.dataPHP.answerInfo)
+  // public chartClicked(e: any, d: any): void {
+  //   console.log(e);
+  // }
 
-  }
-
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
+  // public chartHovered(e: any): void {
+  //   console.log(e);
+  // }
 
 
 
