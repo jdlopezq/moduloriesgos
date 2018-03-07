@@ -1,16 +1,12 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, AfterViewInit, OnChanges, SimpleChanges, QueryList, ViewChildren } from '@angular/core';
 import { dataDemo } from '../../shared/data.model';
 import { error, log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort, MatFormField, MAT_DIALOG_DATA, MatTabChangeEvent, MatSlideToggle, MatSlideToggleChange, } from '@angular/material';
 import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService, dataInfo } from '../../services/php.service';
-
-
-
-
-
-
+import { Chart } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts/ng2-charts';
 
 @Component({
   selector: 'app-proyecciones',
@@ -19,6 +15,8 @@ import { PhpService, dataInfo } from '../../services/php.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ProyeccionesComponent implements OnInit {
+ 
+  @ViewChildren(BaseChartDirective) charts: QueryList<BaseChartDirective>;
   Scolor = "primary"
   dataDB = [];
   dataDBn = [];
@@ -26,22 +24,25 @@ export class ProyeccionesComponent implements OnInit {
   nameVar = [];
   changeChart: any
   changeChartTab: number
+  Activate:any
+  Activate2:boolean;
   dynamicHeight = true;
+chartsReady: boolean = true;
 
-
-  chartsReady: boolean = true;
+ 
 
 
   constructor(private dataPHP: PhpService) {
   }
 
+  
   ngOnInit() {
-
   }
 
 
 
   getInfoCharts(a: string) {
+    
     console.log(a)
     this.dataPHP.getItem(a).subscribe(datos => {
      // console.log(datos)
@@ -62,11 +63,16 @@ export class ProyeccionesComponent implements OnInit {
         this.totalVar.push(datos[i].map(it => it["Total"]))
       })
 
+
+     this.doughnutChartData=this.totalVar
+     this.doughnutChartLabels=this.nameVar
+   
       // console.log(this.nameVar);
       // console.log(this.totalVar);
 
 
     })
+  
   }
 
 
@@ -90,7 +96,27 @@ export class ProyeccionesComponent implements OnInit {
     console.log(e)
   }
 
-  useOrnot(f, a: string, e: string, d: string) {
+useAll(f, a, e){
+  this.Activate2=f.checked;
+   console.log(f.checked);
+   if (f.checked) {
+     this.Activate = JSON.stringify({  "array": e,"code": 17 })
+   } else {
+     this.Activate = JSON.stringify({ "array": e, "code": 16})
+   }
+
+   this.dataPHP.graphRnew(this.Activate, a).subscribe(
+    datos => {
+datos;
+console.log(datos)
+
+    })
+
+    return this.Activate2
+}
+
+
+  useOrnot(f, a: string, e: string, d: string, i) {
     this.changeChartTab
    // console.log(f.checked)
     if (f.checked) {
@@ -111,36 +137,56 @@ export class ProyeccionesComponent implements OnInit {
         this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
         this.nameVar = [];
         this.totalVar = [];
+    //     this.charts._results[i].data[i]=[]
+    // this.charts._results[i].labels[i]=[]
         datos.shift();
+        
         this.dataDB.forEach((name, i) => {
           this.nameVar.push(datos[i].map(it=>it[name]))
           this.totalVar.push(datos[i].map(it => it["Total"]))
-
         })
-          console.log(this.nameVar.length);
-      console.log(this.totalVar.length);
+
+
+    
+    //  this.chart.data=this.totalVar[i]
+    //  this.chart.labels=this.nameVar[i]
+    //  this.chart.ngOnInit()
+    // this.charts._results[i].data=this.totalVar[i]
+    // this.charts._results[i].labels=this.nameVar[i]
+    // this.charts._results[i].legend=false
+
+
+    
+    for (let index = 0; index < this.charts._results.length; index++) {
+      this.charts._results[index].data=this.totalVar[index]
+      this.charts._results[index].labels=this.nameVar[index]
+      // this.charts._results[index].legend=false
+
+      this.charts._results[index].ngOnInit()
+     // const element = array[index];
+     
+
+
+     console.log(this.charts._results[index])
+    }
+     console.log(this.charts._results);
       })
-    console.log(this.dataDBn)
-    console.log(this.dataDB)
-    console.log(this.changeChart)
-  }
+      
+    
+   
 
+    }
 
+  
+   
 
-  // Doughnut
-  public doughnutChartLabels: string[] = [];
-  public doughnutChartData: number[] = [];
-  public doughnutChartType: string = 'doughnut';
+    
 
-  // events
-  // public chartClicked(e: any, d: any): void {
-  //   console.log(e);
-  // }
-
-  // public chartHovered(e: any): void {
-  //   console.log(e);
-  // }
-
+ 
+// Doughnut
+public doughnutChartLabels: string[] = [];
+public doughnutChartData: number[] = [];
+public doughnutChartType: string = 'doughnut';
 
 
 

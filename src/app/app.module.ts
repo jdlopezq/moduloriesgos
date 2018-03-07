@@ -14,7 +14,12 @@ import { ProyeccionesComponent } from './components/var-graph/proyecciones.compo
 import { TabladatosComponent } from './components/data-table/tabladatos.component';
 import { SelecvariablesComponent } from './components/selecvariables/selecvariables.component';
 import { AntecedentesComponent } from './components/loans-index/antecedentes.component';
-
+import { LogscreenComponent } from './components/logscreen/logscreen.component';
+import { RegistuserComponent } from './components/regist-user/registuser.component';
+import { LoadarchComponent } from './components/loadarch/loadarch.component';
+import { ChangePassComponent } from './components/change-pass/change-pass.component';
+import { ModifyUserComponent } from './components/modify-user/modify-user.component';
+import { TestComponent } from './components/test/test.component';
 
 
 //Rutas
@@ -27,12 +32,7 @@ import { UtilityService } from './services/utility.service';
 
 //graficos
 import { ChartsModule } from "ng2-charts";
-import { LogscreenComponent } from './components/logscreen/logscreen.component';
-import { RegistuserComponent } from './components/regist-user/registuser.component';
-import { LoadarchComponent } from './components/loadarch/loadarch.component';
-import { ChangePassComponent } from './components/change-pass/change-pass.component';
-import { ModifyUserComponent } from './components/modify-user/modify-user.component';
-import { TestComponent } from './components/test/test.component';
+//import { ChartsModule } from "ng4-charts"
 import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 

@@ -1,6 +1,6 @@
 
 
-      <mat-tab-group #tabGroup (focusChange)="test($event)" (selectedTabChange)="tabChanged($event)">
+      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
           <mat-tab>
               <ng-template  mat-tab-label >  
                   <i class="material-icons" (click)='getInfoCharts("graphics.php")' style="font-size: 200px; color:#8C8C2A" >person</i>
@@ -11,17 +11,17 @@
             </mat-card>    -->
 <br>
             <div class="card-columns">
-                <div class="card border-secondary example-container" style="color:#8C8C2A; max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                <div class="card border-secondary example-container" style=" max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                         <div class="card-header">
                           <div class="row">
                             <span class="fill-remaining-space">{{data}}</span>
                             <span class="fill-remaining-space">
-                              <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                              <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', data )" checked="data==data">Activar</mat-slide-toggle></span>
                           </div>
                         </div>
                         <div class="card-body scroll-box" >
                     <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-                      <mat-slide-toggle [color]="Scolor" checked="{{nameVar[i][j]!==null}}" (change)='useOrnot($event, "graphics.php", data, nameVar[i][j])' >
+                      <mat-slide-toggle [color]="Scolor" checked="{{Activate2}}" (change)='useOrnot($event, "graphics.php", data, nameVar[i][j], i)' >
                       {{nameVar[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@
    
 
 
-<div >
+<div *ngIf="false" >
 <h1>Información: <small>Fábrica y Core</small> </h1>
    <hr> </div>  
    
@@ -103,17 +103,16 @@
                
               <img class="card-img-top" >
                 <div class="card-body "  >
-                   <h5 class="card-title">{{graficas}}[nombres]= {{nameVar[i]}} [totales]={{totalVar[i]}}</h5>
+                   <h5 class="card-title">{{graficas}}</h5>
                     <div class="container">
                       
-                        <canvas baseChart 
-                                    [data]="totalVar[i]"
-                                    [labels]= "nameVar[i]"
+                        <canvas baseChart  #baseChart="base-chart"
+                                    [data]="doughnutChartData[i]"
+                                    [labels]= "doughnutChartLabels[i]"
                                     [chartType]="doughnutChartType"
+                                    
                                     ></canvas>
 
-
- 
                   </div>
                 </div>
               </div>

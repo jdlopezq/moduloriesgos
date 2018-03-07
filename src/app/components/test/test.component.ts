@@ -91,7 +91,7 @@ console.log(JSON.stringify(this.dynamicHeight[1]))
           }
         }]
       },
-      "dataProvider":JSON.stringify(this.dynamicHeight[1]),
+      "dataProvider":JSON.parse(JSON.stringify(this.dynamicHeight[1])),
       "valueField": "Total",
       "titleField": "Type",
       "export": {
@@ -214,7 +214,9 @@ console.log(JSON.stringify(this.dynamicHeight[1]))
           }
     console.log("Funciono")
 
-  }
+        }
+
+
 
 
 
