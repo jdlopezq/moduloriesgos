@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { RequestOptionsArgs, RequestOptions, RequestMethod, Response } from '@angular/http';
+
 import {
   MatSort, MatTableDataSource, MatPaginator, MatSnackBar, MatHorizontalStepper, MatStep, MatFormField
 } from '@angular/material';
@@ -19,7 +19,7 @@ import { UtilityService } from '../../services/utility.service';
   styleUrls: ['./selecvariables.component.css']
 })
 export class SelecvariablesComponent {
-  displayedColumns = ['NombreCampo', 'Kclient', "Capital", "Capital Vencido"];
+  displayedColumns = ['NombreCampo', 'Kclient', "Capital", "Capital Vencido", "Eliminar"];
   obtencionVariables: any
   editVar: any
   dataSource: any
@@ -34,6 +34,7 @@ export class SelecvariablesComponent {
   options = [];
   myColor = "#006400"
   checked=false
+  deleteId:any
 
 
 
@@ -42,12 +43,6 @@ export class SelecvariablesComponent {
   }
 
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-
-
-
-
 
 
   /**
@@ -56,7 +51,7 @@ export class SelecvariablesComponent {
    */
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+  
 
   }
 
@@ -76,19 +71,20 @@ export class SelecvariablesComponent {
 
     //validacioes de formulario
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: [this.cargaVariables.Name, Validators.required]
+      firstCtrl: ["", Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      m1: [this.cargaVariables.m1, Validators.required],
-      m2: [this.cargaVariables.m2, Validators.required],
-      m3: [this.cargaVariables.m3, Validators.required],
+     m1: [false, Validators.required],
+       m2: [false, Validators.required],
+      m3: [false, Validators.required],
     });
 
 
   }
 
 
-  changeState(e, a, i) {
+  changeState(e, a, i, x) {
+    console.log(x)
     if (a == true) {
       a = 0
     } else {
@@ -114,9 +110,9 @@ export class SelecvariablesComponent {
     this.dataImport.addItem(this.editVar, "select.php").subscribe(
       res => {
         this.obtencionVariables = res;
-        console.log(res)
+        //console.log(res)
         this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
-
+this.editVar=[]
       }
     )
     console.log(this.editVar)
@@ -137,11 +133,7 @@ refershVar(){
         this.options = Qvar[0]
         this.obtencionVariables = Qvar[1];
         this.dataSource = this.obtencionVariables;
-
-
-
-
-        console.log(this.obtencionVariables[1].m2)
+        
       })
   }
 
@@ -154,21 +146,36 @@ refershVar(){
           // console.log(res[0])
           this.obtencionVariables = res;
           this.getVariables()
-          console.log(res)
-          console.log(this.dataImport.answerInfo)
           this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
+        });
+      
+        this.firstFormGroup = this._formBuilder.group({
+          firstCtrl: ["", Validators.required]
+        });
+        this.secondFormGroup = this._formBuilder.group({
+         m1: [false, Validators.required],
+           m2: [false, Validators.required],
+          m3: [false, Validators.required],
         });
 
 
   }
 
   deleteItem(id) {
+    console.log(id)
+    this.deleteId={"id":id, "code":18}
+    console.log(this.deleteId)
+    console.log("prueba a")
+    this.dataImport.addItem(JSON.stringify(this.deleteId), "select.php")
+      .subscribe(
+        (res) => {
+          res;
+          // console.log(res[0])
+          this.obtencionVariables = res;
+          this.getVariables()
+          this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
+        });
 
-    this.dataImport
-      .deleteItem(id)
-      .subscribe(() => {
-        this.getVariables();
-      })
 
   }
 

@@ -1,14 +1,14 @@
 
 
 <div>
-<mat-horizontal-stepper class='input-size' [linear]="isLinear" #stepper="matHorizontalStepper">
-  <mat-step [stepControl]="firstFormGroup" completed="false">
+<mat-horizontal-stepper class='input-size' linear="true" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Seleccionar Variable</ng-template>
 
-      <mat-form-field>
-          <mat-select placeholder="Lista de Variables" (click)="refershVar()" [(ngModel)]="cargaVariables.name" formControlName="firstCtrl">
-            <mat-option *ngFor="let option of options" [value]="option">
+      <mat-form-field> 
+         <mat-select placeholder="Lista de Variables" (click)="refershVar()" [(ngModel)]="cargaVariables.name" formControlName="firstCtrl">
+            <mat-option *ngFor="let option of options" [value]="option"required>
               {{option}}
             </mat-option>
           </mat-select>
@@ -30,7 +30,7 @@
      <mat-slide-toggle formControlName="m2" color="primary"  [(ngModel)]="cargaVariables.m2" >Capital</mat-slide-toggle>
        </span>
        <span>
-       <mat-slide-toggle formControlName="m3"  color="primary"  [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
+       <mat-slide-toggle formControlName="m2"  color="primary"  [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
       </span>
       <div>
         <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
@@ -44,8 +44,8 @@
     <div>
       <br>
       <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-      <button mat-button (click)='AgregarVariable()'>Guardar <i class="material-icons">check</i></button>
-      <button mat-button  (click)="stepper.reset()"><i class="material-icons">add</i>Agregar una mas?</button>
+      <button mat-button (click)='AgregarVariable()' >Guardar <i class="material-icons">check</i></button>
+      <button mat-button  (click)="stepper.reset()"    (click)="AgregarVariable()"><i class="material-icons">add</i>Agregar una mas?</button>
 
     </div>
   </mat-step>
@@ -92,21 +92,27 @@
     <ng-container matColumnDef="Capital Vencido">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
       <mat-cell *matCellDef="let element">
-          <mat-slide-toggle 
-          color="primary"
-          (change)="changeState(element.Id, element.m3, 3)" (change)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
+          <mat-slide-toggle
+          color="primary" 
+          (change)="changeState(element.Id, element.m3, 3, $event)" (change)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
           <div *ngIf="element.m3==1">Activo</div>
           <div *ngIf="element.m3==0">Inactivo</div>
         </mat-slide-toggle>
      </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="Eliminar">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Eliminar Variable </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="deleteItem(element.Id)"><i class="material-icons">delete</i></button>
+
+       </mat-cell>
+      </ng-container>
 
 
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
-  </mat-paginator>
+
 </div>
 </div>

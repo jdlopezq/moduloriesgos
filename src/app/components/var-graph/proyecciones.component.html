@@ -1,33 +1,41 @@
 
 
-      <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
+
+
+
+
+
+<mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
           <mat-tab>
               <ng-template  mat-tab-label >  
                   <i class="material-icons" (click)='getInfoCharts("graphics.php")' style="font-size: 200px; color:#8C8C2A" >person</i>
-                  <div>Conocimeiento Del Cliente</div>
+                  <div>Conocimiento Del Cliente graphicsicv</div>
                 </ng-template>
-            <!-- <mat-card style="height: 150px" *ngIf="chartsReady">
-              <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
-            </mat-card>    -->
+
+           <!-- <img class="background" src="/assets/img/mountain.jpg" alt="">      -->
+           
 <br>
+<div class="container">
+
             <div class="card-columns">
                 <div class="card border-secondary example-container" style=" max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                         <div class="card-header">
                           <div class="row">
                             <span class="fill-remaining-space">{{data}}</span>
                             <span class="fill-remaining-space">
-                              <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', data )" checked="data==data">Activar</mat-slide-toggle></span>
+                              <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', nameVar[i], data )" checked="data==data">Activar</mat-slide-toggle>
+                            </span>
                           </div>
                         </div>
                         <div class="card-body scroll-box" >
-                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-                      <mat-slide-toggle [color]="Scolor" checked="{{Activate2}}" (change)='useOrnot($event, "graphics.php", data, nameVar[i][j], i)' >
-                      {{nameVar[i][j]}}</mat-slide-toggle></p>
+                    <p class="card-text example-container" *ngFor='let datos of controlPanName[i], let j =index'>
+                      <mat-slide-toggle [color]="Scolor" checked="" (change)='useOrnot($event, "graphics.php", data,controlPanName[i][j], i)' >
+                      {{controlPanName[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
                 
               </div>
-
+</div>
           </mat-tab>
           <mat-tab>
               <ng-template mat-tab-label>
@@ -39,29 +47,32 @@
                   <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
                 </mat-card>  
                 <br>
+                
+                <div class="container">
               <div class="card-columns">
-                  <div class="card border-info mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                  <div class="card border-secondary mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                           <div class="card-header">
                             
                               <div class="row">
                                   <span class="fill-remaining-space">{{data}}</span>
                                   <span class="fill-remaining-space">
-                                    <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                                    <!-- <mat-slide-toggle>Activar</mat-slide-toggle> -->
+                                  </span>
                                 </div>
                           </div>
-                          <div class="card-body text-info scroll-box " >
-                      <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'>
-                        <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot($event, "graphicsc.php", data, nameVar[i][j])' >
-                        {{nameVar[i][j]}}</mat-slide-toggle></p>
+                          <div class="card-body  scroll-box " >
+                      <p class="card-text " *ngFor='let datos of controlPanName[i], let j =index'>
+                        <mat-slide-toggle color="primary" checked="{{Activate2}}" (change)='useOrnot($event, "graphicsc.php", data, controlPanName[i][j])' >
+                        {{controlPanName[i][j]}}</mat-slide-toggle></p>
                     </div>
                   </div>
-                  
+                </div>
                 </div>
         
                
         
           </mat-tab>
-          <mat-tab    > 
+          <mat-tab (click)='getInfoCharts("graphicscv.php")'> 
               <ng-template mat-tab-label>
                   <i class="material-icons" style="font-size: 200px;  color: #75001F">priority_high</i>
                   <div>Capital Vencido</div>
@@ -70,32 +81,37 @@
               <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
             </mat-card> 
             <br>
-            
-
+            <div class="container">
+              
             <div class="card-columns">
-                <div class="card border-info mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
+                <div class="card border-secondary mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
                         <div class="card-header"> <div class="row">
                             <span class="fill-remaining-space">{{data}} </span>
                             <span class="fill-remaining-space">
-                              <mat-slide-toggle>Activar</mat-slide-toggle></span>
+                              <!-- <mat-slide-toggle>Activar</mat-slide-toggle> -->
+                            </span>
                           </div></div>
-                        <div class="card-body text-info scroll-box" >
-                    <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-                      <mat-slide-toggle color="primary" checked="{{nameVar[i][j]!==null}}" (click)='useOrnot($event, "graphicscv.php", data, nameVar[i][j])' >
-                      {{nameVar[i][j]}}</mat-slide-toggle></p>
+                        <div class="card-body scroll-box" >
+                    <p class="card-text example-container" *ngFor='let datos of controlPanName[i], let j =index'>
+                      <mat-slide-toggle color="primary" checked="{{Activate2}}" (change)='useOrnot($event, "graphicscv.php", data, controlPanName[i][j])' >
+                      {{controlPanName[i][j]}}</mat-slide-toggle></p>
                   </div>
                 </div>
                 
               </div>
-               
+            </div>
         </mat-tab>
+        
         </mat-tab-group>
    
 
 
-<div *ngIf="false" >
+<div *ngIf="!chartsReady" >
 <h1>Información: <small>Fábrica y Core</small> </h1>
    <hr> </div>  
+    <!-- <mat-card style="height: 150px" *ngIf="chartsReady">
+              <mat-spinner  style="margin:0 auto; height: 50px"></mat-spinner>
+            </mat-card>    -->
    
       <div class="col-sm-15" >
          <div class="card-columns card-graphic-columns" style="width:100%">
@@ -110,7 +126,7 @@
                                     [data]="doughnutChartData[i]"
                                     [labels]= "doughnutChartLabels[i]"
                                     [chartType]="doughnutChartType"
-                                    
+                                    [options]="options"
                                     ></canvas>
 
                   </div>

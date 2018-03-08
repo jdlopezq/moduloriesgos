@@ -29,7 +29,7 @@ export class PhpService {
   // }
 
 loadFile(file:FileItem[], page:string){
-  console.log(file);
+  console.log(file[0]);
   return this.http.post(this.dataHttp + page, file)
   .map((res) => {
     res;
@@ -63,6 +63,7 @@ graphRnew(info, page: string) {
   getItem(page) {
     return this.http.get(this.dataHttp + page)
       .map(res => {
+        console.log(res)
         this.checkMe = res.json();
 
         if (this.checkMe._body !== "0") {

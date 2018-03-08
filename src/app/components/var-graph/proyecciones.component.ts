@@ -7,6 +7,7 @@ import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService, dataInfo } from '../../services/php.service';
 import { Chart } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
+import {  } from "win";
 
 @Component({
   selector: 'app-proyecciones',
@@ -15,37 +16,37 @@ import { BaseChartDirective } from 'ng2-charts/ng2-charts';
   encapsulation: ViewEncapsulation.None
 })
 export class ProyeccionesComponent implements OnInit {
- 
+
   @ViewChildren(BaseChartDirective) charts: QueryList<BaseChartDirective>;
   Scolor = "primary"
   dataDB = [];
   dataDBn = [];
   totalVar = [];
   nameVar = [];
+  controlPanName=[]
   changeChart: any
   changeChartTab: number
-  Activate:any
-  Activate2:boolean;
+  Activate: any
+  Activate2: boolean;
   dynamicHeight = true;
-chartsReady: boolean = true;
+  chartsReady: boolean = true;
 
- 
+
 
 
   constructor(private dataPHP: PhpService) {
   }
 
-  
+
   ngOnInit() {
   }
 
 
 
   getInfoCharts(a: string) {
-    
     console.log(a)
     this.dataPHP.getItem(a).subscribe(datos => {
-     // console.log(datos)
+      // console.log(datos)
       if (datos.length == 0) {
         this.chartsReady = true;
         console.log('sin respuesta')
@@ -55,28 +56,23 @@ chartsReady: boolean = true;
       };
       this.nameVar = [];
       this.totalVar = [];
+      //this.controlPanName=[]
       this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
       this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
+      
       datos.shift();
       this.dataDB.forEach((name, i) => {
         this.nameVar.push(datos[i].map(it => it[name]))
         this.totalVar.push(datos[i].map(it => it["Total"]))
+        this.controlPanName.push(datos[i].map(it=>it[name]))
       })
-
-
-     this.doughnutChartData=this.totalVar
-     this.doughnutChartLabels=this.nameVar
-   
-      // console.log(this.nameVar);
-      // console.log(this.totalVar);
-
-
+      
+      this.doughnutChartData = this.totalVar
+      this.doughnutChartLabels = this.nameVar
+       console.log(this.nameVar);
+       console.log(this.totalVar);
     })
-  
   }
-
-
-
 
   tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
     if (tabChangeEvent.index == 0) {
@@ -89,104 +85,117 @@ chartsReady: boolean = true;
       this.changeChartTab = tabChangeEvent.index
       this.getInfoCharts("graphicscv.php")
     }
-    //console.log('index => ', tabChangeEvent);
   }
 
   test(e) {
     console.log(e)
   }
 
-useAll(f, a, e){
-  this.Activate2=f.checked;
-   console.log(f.checked);
-   if (f.checked) {
-     this.Activate = JSON.stringify({  "array": e,"code": 17 })
-   } else {
-     this.Activate = JSON.stringify({ "array": e, "code": 16})
-   }
-
-   this.dataPHP.graphRnew(this.Activate, a).subscribe(
-    datos => {
-datos;
-console.log(datos)
-
-    })
-
-    return this.Activate2
-}
-
-
-  useOrnot(f, a: string, e: string, d: string, i) {
-    this.changeChartTab
-   // console.log(f.checked)
+  useAll(f, a, e, d) {
+    this.Activate2 = f.checked;
+    console.log(f);
+    console.log(this.controlPanName)
+    console.log(this.nameVar)
     if (f.checked) {
-      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 15 })
+      this.Activate = JSON.stringify({ "array": e, "name":d, "code": 17 })
+      console.log(this.Activate)
     } else {
-      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
+      this.Activate = JSON.stringify({ "array": e, "name":d, "code": 16 })
+      console.log(this.Activate)
     }
-
-
-
-    this.dataPHP.graphRnew(this.changeChart, a).subscribe(
+    this.dataPHP.graphRnew(this.Activate, a).subscribe(
       datos => {
-        
-       
+        datos;
+        console.log(datos)
         console.log("Respuesta graficas: ")
         console.log(datos);
         this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
         this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
         this.nameVar = [];
         this.totalVar = [];
-    //     this.charts._results[i].data[i]=[]
-    // this.charts._results[i].labels[i]=[]
         datos.shift();
-        
         this.dataDB.forEach((name, i) => {
-          this.nameVar.push(datos[i].map(it=>it[name]))
+          this.nameVar.push(datos[i].map(it => it[name]))
           this.totalVar.push(datos[i].map(it => it["Total"]))
         })
+        for (let index = 0; index < this.charts._results.length; index++) {
+          this.charts._results[index].data = this.totalVar[index]
+          this.charts._results[index].labels = this.nameVar[index]
+           //this.charts._results[index].legend=false
+          this.charts._results[index].ngOnInit();
+         // console.log(this.charts._results[index]);
+      }})
+
+    return this.Activate2
+  }
 
 
-    
-    //  this.chart.data=this.totalVar[i]
-    //  this.chart.labels=this.nameVar[i]
-    //  this.chart.ngOnInit()
-    // this.charts._results[i].data=this.totalVar[i]
-    // this.charts._results[i].labels=this.nameVar[i]
-    // this.charts._results[i].legend=false
-
-
-    
-    for (let index = 0; index < this.charts._results.length; index++) {
-      this.charts._results[index].data=this.totalVar[index]
-      this.charts._results[index].labels=this.nameVar[index]
-      // this.charts._results[index].legend=false
-
-      this.charts._results[index].ngOnInit()
-     // const element = array[index];
-     
-
-
-     console.log(this.charts._results[index])
-    }
-     console.log(this.charts._results);
-      })
+  useOrnot(f, a: string, e: string, d: string, i) {
+    console.log(this.controlPanName)
+    console.log(this.nameVar)
+    this.changeChartTab
+    // console.log(f.checked)
+    if (f.checked) {
+      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 15 })
+      console.log(this.changeChart)
+    } else {
+      this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 14 })
+      console.log(this.changeChart)
       
-    
-   
-
     }
 
+    this.dataPHP.graphRnew(this.changeChart, a).subscribe(
+      datos => {
+        console.log("Respuesta graficas: ")
+        console.log(datos);
+        this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
+        this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
+        this.nameVar = [];
+        this.totalVar = [];
+        datos.shift();
+        this.dataDB.forEach((name, i) => {
+          this.nameVar.push(datos[i].map(it => it[name]))
+          this.totalVar.push(datos[i].map(it => it["Total"]))
+        })
+        for (let index = 0; index < this.charts._results.length; index++) {
+          this.charts._results[index].data = this.totalVar[index]
+          this.charts._results[index].labels = this.nameVar[index]
+         // this.charts._results[index] = this.nameVar[index]
+           //this.charts._results[index].legend=false
+          this.charts._results[index].ngOnInit();
+          console.log(this.charts._results[index]);
+        }
+        
+      })
+  }
+
+  // Doughnut
+  public doughnutChartLabels: string[] = [];
+  public doughnutChartData: number[] = [];
+  public doughnutChartType: string = 'doughnut';
+  public options:any={
+    layout: {
+      padding: {
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+      }
+  }, 
+  cutoutPercentage:70,
+  legend: {
+    position: "right",
+    labels: {
+      fontColor: 'black'
+    },
+    onClick: function(e, legendItem) {
+
+    //    Chart.defaults.doughnut.legend.onClick.apply(this, arguments);
+      console.log(legendItem)
+},
   
-   
-
-    
-
- 
-// Doughnut
-public doughnutChartLabels: string[] = [];
-public doughnutChartData: number[] = [];
-public doughnutChartType: string = 'doughnut';
+  },
+  }
 
 
 

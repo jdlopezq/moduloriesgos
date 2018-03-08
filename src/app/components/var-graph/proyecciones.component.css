@@ -1,14 +1,14 @@
-.card-graphic-columns {
-   column-count: 1;
-  }
+/* .card-graphic-columns {
+   column-count: 2;
+  } */
   .scroll-box {
     overflow-y: scroll;
     height: 130px;
     padding: 1rem
 }
-.fill-remaining-space {
+/* .fill-remaining-space {
   flex: 3 1 auto;
-}
+} */
 
 .mat-tab-label {
   min-width: 33% !important;
@@ -28,3 +28,15 @@
   color:black;
   font-weight: 700;
 }
+
+.background {
+  /*  making the video fullscreen  */
+   position: relative;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -23;
+  }

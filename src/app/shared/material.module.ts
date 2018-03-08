@@ -15,6 +15,7 @@ import {
     MatRadioModule,
     MatOptionModule,
     MatSelectModule,
+    MatButtonToggleModule,
     MatInputModule,
     MatSlideToggleModule,
     MatSnackBarModule,
@@ -34,6 +35,7 @@ import {FormsModule, ReactiveFormsModule, } from '@angular/forms'
 import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
     imports: [MatButtonModule,
+        MatButtonToggleModule,
         MatCheckboxModule,
         MatGridListModule,
         MatListModule,
@@ -60,6 +62,7 @@ import {MatMenuModule} from '@angular/material/menu';
         MatProgressSpinnerModule
        ],
     exports: [MatButtonModule,
+        MatButtonToggleModule,
         MatCheckboxModule,
         MatGridListModule,
         MatListModule,
