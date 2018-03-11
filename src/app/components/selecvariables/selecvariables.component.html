@@ -1,118 +1,131 @@
+<div class="row">
+  <div class="col-md-8">
+    <mat-horizontal-stepper class='input-size' linear="true" #stepper="matHorizontalStepper">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Seleccionar Variable</ng-template>
 
+          <mat-form-field>
+            <mat-select placeholder="Lista de Variables" (click)="refershVar()" [(ngModel)]="cargaVariables.name" formControlName="firstCtrl">
+              <mat-option *ngFor="let option of options" [value]="option" required>
+                {{option}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext (click)="test()">Siguiente
+              <i class="material-icons">navigate_next</i>
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Parametrizar Variable</ng-template>
+          <span>
+            <mat-slide-toggle formControlName="m1" (change)="test()" color="primary" [(ngModel)]="cargaVariables.m1">Conociendo Mi Cliente</mat-slide-toggle>
+          </span>
+          <span>
+            <mat-slide-toggle formControlName="m2" (change)="test()" color="primary" [(ngModel)]="cargaVariables.m2">Capital</mat-slide-toggle>
+          </span>
+          <span>
+            <mat-slide-toggle formControlName="m3" (change)="test()" color="primary" [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
+          </span>
+          <div>
+            <button mat-button matStepperPrevious>
+              <i class="material-icons">navigate_before</i>Atras</button>
+            <button mat-button matStepperNext color=success disabled={{next}} (click)="test()">Siguiente
+              <i class="material-icons">navigate_next</i>
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step >
+        <ng-template matStepLabel>Agregar</ng-template>
+        Agregar Variable?
+        <div>
+          <br>
+          <button mat-button matStepperPrevious>
+            <i class="material-icons">navigate_before</i>Atras</button>
+          <button mat-button (click)='AgregarVariable()'>Guardar
+            <i class="material-icons">check</i>
+          </button>
+          <button mat-button (click)="stepper.reset()" (click)="AgregarVariable()">
+            <i class="material-icons">add</i>Agregar una mas?</button>
 
-<div>
-<mat-horizontal-stepper class='input-size' linear="true" #stepper="matHorizontalStepper">
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Seleccionar Variable</ng-template>
-
-      <mat-form-field> 
-         <mat-select placeholder="Lista de Variables" (click)="refershVar()" [(ngModel)]="cargaVariables.name" formControlName="firstCtrl">
-            <mat-option *ngFor="let option of options" [value]="option"required>
-              {{option}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-    
-      <div>
-        <button mat-button matStepperNext>Siguiente<i class="material-icons">navigate_next</i></button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Parametrizar Variable</ng-template>
-      <span>
-      <mat-slide-toggle formControlName="m1" color="primary"  [(ngModel)]="cargaVariables.m1" >Conociendo Mi Cliente</mat-slide-toggle>
-      </span>
-      <span>
-     <mat-slide-toggle formControlName="m2" color="primary"  [(ngModel)]="cargaVariables.m2" >Capital</mat-slide-toggle>
-       </span>
-       <span>
-       <mat-slide-toggle formControlName="m2"  color="primary"  [(ngModel)]="cargaVariables.m3">Capital Vencido</mat-slide-toggle>
-      </span>
-      <div>
-        <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-        <button mat-button matStepperNext color=success>Siguiente<i class="material-icons">navigate_next</i></button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Agregar</ng-template>
-    Agregar Variable?
-    <div>
-      <br>
-      <button mat-button matStepperPrevious><i class="material-icons">navigate_before</i>Atras</button>
-      <button mat-button (click)='AgregarVariable()' >Guardar <i class="material-icons">check</i></button>
-      <button mat-button  (click)="stepper.reset()"    (click)="AgregarVariable()"><i class="material-icons">add</i>Agregar una mas?</button>
-
-    </div>
-  </mat-step>
-</mat-horizontal-stepper>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div></div>
+  <div class="row">
+  <div class="col-md-8">
+    <button mat-button	>
+        <i class="material-icons" style="color:  #75001F">delete_forever</i>
+      Borrar Todas Las variables</button>
+  </div>
 </div>
 
+
 <div class="container-fluid">
-<div class="mat-elevation-z8" class="mat-form-field" >
-  <mat-table #table [dataSource]="dataSource"  matSort>
+  <div class="mat-elevation-z8" class="mat-form-field">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-    <!-- Nombre Column -->
-    <ng-container matColumnDef="NombreCampo">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
-    </ng-container>
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="NombreCampo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+      </ng-container>
 
-     <!-- Name Column -->
-    <ng-container matColumnDef="Kclient">
+      <!-- Name Column -->
+      <ng-container matColumnDef="Kclient">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Conociedo Mi cliente</mat-header-cell>
-        <mat-cell *matCellDef="let element"> 
-            <mat-slide-toggle 
-            color="primary"
-            (change)="changeState(element.Id, element.m1, 1)" (change)="refershVar()" checked="{{element.m1==1}}" labelPosition="after">
+        <mat-cell *matCellDef="let element">
+          <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m1, 1)" (change)="refershVar()" checked="{{element.m1==1}}"
+            labelPosition="after">
             <div *ngIf="element.m1==1">Activo</div>
             <div *ngIf="element.m1==0">Inactivo</div>
-          </mat-slide-toggle> 
+          </mat-slide-toggle>
         </mat-cell>
       </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="Capital" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-          <mat-slide-toggle 
-          color="primary"
-          (change)="changeState(element.Id, element.m2, 2)" (change)="refershVar()" checked="{{element.m2==1}}" labelPosition="after">
-          <div *ngIf="element.m2==1">Activo</div>
-          <div *ngIf="element.m2==0">Inactivo</div>
-        </mat-slide-toggle>
-      </mat-cell>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="Capital">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m2, 2)" (change)="refershVar()" checked="{{element.m2==1}}"
+            labelPosition="after">
+            <div *ngIf="element.m2==1">Activo</div>
+            <div *ngIf="element.m2==0">Inactivo</div>
+          </mat-slide-toggle>
+        </mat-cell>
+      </ng-container>
 
-    <!--Borrar Column --> 
-    <ng-container matColumnDef="Capital Vencido">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-          <mat-slide-toggle
-          color="primary" 
-          (change)="changeState(element.Id, element.m3, 3, $event)" (change)="refershVar()" checked="{{element.m3==1}}" labelPosition="after">
-          <div *ngIf="element.m3==1">Activo</div>
-          <div *ngIf="element.m3==0">Inactivo</div>
-        </mat-slide-toggle>
-     </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="Eliminar">
+      <!--Borrar Column -->
+      <ng-container matColumnDef="Capital Vencido">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m3, 3, $event)" (change)="refershVar()" checked="{{element.m3==1}}"
+            labelPosition="after">
+            <div *ngIf="element.m3==1">Activo</div>
+            <div *ngIf="element.m3==0">Inactivo</div>
+          </mat-slide-toggle>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Eliminar">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Eliminar Variable </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-icon-button (click)="deleteItem(element.Id)"><i class="material-icons">delete</i></button>
+          <button mat-icon-button (click)="deleteItem(element.Id)">
+            <i class="material-icons" style="color:  #75001F">delete</i>
+          </button>
 
-       </mat-cell>
+        </mat-cell>
       </ng-container>
 
 
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 
-</div>
+  </div>
 </div>

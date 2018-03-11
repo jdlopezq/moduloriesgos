@@ -26,7 +26,8 @@ import {
  MatChipsModule,
  MatExpansionModule,
  MatTabsModule,
- MatProgressSpinnerModule
+ MatProgressSpinnerModule,
+ MatSidenavModule
  
     
     
@@ -59,7 +60,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatAutocompleteModule,
         MatExpansionModule,
         MatTabsModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSidenavModule
        ],
     exports: [MatButtonModule,
         MatButtonToggleModule,
@@ -88,7 +90,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatAutocompleteModule,
         MatExpansionModule,
         MatTabsModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSidenavModule
         
     ],
     providers: [],

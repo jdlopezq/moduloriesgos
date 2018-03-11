@@ -1,14 +1,14 @@
 export class FileItem{
  
     public file:File;
-    public fileName:string;
+    public nombre:string;
     public url: string
     public isLoading:boolean
     public progress:number;
 
     constructor( file:File){
         this.file=file;
-        this.fileName=file.name;
+        this.nombre=file.name;
          this.progress=0;
          this.isLoading=false
 

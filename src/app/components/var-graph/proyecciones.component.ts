@@ -7,7 +7,7 @@ import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService, dataInfo } from '../../services/php.service';
 import { Chart } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
-import {  } from "win";
+
 
 @Component({
   selector: 'app-proyecciones',
@@ -30,6 +30,7 @@ export class ProyeccionesComponent implements OnInit {
   Activate2: boolean;
   dynamicHeight = true;
   chartsReady: boolean = true;
+  varChange:any;
 
 
 
@@ -39,6 +40,7 @@ export class ProyeccionesComponent implements OnInit {
 
 
   ngOnInit() {
+    
   }
 
 
@@ -56,7 +58,6 @@ export class ProyeccionesComponent implements OnInit {
       };
       this.nameVar = [];
       this.totalVar = [];
-      //this.controlPanName=[]
       this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
       this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
       
@@ -106,7 +107,6 @@ export class ProyeccionesComponent implements OnInit {
     this.dataPHP.graphRnew(this.Activate, a).subscribe(
       datos => {
         datos;
-        console.log(datos)
         console.log("Respuesta graficas: ")
         console.log(datos);
         this.dataDBn = datos.length > 0 ? Object.values(datos[0][0]) : [];
@@ -123,17 +123,15 @@ export class ProyeccionesComponent implements OnInit {
           this.charts._results[index].labels = this.nameVar[index]
            //this.charts._results[index].legend=false
           this.charts._results[index].ngOnInit();
-         // console.log(this.charts._results[index]);
+          console.log(this.charts._results[index]);
       }})
-
-    return this.Activate2
   }
 
 
   useOrnot(f, a: string, e: string, d: string, i) {
     console.log(this.controlPanName)
     console.log(this.nameVar)
-    this.changeChartTab
+    this.varChange=this.totalVar
     // console.log(f.checked)
     if (f.checked) {
       this.changeChart = JSON.stringify({ "array": e, "name": d, "code": 15 })
@@ -152,20 +150,30 @@ export class ProyeccionesComponent implements OnInit {
         this.dataDB = datos.length > 0 ? Object.values(datos[0][1]) : [];
         this.nameVar = [];
         this.totalVar = [];
-        datos.shift();
+       datos.shift();
         this.dataDB.forEach((name, i) => {
           this.nameVar.push(datos[i].map(it => it[name]))
           this.totalVar.push(datos[i].map(it => it["Total"]))
         })
         for (let index = 0; index < this.charts._results.length; index++) {
-          this.charts._results[index].data = this.totalVar[index]
+         // console.log(this.totalVar)
+
+          for (let i = 0; i < this.totalVar.length; i++) {
+          //   if(this.totalVar[index][i]==null){
+          //  this.nameVar[index][i]=""
+          //  //console.log(this.nameVar)
+          // }
+            
+          }
+          
+          this.charts._results[index].data = this.totalVar[index] 
           this.charts._results[index].labels = this.nameVar[index]
          // this.charts._results[index] = this.nameVar[index]
            //this.charts._results[index].legend=false
           this.charts._results[index].ngOnInit();
-          console.log(this.charts._results[index]);
+         
         }
-        
+         console.log(this.charts._results);
       })
   }
 
@@ -188,11 +196,6 @@ export class ProyeccionesComponent implements OnInit {
     labels: {
       fontColor: 'black'
     },
-    onClick: function(e, legendItem) {
-
-    //    Chart.defaults.doughnut.legend.onClick.apply(this, arguments);
-      console.log(legendItem)
-},
   
   },
   }

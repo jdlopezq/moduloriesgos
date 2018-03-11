@@ -1,1 +1,25 @@
-Hola como estan todos 
+<div class="col-sm-15" >
+        <div class="card-columns card-graphic-columns" style="width:100%">
+            <div class="card animated fadeIn fast " *ngFor="let graficas of dataICV, let i = index">
+              
+             <img class="card-img-top" >
+               <div class="card-body "  >
+                  <h5 class="card-title">{{dataImpo[i].tipo1}}</h5>
+                   <div class="container">
+                     
+                      <canvas baseChart width="400" height="400"#baseChart="base-chart"
+                      [datasets]="lineChartData"
+                      [labels]="lineChartLabels"
+                      [options]="lineChartOptions"
+                      [colors]="lineChartColors"
+                      [legend]="lineChartLegend"
+                      [chartType]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+
+                 </div>
+               </div>
+             </div>
+
+</div>   
+</div>

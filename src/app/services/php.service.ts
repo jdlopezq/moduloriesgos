@@ -12,11 +12,12 @@ export class PhpService {
   graphResp:any
 
   constructor(private http: Http) { }
-  dataHttp: string = "//10.191.225.154/server/";
-  dataHttpTest: string = "../backEnd/";
+   dataHttp: string = "//10.191.225.154/server/";
+ // dataHttp:string="//192.168.1.107/server/";
+  ataHttpTest: string = "../backEnd/";
   answerInfo= new dataInfo;
   answerGet: any[];
-
+  filetosend:any
 
   // getDataPHP(page) {
   //   return this.http.get(this.dataHttp+page)
@@ -27,12 +28,31 @@ export class PhpService {
   //       return this.answerGet
   //     });
   // }
+  
 
-loadFile(file:FileItem[], page:string){
-  console.log(file[0]);
-  return this.http.post(this.dataHttp + page, file)
+//   postFile(fileToUpload: File) {
+//     const endpoint = '//10.191.225.154/server/cargar.php';
+//     const formData: FormData = new FormData();
+//     formData.append('fileKey', fileToUpload, fileToUpload.name);
+//     console.log(formData.append('fileKey', fileToUpload, fileToUpload.name))
+//     return this.http
+//       .post(endpoint, formData)
+//       .map(() => { return true; })
+      
+// }
+
+
+
+loadFile(file, page:string){
+
+// this.filetosend=JSON.stringify({n:"25"} )
+ console.log(file)
+
+
+  return this.http.post(this.dataHttp +page,  file)
   .map((res) => {
     res;
+    console.log(res)
     this.answerInfo = res.json(); 
     return this.answerInfo;
   });

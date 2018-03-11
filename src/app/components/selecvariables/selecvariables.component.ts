@@ -35,6 +35,7 @@ export class SelecvariablesComponent {
   myColor = "#006400"
   checked=false
   deleteId:any
+  next=true;
 
 
 
@@ -54,7 +55,18 @@ export class SelecvariablesComponent {
   
 
   }
-
+test(){
+  console.log(this.firstFormGroup)
+  console.log(this.secondFormGroup)
+  console.log(this.cargaVariables)
+  if(this.cargaVariables.m1==false&&this.cargaVariables.m2==false&&this.cargaVariables.m3==false){
+  this.next=true
+  
+  console.log(this.cargaVariables)
+}else{
+  this.next=false
+}
+}
 
   ngOnInit() {
     this.getVariables();
@@ -71,12 +83,14 @@ export class SelecvariablesComponent {
 
     //validacioes de formulario
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ["", Validators.required]
+      firstCtrl: ["",  Validators.required]
     });
+  
     this.secondFormGroup = this._formBuilder.group({
-     m1: [false, Validators.required],
-       m2: [false, Validators.required],
-      m3: [false, Validators.required],
+    
+     m1: ["touched", Validators.required],
+       m2: [null, Validators.required],
+      m3: [null, Validators.required],
     });
 
 
@@ -87,7 +101,7 @@ export class SelecvariablesComponent {
     console.log(x)
     if (a == true) {
       a = 0
-    } else {
+    } else{
       a = 1
     }
 
@@ -148,17 +162,6 @@ refershVar(){
           this.getVariables()
           this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
         });
-      
-        this.firstFormGroup = this._formBuilder.group({
-          firstCtrl: ["", Validators.required]
-        });
-        this.secondFormGroup = this._formBuilder.group({
-         m1: [false, Validators.required],
-           m2: [false, Validators.required],
-          m3: [false, Validators.required],
-        });
-
-
   }
 
   deleteItem(id) {
@@ -202,7 +205,7 @@ export class addItem {
   Name: string;
   m1: boolean = false;
   m2: boolean = false;
-  m3: boolean = false
+  m3: boolean = false;
   code: string = '12';
 }
 

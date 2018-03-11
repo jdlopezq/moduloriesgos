@@ -76,14 +76,14 @@ export class NgDropFilesDirective {
   private _ValidFile(tipoArchivo: string): boolean {
     console.log(tipoArchivo)
     return (tipoArchivo === '' || tipoArchivo === undefined) ? 
-    false : tipoArchivo.startsWith('');
+    false : tipoArchivo.startsWith('application/vnd.ms-excel');
   }
 
 
 
   private _fileExist(nameFile: string): boolean {
     for (const archivo of this.archivos) {
-      if (archivo.fileName == nameFile) {
+      if (archivo.nombre== nameFile) {
         console.log("El archivo " + nameFile + "ya existe");
         return true;
       } return false;
