@@ -47,7 +47,7 @@
 
       </table>
 
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name">
@@ -58,9 +58,21 @@
             <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
           </div>
           <button type="submit"  class="btn btn-success">Submit <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
-        </form>
+        </form> -->
 
-        <input type="file" >
+        <!-- <input type="file" > -->
+
+<div class="text-center">
+  <label class="btn btn-default">Subir Archivo
+    <input type="file" hidden (change)="uploadFile($event)">
+  </label>
+
+</div>
+
+
+
+
+
     </div>
 </div>
 </mat-card>
