@@ -27,7 +27,9 @@ import {
  MatExpansionModule,
  MatTabsModule,
  MatProgressSpinnerModule,
- MatSidenavModule
+ MatSidenavModule,
+ MatDatepickerModule,
+ MatNativeDateModule
  
     
     
@@ -61,7 +63,9 @@ import {MatMenuModule} from '@angular/material/menu';
         MatExpansionModule,
         MatTabsModule,
         MatProgressSpinnerModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatDatepickerModule,
+        MatNativeDateModule
        ],
     exports: [MatButtonModule,
         MatButtonToggleModule,
@@ -91,7 +95,10 @@ import {MatMenuModule} from '@angular/material/menu';
         MatExpansionModule,
         MatTabsModule,
         MatProgressSpinnerModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        
         
     ],
     providers: [],

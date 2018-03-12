@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../../services/utility.service';
-import { Routes, Router } from '@angular/router';
+import { Routes, Router, ActivatedRoute } from '@angular/router';
 import { window } from 'rxjs/operators';
 ;
 
@@ -46,7 +46,9 @@ logOut(){
 }
 
 reload(){
+
   window.reload();
+ 
 }
 
 

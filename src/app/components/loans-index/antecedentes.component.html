@@ -1,15 +1,39 @@
+<img class="background fondo"  alt="">    
+
+
+<div class="container text-center">
+<mat-form-field>
+    <input matInput [matDatepicker]="picker1" placeholder="Angular forms" [formControl]="date">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker2" placeholder="Angular forms (w/ deserialization)"
+           [formControl]="serializedDate">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker3" placeholder="Value binding" [value]="date.value">
+    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+    <mat-datepicker #picker3></mat-datepicker>
+  </mat-form-field>
+</div>
+
 <div class="col-sm-15" >
         <div class="card-columns card-graphic-columns" style="width:100%">
-            <div class="card animated fadeIn fast " *ngFor="let graficas of dataICV, let i = index">
+            <div class="card animated fadeIn fast " *ngFor="let graficas of labels, let i = index">
               
              <img class="card-img-top" >
                <div class="card-body "  >
-                  <h5 class="card-title">{{dataImpo[i].tipo1}}</h5>
+                  <h5 class="card-title">{{labels[i]}}</h5>
                    <div class="container">
                      
-                      <canvas baseChart width="400" height="400"#baseChart="base-chart"
-                      [datasets]="lineChartData"
-                      [labels]="lineChartLabels"
+                      <canvas baseChart width="400" height="400" 
+                      [datasets]="lineChartData[i]"
+                      [labels]="lineChartLabels[i]"
                       [options]="lineChartOptions"
                       [colors]="lineChartColors"
                       [legend]="lineChartLegend"

@@ -128,6 +128,18 @@ export class ProyeccionesComponent implements OnInit {
   }
 
 
+downloadFile(a){
+ let pageDWL=JSON.stringify({"code":a})
+  this.dataPHP.downloadItem(pageDWL, "export.php").subscribe(blob=>{
+    var link=document.createElement('a');
+    link.href=window.URL.createObjectURL(blob);
+    link.download="datos.xls";
+    link.click();
+  })
+}
+
+
+
   useOrnot(f, a: string, e: string, d: string, i) {
     console.log(this.controlPanName)
     console.log(this.nameVar)

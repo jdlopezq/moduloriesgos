@@ -19,6 +19,7 @@ export class PhpService {
   answerGet: any[];
   filetosend:any
 
+
   // getDataPHP(page) {
   //   return this.http.get(this.dataHttp+page)
   //     .map(Response => {
@@ -70,6 +71,20 @@ graphRnew(info, page: string) {
 }
 
 
+downloadItem(info, page: string) {
+  
+  return this.http.post(this.dataHttp + page, info)
+    .map((response) => { // download file
+
+      console.log(response)
+      var blob = new Blob([(<any>response)._body], { type: "aplication/vnd.ms-exel" });
+      var filename = 'file.pdf';
+      console.log(blob)
+     return blob
+}
+      
+    );
+}
 
   addItem(info, page: string) {
     return this.http.post(this.dataHttp + page, info)

@@ -1,3 +1,6 @@
+<img class="background fondo"  alt="">   
+
+
 <div class="row">
   <div class="col-md-8">
     <mat-horizontal-stepper class='input-size' linear="true" #stepper="matHorizontalStepper">
@@ -59,7 +62,7 @@
   </div></div>
   <div class="row">
   <div class="col-md-8">
-    <button mat-button	>
+    <button mat-button (click)="deleteAll()"	>
         <i class="material-icons" style="color:  #75001F">delete_forever</i>
       Borrar Todas Las variables</button>
   </div>

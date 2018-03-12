@@ -88,9 +88,9 @@ test(){
   
     this.secondFormGroup = this._formBuilder.group({
     
-     m1: ["touched", Validators.required],
-       m2: [null, Validators.required],
-      m3: [null, Validators.required],
+      m1: ["", Validators.required],
+      m2: ["", Validators.required],
+      m3: ["", Validators.required],
     });
 
 
@@ -162,6 +162,22 @@ refershVar(){
           this.getVariables()
           this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
         });
+  }
+
+  deleteAll(){
+    this.deleteId={"code":19}
+    console.log(this.deleteId)
+    console.log("prueba a")
+    this.dataImport.addItem(JSON.stringify(this.deleteId), "select.php")
+      .subscribe(
+        (res) => {
+          res;
+          // console.log(res[0])
+          this.obtencionVariables = res;
+          this.getVariables()
+          this.openSnackBar("¡Atención!", this.dataImport.answerInfo.info)
+        });
+
   }
 
   deleteItem(id) {
