@@ -18,50 +18,47 @@ export class AntecedentesComponent implements OnInit {
   }
   @ViewChildren(BaseChartDirective) charts: QueryList<BaseChartDirective>;
   dataImpo = []
-  labels = []
-  dataICV = [[new indice]]
-  objectGen=[{data:[],label:[]}]
+  labels
+  dataICV = []
+  objectGen = []
+  keyvalue=[];
 
 
   ngOnInit() {
     this.dataPHP.getItem("graphicsicv.php").subscribe(datos => {
-      //console.log(datos);
+      console.log(datos);
       this.dataImpo = datos
       this.labels = datos.length > 0 ? Object.values(datos[0]) : [];
-      datos.shift();
-      //  this.dataImpo = datos.length > 0 ? Object.values(datos) : [];
 
-      this.dataICV = datos
-
-
-
-
-      for (let i = 0; i < this.dataICV.length; i++) {
-        let dates = []
-        let data = []
-        let label = []
-        for (let j = 0; j < this.dataICV[i].length; j++) {
-          this.objectGen[i]
-          let datanu = this.dataICV[i][j].icv
-          let datesn = this.dataICV[i][j].Date
-          let labeln = this.dataICV[i][j].tipo2
-          dates[j] = datesn
-          data[j] = datanu
-          label[j]=labeln
-
-          this.lineChartData[i] = [
-            {data: data, label:label[i]}, 
-            {data: data, label:label[i]}
-          ]
-          this.lineChartLabels[i] = dates
-        }
-        //console.log(data)
-        console.log(this.objectGen)
-        //console.log(this.lineChartData[i])
+      for (let i = 1; i < this.dataImpo.length; i++) {
+        this.dataICV[i] = Object.values(this.dataImpo[i][i])
+         this.keyvalue[i] = Object.keys(this.dataImpo[i][i])
       }
 
+   
 
 
+      this.dataICV.shift()
+      this.keyvalue.shift()
+      for (let i = 0; i < this.dataICV.length; i++) {
+        for (let j = 0; j < this.dataICV[i].length; j++) {
+          this.objectGen[i]=[{data:this.dataICV[i][j].icv, label:this.keyvalue[i][j]}]
+           
+        }
+      }    
+
+
+for (let i = 0; i < this.dataICV.length; i++) {
+  for (let j = 0; j < this.dataICV[i].length; j++) {
+    this.lineChartData[i]=this.objectGen[i]
+      this.lineChartLabels[i]=this.dataICV[i][j].Date 
+  }
+}
+      
+      console.log(this.objectGen)
+  
+      console.log(this.dataICV[0][0].icv)
+      console.log(this.charts)
     })
 
   }
@@ -70,9 +67,9 @@ export class AntecedentesComponent implements OnInit {
   // lineChart
   lineChartData: Array<any> = [
 
-    { data: [14.32, 14.03, 13.55, 13.62, 13.66, 13.65, 13.7, 13.54], label: 'General' },
+    { data: ["14.32"], label: 'Sin Grafica' },
   ];
-  public lineChartLabels: Array<any> = [];
+  public lineChartLabels: Array<any> = ["2017-06-30"];
 
   public lineChartOptions: any = {
     responsive: true,
@@ -95,6 +92,5 @@ export class AntecedentesComponent implements OnInit {
 
 export class indice {
   icv: string;
-  tipo2: string;
   Date: string;
 }

@@ -1,67 +1,75 @@
+<img class="background fondo" alt="">
+
 <br>
-
-<mat-card class="container containerBkg mat-elevation-z8 ">
-  <mat-toolbar class='positionABS' style="background-color: #1C3D7F; font: Helvetica">
-    <span class="fill-remaining-space" style="color: rgb(255, 255, 255)">Carga de Archivos </span>
-  </mat-toolbar>
-  <div class="row">
-    <!-- <div class="col-md-4">
-      <h4>Seleccione Archivos</h4>
-      <div appNgDropFiles 
-      (mouseAbove)="overDrop=($event)"
-      [archivos]="archivos"
-       class="well drop-zone" 
-       [ngClass]="{'file-over':overDrop}">
-          <i class="material-icons" style="font-size: 80px">insert_drive_file</i>
-        <h4>Arrastre Aqui los Archivos</h4>
-
-      </div>
-    </div> -->
+<div class="container-fluid">
+  <mat-card class="container containerBkg mat-elevation-z8 ">
+    <mat-toolbar class='positionABS' style="background-color: #1C3D7F; font: Helvetica">
+      <span class="fill-remaining-space" style="color: rgb(255, 255, 255)">Carga de Archivos </span>
+    </mat-toolbar>
+    <br>
 
 
 
-    <div class="col-md-8">
-      <!-- <h5>Cargar Archivos</h5>
-      <div></div>
-      <button mat-raised-button (click)="sendData()" [disabled]="archivos.length===0">
-        <i class="material-icons">file_upload</i>Cargar
+    <div class="text-center">
+
+      <button mat-raised-button (click)="FileInput.click()">Buscar Archivo
+        <i class="material-icons" style="z-index: 4;">search</i>
       </button>
-      <button mat-raised-button><i class="material-icons">clear</i>Limpiar</button> -->
+      <input hidden type="file" #FileInput (change)="uploadFile($event)" />
+      <input type="text" placeholder="Selccionar Archivo" [value]="fileShow" disabled="false">
+     
+      <mat-form-field>
+        <mat-select placeholder="Variable a Asociar" [(ngModel)]="selectedValue" name="food">
+          <mat-option *ngFor="let list of varList" [value]="list">
+            {{list.Name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Numero de Columna">
+      </mat-form-field>
+ <button mat-raised-button (click)="sendData()">Cargar</button>
 
-      <!-- <table class="table">
+
+      <table class="table">
         <thead class="thead=dark">
           <tr>
             <th>Nombre Archivo</th>
             <th>Tamaño</th>
-            <th>Progreso</th>
+            <th>Asociar a Columna</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let archivo of archivos">
-            <td>{{archivo.nombre}}</td>
-            <td>{{archivo.file.size/1024 | number: '.2-2'}} Kb</td>
+          <tr *ngFor="let archivo of fileinServ; let i =index ">
+            <td>{{i+1}}.{{fileinServ[i].Name}}</td>
+            <td> {{archivo.Name}}</td>
             <td>
-              <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Favorite food" value="Sushi">
+                </mat-form-field>
+              </form>
+            </td>
+            <td>
+              <button mat-icon-button>
+                <i class="material-icons">delete</i>
+              </button>
+
             </td>
           </tr>
         </tbody>
 
 
-      </table> -->
-
-      
-
-<div class="text-center">
-  <label class="btn btn-default">Subir Archivo:
-    <input type="file"  (change)="uploadFile($event)">
-  </label>
-<!-- <button mat-button (click)="uploadFile($event)">Cargar</button> -->
-</div>
-
-
-
-
+      </table>
 
     </div>
+
+
+
+
+
+
+
+  </mat-card>
 </div>
-</mat-card>

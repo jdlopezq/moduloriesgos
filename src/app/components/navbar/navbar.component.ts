@@ -47,7 +47,7 @@ logOut(){
 
 reload(){
 
-  window.reload();
+  location.reload();;
  
 }
 

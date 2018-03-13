@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <mat-horizontal-stepper class='input-size' linear="true" #stepper="matHorizontalStepper">
+    <mat-horizontal-stepper class='input-size' style="background-color:transparent" linear="true" #stepper="matHorizontalStepper">
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>Seleccionar Variable</ng-template>
@@ -50,11 +50,13 @@
           <br>
           <button mat-button matStepperPrevious>
             <i class="material-icons">navigate_before</i>Atras</button>
-          <button mat-button (click)='AgregarVariable()'>Guardar
+          <button mat-button (click)='AgregarVariable()'>Si
             <i class="material-icons">check</i>
           </button>
-          <button mat-button (click)="stepper.reset()" (click)="AgregarVariable()">
-            <i class="material-icons">add</i>Agregar una mas?</button>
+          <button mat-button (click)="stepper.previous(2)" (click)="AgregarVariable()">
+            <i class="material-icons">add</i>Agregar una más</button>
+            <button mat-button (click)="stepper.reset()" (click)="AgregarVariable()">
+                <i class="material-icons">close</i>Limpiar</button>
 
         </div>
       </mat-step>
@@ -71,7 +73,7 @@
 
 <div class="container-fluid">
   <div class="mat-elevation-z8" class="mat-form-field">
-    <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-table #table [dataSource]="dataSource" matSort  style="background-color:transparent">
 
       <!-- Nombre Column -->
       <ng-container matColumnDef="NombreCampo">

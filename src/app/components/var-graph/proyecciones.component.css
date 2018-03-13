@@ -2,9 +2,9 @@
    column-count: 1;
   }
 
-.var-control{
-  column-count: 4;
-}
+/* .var-control{
+  column-count: auto;
+} */
 
   .scroll-box {
     overflow-y: scroll;
