@@ -76,8 +76,8 @@
           </div>
         </div>
       </div>
-      <button mat-icon-button *ngIf="!chartsReady">
-        <i class="material-icons" style=" color: #3A2A19" (click)="downloadFile(2)">file_download</i>Descaragar Datos</button>
+      <button mat-button *ngIf="!chartsReady" (click)="downloadFile(2)">
+        <i class="material-icons" style=" color: #3A2A19" >file_download</i>Descaragar Datos</button>
 
     </div>
 
@@ -115,8 +115,8 @@
         </div>
 
       </div>
-      <button mat-icon-button *ngIf="!chartsReady">
-        <i class="material-icons" style=" color: #75001F" (click)="downloadFile(3)">file_download</i>Descaragar Datos</button>
+      <button mat-button *ngIf="!chartsReady"(click)="downloadFile(3)">
+        <i class="material-icons" style=" color: #75001F" >file_download</i>Descaragar Datos</button>
 
     </div>
   </mat-tab>
