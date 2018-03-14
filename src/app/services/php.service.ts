@@ -9,15 +9,15 @@ import { FileItem } from '../shared/file.model';
 export class PhpService {
   dataImport: any;
   checkMe: any
-  graphResp:any
+  graphResp: any
 
   constructor(private http: Http) { }
   // dataHttp: string = "//10.191.225.154/server/";
-  dataHttp:string="//192.168.1.110/server/";
+  dataHttp: string = "//localhost/server/";
   ataHttpTest: string = "../backEnd/";
-  answerInfo= new dataInfo;
+  answerInfo = new dataInfo;
   answerGet: any[];
-  filetosend:any
+  filetosend: any
 
 
   // getDataPHP(page) {
@@ -29,68 +29,63 @@ export class PhpService {
   //       return this.answerGet
   //     });
   // }
-  
-
-//   postFile(fileToUpload: File) {
-//     const endpoint = '//10.191.225.154/server/cargar.php';
-//     const formData: FormData = new FormData();
-//     formData.append('fileKey', fileToUpload, fileToUpload.name);
-//     console.log(formData.append('fileKey', fileToUpload, fileToUpload.name))
-//     return this.http
-//       .post(endpoint, formData)
-//       .map(() => { return true; })
-      
-// }
 
 
+  //   postFile(fileToUpload: File) {
+  //     const endpoint = '//10.191.225.154/server/cargar.php';
+  //     const formData: FormData = new FormData();
+  //     formData.append('fileKey', fileToUpload, fileToUpload.name);
+  //     console.log(formData.append('fileKey', fileToUpload, fileToUpload.name))
+  //     return this.http
+  //       .post(endpoint, formData)
+  //       .map(() => { return true; })
 
-loadFile(file, page:string){
-
-// this.filetosend=JSON.stringify({n:"25"} )
- console.log(file)
-
-
-  return this.http.post(this.dataHttp +page,  file)
-  .map((res) => {
-    res;
-    console.log(res)
-    this.answerInfo = res.json(); 
-    return this.answerInfo;
-  });
-}
+  // }
 
 
-graphRnew(info, page: string) {
-  return this.http.post(this.dataHttp + page, info)
-    .map((res) => {
-      res;
-      this.graphResp=res.json()
-     //console.log(this.graphResp)
-     return this.graphResp
-    });
-}
+
+  loadFile(file, page: string) {
+    return this.http.post(this.dataHttp + page, file)
+      .map((res) => {
+        res;
+        console.log(res)
+        this.answerInfo = res.json();
+        return this.answerInfo;
+      });
+  }
 
 
-downloadItem(info, page: string) {
-  
-  return this.http.post(this.dataHttp + page, info)
-    .map((response) => { // download file
+  graphRnew(info, page: string) {
+    return this.http.post(this.dataHttp + page, info)
+      .map((res) => {
+        res;
+        this.graphResp = res.json()
+        //console.log(this.graphResp)
+        return this.graphResp
+      });
+  }
 
-      console.log(response)
-      var blob = new Blob([(<any>response)._body], { type: "aplication/vnd.ms-exel" });
-      var filename = 'file.pdf';
-      console.log(blob)
-     return blob
-}
-      
-    );
-}
+
+  downloadItem(info, page: string) {
+
+    return this.http.post(this.dataHttp + page, info)
+      .map((response) => { // download file
+
+        console.log(response)
+        var blob = new Blob([(<any>response)._body], { type: "aplication/vnd.ms-exel" });
+        var filename = 'file.pdf';
+        console.log(blob)
+        return blob
+      }
+
+      );
+  }
 
   addItem(info, page: string) {
     return this.http.post(this.dataHttp + page, info)
       .map((res) => {
         res;
-        this.answerInfo = res.json(); 
+        this.answerInfo = res.json();
         return this.answerInfo;
       });
   }
@@ -109,16 +104,19 @@ downloadItem(info, page: string) {
       });
   }
 
-  deleteItem(id) {
-    let body = { "id": id };
-    return this.http.post("http://10.191.225.154/", body)
-      .map((res) => { this.getItem("prueba2.php"), res, console.log(res), console.log(body) });
+  deleteItem(info, page: string) {
+    return this.http.post(this.dataHttp + page, info)
+      .map((res) => {
+        res;
+        // this.answerInfo = res 
+        // return this.answerInfo;
+      });
   }
 
 
 
 }
 
-export class dataInfo{
-  info:string
+export class dataInfo {
+  info: string
 }

@@ -22,6 +22,7 @@ export class AntecedentesComponent implements OnInit {
   dataICV = []
   objectGen = []
   keyvalue=[];
+  dataSet=[]
 
 
   ngOnInit() {
@@ -34,17 +35,20 @@ export class AntecedentesComponent implements OnInit {
         this.dataICV[i] = Object.values(this.dataImpo[i][i])
          this.keyvalue[i] = Object.keys(this.dataImpo[i][i])
       }
-
    
 
 
       this.dataICV.shift()
       this.keyvalue.shift()
+    
       for (let i = 0; i < this.dataICV.length; i++) {
         for (let j = 0; j < this.dataICV[i].length; j++) {
           this.objectGen[i]=[{data:this.dataICV[i][j].icv, label:this.keyvalue[i][j]}]
-           console.log(this.objectGen[i])
+          //console.log(this.dataICV[i][j].icv)
+          //console.log(this.keyvalue[i][j])
+          
         }
+        console.log(this.objectGen[i])
       }    
 
 
@@ -56,8 +60,8 @@ for (let i = 0; i < this.dataICV.length; i++) {
 }
       
       console.log(this.objectGen)
-  
-      console.log(this.dataICV[0][0].icv)
+  console.log(this.dataSet)
+     
       console.log(this.charts)
     })
 

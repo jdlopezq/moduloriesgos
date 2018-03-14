@@ -13,8 +13,9 @@ export class LoadarchComponent implements OnInit {
   form: FormGroup;
   filetoSend;
   fileinServ;
-  fileShow="Seleccionar Archivo"
-
+  fileShow = "Seleccionar Archivo"
+  selectedValue: string;
+  selecteCol: string;
 
 
   varList = [
@@ -23,43 +24,64 @@ export class LoadarchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataSend.getItem("delete.php").subscribe(res => {
-      this.varList=res[1]
-      if(res[0]!==null){
-          this.fileinServ=res.length > 0 ? Object.values(res[0]):[];
-      }
-   
-      console.log(this.fileinServ)
-
-console.log(this.varList)
-    })
-
+  
+this.getinfoFiles()
   }
+
+getinfoFiles(){
+  this.dataSend.getItem("delete.php").subscribe(res => {
+    this.varList = res[1]
+    if (res[0] !== null) {
+      this.fileinServ = res.length > 0 ? Object.values(res[0]) : [];
+    }
+    console.log(this.fileinServ)
+    console.log(this.varList)
+  })
+}
 
 
   uploadFile(event) {
     let elem = event.target
-    this.filetoSend=event.target
-    this.fileShow=this.filetoSend.files[0].name
+    this.filetoSend = event.target
+    this.fileShow = this.filetoSend.files[0].name
     console.log(this.filetoSend.files[0].name)
+  }
+
+  deleteFile(i) {
+    let deletef = JSON.stringify({ "id": i, "code": 10 })
+    this.dataSend.addItem(deletef, "delete.php").subscribe(res => {
+      console.log(res);
+if(res!==null){
+ this.getinfoFiles()
+}
+
+
+      // (error)=>console.log(error)
+    }
+    )
+   
   }
 
 
 
-
   sendData() {
-    console.log(this.filetoSend.files.length)
     if (this.filetoSend.files.length > 0) {
       console.log(this.filetoSend.files[0])
-      let formData = new FormData();
+      var formData = new FormData();
+
       formData.append('file', this.filetoSend.files[0])
-      console.log(formData)
+      formData.append('colName', this.selectedValue)
+      formData.append('col', this.selecteCol)
+      formData.append('code', '7')
+
       this.dataSend.loadFile(formData, "cargar.php").subscribe((res) => {
+
         console.log(res)
-      }, 
-      (error)=>{console.log(error)}
+      },
+        (error) => { console.log(error) }
       )
     }
+
     this.ngOnInit()
   }
 
@@ -74,7 +96,7 @@ console.log(this.varList)
 
 }
 
-export class file{
+export class file {
   Name;
   Id
 }

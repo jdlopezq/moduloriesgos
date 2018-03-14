@@ -19,14 +19,14 @@
       <input type="text" placeholder="Selccionar Archivo" [value]="fileShow" disabled="false">
      
       <mat-form-field>
-        <mat-select placeholder="Variable a Asociar" [(ngModel)]="selectedValue" name="food">
+        <mat-select placeholder="Variable a Asociar" [(ngModel)]="selectedValue" >
           <mat-option *ngFor="let list of varList" [value]="list">
-            {{list.Name}}
+            {{list}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Numero de Columna">
+        <input matInput placeholder="Numero de Columna"  [(ngModel)]="selecteCol">
       </mat-form-field>
  <button mat-raised-button (click)="sendData()">Cargar</button>
 
@@ -43,12 +43,12 @@
         <tbody>
           <tr *ngFor="let archivo of fileinServ; let i =index ">
             <td>{{i+1}}.{{fileinServ[i].Name}}</td>
-            <td> {{archivo.Name}}</td>
+            <td> {{archivo.size/1024}}</td>
             <td>
-            
+            {{archivo.Aso}}
             </td>
             <td>
-              <button mat-icon-button>
+              <button mat-icon-button (click)="deleteFile(archivo.Id)">
                 <i class="material-icons">delete</i>
               </button>
 

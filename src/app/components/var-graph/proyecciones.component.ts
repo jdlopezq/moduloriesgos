@@ -175,8 +175,8 @@ export class ProyeccionesComponent implements OnInit {
           for (let i = 0; i < this.totalVar[index].length; i++) {
             if (this.totalVar[index][i] == null) {
              this.nameVar[index][i]=""
-               this.nameVar[index][i]="No incluido"
-               this.totalVar[index][i]="0"
+               //this.nameVar[index][i]="No incluido"
+               //this.totalVar[index][i]="0"
             }
 
           }

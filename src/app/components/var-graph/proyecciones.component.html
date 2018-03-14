@@ -32,7 +32,7 @@
           </div>
           <div class="card-body scroll-box">
             <p class="card-text example-container flex-row-reverse" *ngFor='let datos of controlPanName[i], let j =index'>
-              <mat-slide-toggle [color]="Scolor" checked="{{totalVar[i][j]!==null}}" disabled="false" (change)='useOrnot($event, "graphics.php", data,nameVar[i][j], i)'>
+              <mat-slide-toggle [color]="Scolor" checked="{{totalVar[i][j]!==null}}" disabled="false" (change)='useOrnot($event, "graphics.php", data,controlPanName[i][j], i)'>
                 {{controlPanName[i][j]}}</mat-slide-toggle>
             </p>
           </div>
