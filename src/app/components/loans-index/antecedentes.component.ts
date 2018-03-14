@@ -43,7 +43,7 @@ export class AntecedentesComponent implements OnInit {
       for (let i = 0; i < this.dataICV.length; i++) {
         for (let j = 0; j < this.dataICV[i].length; j++) {
           this.objectGen[i]=[{data:this.dataICV[i][j].icv, label:this.keyvalue[i][j]}]
-           
+           console.log(this.objectGen[i])
         }
       }    
 

@@ -39,8 +39,8 @@
         </div>
 
       </div>
-      <button mat-icon-button *ngIf="!chartsReady">
-        <i class="material-icons" style=" color: #8C8C2A" (click)="downloadFile(1)">file_download</i>Descaragar Datos</button>
+      <button mat-button *ngIf="!chartsReady" (click)="downloadFile(1)">
+        <i class="material-icons" style=" color: #8C8C2A" >file_download</i>Descaragar Datos</button>
     </div>
 
   </mat-tab>

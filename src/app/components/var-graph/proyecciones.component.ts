@@ -130,6 +130,7 @@ export class ProyeccionesComponent implements OnInit {
 
 
   downloadFile(a) {
+    console.log("descargando")
     let pageDWL = JSON.stringify({ "code": a })
     this.dataPHP.downloadItem(pageDWL, "export.php").subscribe(blob => {
       var link = document.createElement('a');
@@ -174,8 +175,8 @@ export class ProyeccionesComponent implements OnInit {
           for (let i = 0; i < this.totalVar[index].length; i++) {
             if (this.totalVar[index][i] == null) {
              this.nameVar[index][i]=""
-              //  this.nameVar[index][i]=""
-              // this.totalVar[index][i]=""
+               this.nameVar[index][i]="No incluido"
+               this.totalVar[index][i]="0"
             }
 
           }
