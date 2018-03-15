@@ -16,7 +16,7 @@
             </mat-select>
           </mat-form-field>
           <div>
-            <button mat-button matStepperNext (click)="test()">Siguiente
+            <button mat-button matStepperNext (click)="toFalse()">Siguiente
               <i class="material-icons">navigate_next</i>
             </button>
           </div>
@@ -37,7 +37,7 @@
           <div>
             <button mat-button matStepperPrevious>
               <i class="material-icons">navigate_before</i>Atras</button>
-            <button mat-button matStepperNext color=success disabled={{next}} (click)="test()">Siguiente
+            <button mat-button matStepperNext color=success disabled={{next}} (click)="AgregarVariableAd()">Siguiente
               <i class="material-icons">navigate_next</i>
             </button>
           </div>
@@ -53,9 +53,9 @@
           <button mat-button (click)='AgregarVariable()'>Si
             <i class="material-icons">check</i>
           </button>
-          <button mat-button (click)="stepper.previous(2)" (click)="AgregarVariable()">
+          <button mat-button (click)="AgregarVariable()" (click)="stepper.reset()">
             <i class="material-icons">add</i>Agregar una más</button>
-            <button mat-button (click)="stepper.reset()" (click)="AgregarVariable()">
+            <button mat-button (click)="stepper.reset()">
                 <i class="material-icons">close</i>Limpiar</button>
 
         </div>

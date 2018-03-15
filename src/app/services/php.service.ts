@@ -12,8 +12,8 @@ export class PhpService {
   graphResp: any
 
   constructor(private http: Http) { }
-  // dataHttp: string = "//10.191.225.154/server/";
-  dataHttp: string = "//localhost/server/";
+   dataHttp: string = "//10.191.225.154/server/";
+  //dataHttp: string = "//localhost/server/";
   ataHttpTest: string = "../backEnd/";
   answerInfo = new dataInfo;
   answerGet: any[];

@@ -7,6 +7,7 @@ import { DataserviceService } from '../../services/dataservice.service';
 import { PhpService, dataInfo } from '../../services/php.service';
 import { Chart } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
+import { empty } from 'rxjs/Observer';
 
 
 @Component({
@@ -78,12 +79,18 @@ export class ProyeccionesComponent implements OnInit {
   tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
     if (tabChangeEvent.index == 0) {
       this.changeChartTab = tabChangeEvent.index
+      this.dataDB=[]
+      this.controlPanName=[]
       this.getInfoCharts("graphics.php")
     } else if (tabChangeEvent.index == 1) {
       this.changeChartTab = tabChangeEvent.index
+      this.dataDB=[]
+      this.controlPanName=[]
       this.getInfoCharts("graphicsc.php")
     } else if (tabChangeEvent.index == 2) {
       this.changeChartTab = tabChangeEvent.index
+      this.dataDB=[]
+      this.controlPanName=[]
       this.getInfoCharts("graphicscv.php")
     }
   }
@@ -129,6 +136,14 @@ export class ProyeccionesComponent implements OnInit {
   }
 
 
+  clearFilter(a) {
+    console.log("descargando")
+    let deletfilter = JSON.stringify({ "code": 18 })
+    this.dataPHP.addItem(deletfilter, "graphics.php").subscribe(res => {
+     this.getInfoCharts(a)
+    })
+  }
+
   downloadFile(a) {
     console.log("descargando")
     let pageDWL = JSON.stringify({ "code": a })
@@ -169,12 +184,14 @@ export class ProyeccionesComponent implements OnInit {
           this.nameVar.push(datos[i].map(it => it[name]))
           this.totalVar.push(datos[i].map(it => it["Total"]))
         })
+
+        
         for (let index = 0; index < this.charts._results.length; index++) {
           // console.log(this.totalVar)
-
+          
           for (let i = 0; i < this.totalVar[index].length; i++) {
             if (this.totalVar[index][i] == null) {
-             this.nameVar[index][i]=""
+              this.nameVar[index][i]=null
                //this.nameVar[index][i]="No incluido"
                //this.totalVar[index][i]="0"
             }
@@ -192,11 +209,18 @@ export class ProyeccionesComponent implements OnInit {
       })
   }
 
+
+
+  graphRenew(){
+    
+  }
+
   // Doughnut
   public doughnutChartLabels: string[] = [];
   public doughnutChartData: number[] = [];
   public doughnutChartType: string = 'doughnut';
   public options: any = {
+    
     layout: {
       padding: {
         left: 0,
@@ -207,6 +231,7 @@ export class ProyeccionesComponent implements OnInit {
     },
     cutoutPercentage: 70,
     legend: {
+      
       position: "right",
       labels: {
         fontColor: 'black'

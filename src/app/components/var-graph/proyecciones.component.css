@@ -1,5 +1,5 @@
 .card-graphic-columns {
-   column-count: 2;
+   column-count: 1;
   }
 
 /* .var-control{
@@ -13,7 +13,7 @@
 }
 .scroll-boxX {
   overflow-x: scroll;
-  height: 130px;
+  height: 320px;
   padding: 1rem
 }
 /* .fill-remaining-space {

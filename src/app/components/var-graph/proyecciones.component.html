@@ -10,11 +10,6 @@
       <i class="material-icons" (click)='getInfoCharts("graphics.php")' style="font-size: 200px; color:#8C8C2A">person</i>
       <div>Conocimiento Del Cliente</div>
     </ng-template>
-    <!-- <mat-card style="height: 150px" *ngIf="!chartsReady">
-        <mat-spinner style="margin:0 auto; height: 50px"></mat-spinner>
-      </mat-card> -->
-
-
     <br>
     <div class="container">
 
@@ -39,6 +34,8 @@
         </div>
 
       </div>
+      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphics.php')">
+          <i class="material-icons" style=" color: #8C8C2A">delete_sweep</i>Borrar Filtros</button>
       <button mat-button *ngIf="!chartsReady" (click)="downloadFile(1)">
         <i class="material-icons" style=" color: #8C8C2A" >file_download</i>Descaragar Datos</button>
     </div>
@@ -50,9 +47,6 @@
 
       <div>Capital</div>
     </ng-template>
-    <!-- <mat-card style="height: 150px" *ngIf="chartsReady">
-      <mat-spinner style="margin:0 auto; height: 50px"></mat-spinner>
-    </mat-card> -->
     <br>
 
     <div class="container">
@@ -76,6 +70,8 @@
           </div>
         </div>
       </div>
+      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphicsc.php')">
+          <i class="material-icons" style=" color: #3A2A19">delete_sweep</i>Borrar Filtros</button>
       <button mat-button *ngIf="!chartsReady" (click)="downloadFile(2)">
         <i class="material-icons" style=" color: #3A2A19" >file_download</i>Descaragar Datos</button>
 
@@ -115,6 +111,8 @@
         </div>
 
       </div>
+      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphicscv.php')">
+          <i class="material-icons" style=" color:#75001F">delete_sweep</i>Borrar Filtros</button>
       <button mat-button *ngIf="!chartsReady"(click)="downloadFile(3)">
         <i class="material-icons" style=" color: #75001F" >file_download</i>Descaragar Datos</button>
 
@@ -136,8 +134,8 @@
 
       <img class="card-img-top">
       <div class="card-body ">
-        <h5 class="card-title">{{graficas}}</h5>
-        <div class="container ">
+        <h5 class="card-title text-left">{{graficas}}</h5>
+        <div class="container">
 
           <canvas baseChart #baseChart="base-chart" [data]="doughnutChartData[i]" [labels]="doughnutChartLabels[i]" [chartType]="doughnutChartType"
             [options]="options"></canvas>

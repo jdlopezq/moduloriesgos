@@ -36,6 +36,7 @@ export class SelecvariablesComponent {
   checked=false
   deleteId:any
   next=true;
+  cargavariablesAd
 
 
 
@@ -55,10 +56,13 @@ export class SelecvariablesComponent {
   
 
   }
+
+  toFalse(){
+this.cargaVariables.m1=false
+  this.cargaVariables.m2=false
+  this.cargaVariables.m3=false
+  }
 test(){
-  console.log(this.firstFormGroup)
-  console.log(this.secondFormGroup)
-  console.log(this.cargaVariables)
   if(this.cargaVariables.m1==false&&this.cargaVariables.m2==false&&this.cargaVariables.m3==false){
   this.next=true
   
@@ -66,6 +70,7 @@ test(){
 }else{
   this.next=false
 }
+
 }
 
   ngOnInit() {
@@ -150,8 +155,15 @@ refershVar(){
         
       })
   }
+  AgregarVariableAd() {
+this.cargavariablesAd=this.cargaVariables
+console.log(this.cargavariablesAd)
+  }
+
+
 
   AgregarVariable() {
+    console.log(this.cargavariablesAd)
     console.log(this.cargaVariables)
     this.dataImport.addItem(JSON.stringify(this.cargaVariables), "select.php")
       .subscribe(
