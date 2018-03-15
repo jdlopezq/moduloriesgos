@@ -12,7 +12,7 @@ export class AntecedentesComponent implements OnInit {
 
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
-
+  objectGen2 = []
   constructor(private dataPHP: PhpService) {
 
   }
@@ -21,8 +21,8 @@ export class AntecedentesComponent implements OnInit {
   labels
   dataICV = []
   objectGen = []
-  keyvalue=[];
-  dataSet=[]
+  keyvalue = [];
+  dataSet = []
 
 
   ngOnInit() {
@@ -33,35 +33,35 @@ export class AntecedentesComponent implements OnInit {
 
       for (let i = 1; i < this.dataImpo.length; i++) {
         this.dataICV[i] = Object.values(this.dataImpo[i][i])
-         this.keyvalue[i] = Object.keys(this.dataImpo[i][i])
+        this.keyvalue[i] = Object.keys(this.dataImpo[i][i])
       }
-   
+
 
 
       this.dataICV.shift()
       this.keyvalue.shift()
-    
+
+      for (let i = 0; i < this.dataICV.length; i++) {
+        this.objectGen = []
+        for (let j = 0; j < this.dataICV[i].length; j++) {
+          this.objectGen[j] = { data: this.dataICV[i][j].icv, label: this.keyvalue[i][j] }
+        }
+
+        this.objectGen2[i] = this.objectGen
+        console.log(this.objectGen2)
+      }
+
+
       for (let i = 0; i < this.dataICV.length; i++) {
         for (let j = 0; j < this.dataICV[i].length; j++) {
-          this.objectGen[i]=[{data:this.dataICV[i][j].icv, label:this.keyvalue[i][j]}]
-          //console.log(this.dataICV[i][j].icv)
-          //console.log(this.keyvalue[i][j])
-          
+          this.lineChartData[i] = this.objectGen2[i]
+          this.lineChartLabels[i] = this.dataICV[0][0].Date
         }
-        console.log(this.objectGen[i])
-      }    
+      }
 
-
-for (let i = 0; i < this.dataICV.length; i++) {
-  for (let j = 0; j < this.dataICV[i].length; j++) {
-    this.lineChartData[i]=this.objectGen[i]
-      this.lineChartLabels[i]=this.dataICV[i][j].Date 
-  }
-}
-      
-      console.log(this.objectGen)
-  console.log(this.dataSet)
      
+     
+
       console.log(this.charts)
     })
 

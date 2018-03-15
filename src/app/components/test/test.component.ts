@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PhpService } from '../../services/php.service';
 import { FormControl } from '@angular/forms';
 import { AmChartsService, AmChart } from "@amcharts/amcharts3-angular";
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -22,8 +23,16 @@ dataimpo=[];
 chartNumber
 
 
-  constructor(private AmCharts: AmChartsService, private dataPHP: PhpService ) {}
+  constructor(private AmCharts: AmChartsService, private dataPHP: PhpService, config: NgbCarouselConfig ) {
+      // customize default values of carousels used by this component tree
+      config.interval = 10000;
+      config.wrap = false;
+      config.keyboard = false;
+  }
 
+
+
+ 
   ngOnInit() {
     this.getInfoCharts("graphics.php")
 }

@@ -13,34 +13,11 @@ export class PhpService {
 
   constructor(private http: Http) { }
    dataHttp: string = "//10.191.225.154/server/";
-  //dataHttp: string = "//localhost/server/";
+  // dataHttp: string = "//localhost/server/";
   ataHttpTest: string = "../backEnd/";
   answerInfo = new dataInfo;
   answerGet: any[];
   filetosend: any
-
-
-  // getDataPHP(page) {
-  //   return this.http.get(this.dataHttp+page)
-  //     .map(Response => {
-  //       Response;
-  //       console.log(Response)
-  //       this.answerGet = Response.json();
-  //       return this.answerGet
-  //     });
-  // }
-
-
-  //   postFile(fileToUpload: File) {
-  //     const endpoint = '//10.191.225.154/server/cargar.php';
-  //     const formData: FormData = new FormData();
-  //     formData.append('fileKey', fileToUpload, fileToUpload.name);
-  //     console.log(formData.append('fileKey', fileToUpload, fileToUpload.name))
-  //     return this.http
-  //       .post(endpoint, formData)
-  //       .map(() => { return true; })
-
-  // }
 
 
 

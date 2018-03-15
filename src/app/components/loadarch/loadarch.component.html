@@ -11,24 +11,25 @@
 
 
     <div class="text-center">
-
       <button mat-raised-button (click)="FileInput.click()">Buscar Archivo
         <i class="material-icons" style="z-index: 4;">search</i>
       </button>
       <input hidden type="file" #FileInput (change)="uploadFile($event)" />
       <input type="text" placeholder="Selccionar Archivo" [value]="fileShow" disabled="false">
-     
+
       <mat-form-field>
-        <mat-select placeholder="Variable a Asociar" [(ngModel)]="selectedValue" >
+        <mat-select placeholder="Variable a Asociar" [(ngModel)]="selectedValue">
           <mat-option *ngFor="let list of varList" [value]="list">
             {{list}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Numero de Columna"  [(ngModel)]="selecteCol">
+        <input matInput placeholder="Letra de Columna" [(ngModel)]="selecteCol">
       </mat-form-field>
- <button mat-raised-button (click)="sendData()">Cargar</button>
+
+
+      <button mat-raised-button (click)="sendData()">Cargar</button>
 
 
       <table class="table">
@@ -36,7 +37,7 @@
           <tr>
             <th>Nombre Archivo</th>
             <th>Tamaño</th>
-            <th>Asociar a Columna</th>
+            <th>Columna Asociada</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -45,7 +46,7 @@
             <td>{{i+1}}.{{fileinServ[i].Name}}</td>
             <td> {{archivo.size/1024}}</td>
             <td>
-            {{archivo.Aso}}
+              {{archivo.Aso}}
             </td>
             <td>
               <button mat-icon-button (click)="deleteFile(archivo.Id)">
@@ -55,12 +56,19 @@
             </td>
           </tr>
         </tbody>
-
-
       </table>
 
+
+    </div>
+    <div class="container" style="width: 60%;" *ngIf="fileReady">
+      <h5>Cargando Archivo...</h5> 
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
     </div>
 
+    <div class="container" style="width: 60%;" *ngIf="deleteReady">
+        <h5>Eliminando Archivo...</h5> 
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+      </div>
 
 
 

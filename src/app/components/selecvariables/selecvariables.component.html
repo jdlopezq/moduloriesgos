@@ -77,13 +77,13 @@
 
       <!-- Nombre Column -->
       <ng-container matColumnDef="NombreCampo">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre Campo </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px"> Nombre Campo </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="Kclient">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Conociedo Mi cliente</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Conocimiento del cliente</mat-header-cell>
         <mat-cell *matCellDef="let element">
           <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m1, 1)" (change)="refershVar()" checked="{{element.m1==1}}"
             labelPosition="after">
@@ -95,7 +95,7 @@
 
       <!-- Name Column -->
       <ng-container matColumnDef="Capital">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Capital</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Capital</mat-header-cell>
         <mat-cell *matCellDef="let element">
           <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m2, 2)" (change)="refershVar()" checked="{{element.m2==1}}"
             labelPosition="after">
@@ -107,7 +107,7 @@
 
       <!--Borrar Column -->
       <ng-container matColumnDef="Capital Vencido">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Capital Vencido </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Capital Vencido </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <mat-slide-toggle color="primary" (change)="changeState(element.Id, element.m3, 3, $event)" (change)="refershVar()" checked="{{element.m3==1}}"
             labelPosition="after">
@@ -117,7 +117,7 @@
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="Eliminar">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Eliminar Variable </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px; color:black">Eliminar Variable </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <button mat-icon-button (click)="deleteItem(element.Id)">
             <i class="material-icons" style="color:  #75001F">delete</i>

@@ -20,10 +20,10 @@
     <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
     <mat-datepicker #picker3></mat-datepicker>
   </mat-form-field>
-</div>
+</div>x
 
-<div class="col-sm-15" >
-        <div class="card-columns card-graphic-columns" style="width:100%">
+<div class="container" >
+        <div class="card-columns card-graphic-columns">
             <div class="card animated fadeIn fast " *ngFor="let graficas of labels, let i = index">
               
              <img class="card-img-top" >
@@ -31,7 +31,7 @@
                   <h5 class="card-title">{{graficas}}</h5>
                    <div class="container">
                      
-                      <canvas baseChart width="400" height="400" 
+                      <canvas baseChart width="400" height="300" 
                       [datasets]="lineChartData[i]"
                       [labels]="lineChartLabels[i]"
                       [options]="lineChartOptions"

@@ -8,6 +8,7 @@ import { PhpService, dataInfo } from '../../services/php.service';
 import { Chart } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
 import { empty } from 'rxjs/Observer';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -32,13 +33,17 @@ export class ProyeccionesComponent implements OnInit {
   dynamicHeight = true;
   chartsReady: boolean = true;
   varChange: any;
+dataPure;
+showPanel:boolean;
 
 
 
-
-  constructor(private dataPHP: PhpService) {
-  }
-
+  constructor(private dataPHP: PhpService,config: NgbCarouselConfig ) {
+    // customize default values of carousels used by this component tree
+    config.interval = 10000;
+    config.wrap = false;
+    config.keyboard = false;
+}
 
   ngOnInit() {
 
@@ -49,9 +54,20 @@ export class ProyeccionesComponent implements OnInit {
   getInfoCharts(a: string) {
     console.log(a)
     this.dataPHP.getItem(a).subscribe(datos => {
+      this.dataPure=datos
+       console.log(this.dataPure[0][0])
+if (this.dataPure[0][0]==null) {
+  this.showPanel=false
+}else{
+  this.showPanel=true
+}
+
+
+
       // console.log(datos)
       if (datos.length == 0) {
         this.chartsReady = true;
+      
         console.log('sin respuesta')
       } else {
         this.chartsReady = false
@@ -74,6 +90,9 @@ export class ProyeccionesComponent implements OnInit {
       console.log(this.nameVar);
       console.log(this.totalVar);
     })
+
+
+    
   }
 
   tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
@@ -137,9 +156,9 @@ export class ProyeccionesComponent implements OnInit {
 
 
   clearFilter(a) {
-    console.log("descargando")
+    console.log(a)
     let deletfilter = JSON.stringify({ "code": 18 })
-    this.dataPHP.addItem(deletfilter, "graphics.php").subscribe(res => {
+    this.dataPHP.addItem(deletfilter, a).subscribe(res => {
      this.getInfoCharts(a)
     })
   }
@@ -190,10 +209,12 @@ export class ProyeccionesComponent implements OnInit {
           // console.log(this.totalVar)
           
           for (let i = 0; i < this.totalVar[index].length; i++) {
+
+
             if (this.totalVar[index][i] == null) {
-              this.nameVar[index][i]=null
+              this.nameVar[index][i]=this.nameVar[index][i]+" (Dato filtrado)"
                //this.nameVar[index][i]="No incluido"
-               //this.totalVar[index][i]="0"
+               this.totalVar[index][i]=this.totalVar[index][i]
             }
 
           }
@@ -205,7 +226,6 @@ export class ProyeccionesComponent implements OnInit {
           this.charts._results[index].ngOnInit();
 
         }
-        console.log(this.charts._results);
       })
   }
 

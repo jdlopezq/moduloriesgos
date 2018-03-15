@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './shared/material.module';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 //Components
 import { AppComponent } from './app.component';
@@ -61,7 +62,8 @@ import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
     ChartsModule,
     HttpModule,
     APP_ROUTING,
-    MaterialModule
+    MaterialModule,
+    NgbModule.forRoot(),
   ],
   providers: [DataserviceService, PhpService, UtilityService],
   bootstrap: [AppComponent]

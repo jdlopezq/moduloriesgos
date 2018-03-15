@@ -4,22 +4,30 @@
 
 
 
-<mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <i class="material-icons" (click)='getInfoCharts("graphics.php")' style="font-size: 200px; color:#8C8C2A">person</i>
-      <div>Conocimiento Del Cliente</div>
+<mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)" >
+  <mat-tab class=" z-depth-5">
+    <ng-template mat-tab-label >
+      <div (click)='getInfoCharts("graphics.php")' style="width: 350px; ">
+      <i class="material-icons "  style="font-size: 200px; color:#8C8C2A;">person</i>
+      <div style="position: relative;">Conocimiento Del Cliente</div>
+    </div>
     </ng-template>
     <br>
-    <div class="container">
+    <div class="container" *ngIf="!chartsReady">
 
-      <div class="card-columns var-control">
+        <div class="container text-center" *ngIf="!showPanel">
+            <i class="material-icons"style="font-size: 200px;  color: #8C8C2A">error_outline</i>
+              <h1>¡Atención!</h1>
+              <h2>Asigne variables a este modulo para visualizarlo</h2>
+        </div>
+     
+      <div class="card-columns var-control" *ngIf="showPanel">
         <div class="card border-secondary example-container" style=" max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
           <div class="card-header text-white" style="background-color:rgba(140, 140, 42, 0.486) ">
             <div class="row">
               <span class="mx-auto">{{data}}</span>
               <span class="fill-remaining-space">
-                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', nameVar[i], data )" checked="true"></mat-slide-toggle>
+                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', controlPanName[i], data )" checked="true"></mat-slide-toggle>
               </span>
 
 
@@ -34,9 +42,9 @@
         </div>
 
       </div>
-      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphics.php')">
+      <button mat-button  *ngIf="showPanel" (click)="clearFilter('graphics.php')">
           <i class="material-icons" style=" color: #8C8C2A">delete_sweep</i>Borrar Filtros</button>
-      <button mat-button *ngIf="!chartsReady" (click)="downloadFile(1)">
+      <button mat-button *ngIf="showPanel" (click)="downloadFile(1)">
         <i class="material-icons" style=" color: #8C8C2A" >file_download</i>Descaragar Datos</button>
     </div>
 
@@ -49,30 +57,37 @@
     </ng-template>
     <br>
 
-    <div class="container">
-      <div class="card-columns var-control">
+    <div class="container" *ngIf="!chartsReady">
+        <div class="container text-center" *ngIf="!showPanel">
+            <i class="material-icons" style="font-size: 200px;  color: #3A2A19">error_outline</i>
+              <h1>¡Atención!</h1>
+              <h2>Asigne variables a este modulo para visualizarlo</h2>
+        </div>
+
+
+      <div class="card-columns var-control"  *ngIf="showPanel">
         <div class="card border-secondary mb-3 " style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
           <div class="card-header text-white" style="background-color:rgba(58, 42, 25, 0.555) ">
 
             <div class="row">
               <span class="mx-auto">{{data}}</span>
               <span class="fill-remaining-space">
-                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', nameVar[i], data )" checked="data==data"></mat-slide-toggle>
+                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', controlPanName[i], data )" checked="data==data"></mat-slide-toggle>
 
               </span>
             </div>
           </div>
           <div class="card-body  scroll-box ">
             <p class="card-text " *ngFor='let datos of nameVar[i], let j =index'>
-              <mat-slide-toggle color="primary" checked="{{totalVar[i][j]!==null}}" (change)='useOrnot($event, "graphicsc.php", data, nameVar[i][j], i)'>
+              <mat-slide-toggle color="primary" checked="{{totalVar[i][j]!==null}}" (change)='useOrnot($event, "graphicsc.php", data, controlPanName[i][j], i)'>
                 {{nameVar[i][j]}}</mat-slide-toggle>
             </p>
           </div>
         </div>
       </div>
-      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphicsc.php')">
+      <button mat-button  *ngIf="showPanel" (click)="clearFilter('graphicsc.php')">
           <i class="material-icons" style=" color: #3A2A19">delete_sweep</i>Borrar Filtros</button>
-      <button mat-button *ngIf="!chartsReady" (click)="downloadFile(2)">
+      <button mat-button *ngIf="showPanel" (click)="downloadFile(2)">
         <i class="material-icons" style=" color: #3A2A19" >file_download</i>Descaragar Datos</button>
 
     </div>
@@ -89,31 +104,35 @@
       <mat-spinner style="margin:0 auto; height: 50px"></mat-spinner>
     </mat-card> -->
     <br>
-    <div class="container">
-
-      <div class="card-columns var-control">
+    <div class="container"*ngIf="!chartsReady">
+<div class="container text-center" *ngIf="!showPanel">
+    <i class="material-icons" style="font-size: 200px;  color: #75001F">error_outline</i>
+      <h1>¡Atención!</h1>
+    <h2>Asigne variables a este modulo para visualizarlo</h2>
+</div>
+      <div class="card-columns var-control" *ngIf="showPanel">
         <div class="card border-secondary mb-3 example-container" style="max-width: 18rem;" *ngFor='let data of dataDBn, let i=index, let j =index'>
           <div class="card-header text-white" style="background-color:rgba(117, 0, 31, 0.521) ">
             <div class="row">
               <span class="mx-auto">{{data}} </span>
               <span class="fill-remaining-space">
-                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphics.php', nameVar[i], data )" checked="data==data"></mat-slide-toggle>
+                <mat-slide-toggle color="primary" (change)="useAll($event, 'graphicscv.php', controlPanName[i], data )" checked="data==data"></mat-slide-toggle>
 
               </span>
             </div>
           </div>
           <div class="card-body scroll-box">
             <p class="card-text example-container" *ngFor='let datos of nameVar[i], let j =index'>
-              <mat-slide-toggle color="primary" checked="{{totalVar[i][j]!==null}}" (change)='useOrnot($event, "graphicscv.php", data, nameVar[i][j], i)'>
+              <mat-slide-toggle color="primary" checked="{{totalVar[i][j]!==null}}" (change)='useOrnot($event, "graphicscv.php", data, controlPanName[i][j], i)'>
                 {{nameVar[i][j]}}</mat-slide-toggle>
             </p>
           </div>
         </div>
 
       </div>
-      <button mat-button  *ngIf="!chartsReady" (click)="clearFilter('graphicscv.php')">
+      <button mat-button  *ngIf="showPanel" (click)="clearFilter('graphicscv.php')">
           <i class="material-icons" style=" color:#75001F">delete_sweep</i>Borrar Filtros</button>
-      <button mat-button *ngIf="!chartsReady"(click)="downloadFile(3)">
+      <button mat-button *ngIf="showPanel"(click)="downloadFile(3)">
         <i class="material-icons" style=" color: #75001F" >file_download</i>Descaragar Datos</button>
 
     </div>
@@ -123,12 +142,12 @@
 
 
 
-<div *ngIf="!chartsReady">
+<div *ngIf="showPanel">
   <h1>Información:
     <small>Fábrica y Core</small>
   </h1>
   <hr> </div>
-<div class="col-sm-15 text-center">
+<div class="col-sm-15 text-center" *ngIf="showPanel">
   <div class="card-columns card-graphic-columns" style="width:100%">
     <div class="card border-dark mb-3 text-center animated fadeIn fast" style="width:90%" *ngFor="let graficas of dataDBn; let i = index">
 
