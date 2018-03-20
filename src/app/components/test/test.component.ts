@@ -85,7 +85,7 @@ data4=[{"status":"1","Total":"19421"},{"status":"3","Total":"10"},{"status":"4",
   ngAfterViewInit() {
     
     console.log(this.chart)
-    this.chart = this.AmCharts.makeChart(this.chartNumber,{
+    this.chart = this.AmCharts.makeChart('chartNumber',{
       "type": "pie",
       "startDuration": 0,
        "theme": "light",

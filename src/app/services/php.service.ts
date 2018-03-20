@@ -13,8 +13,9 @@ export class PhpService {
 
   constructor(private http: Http) { }
    dataHttp: string = "//10.191.225.154/server/";
+  // dataHttp:string="//192.168.1.110/server/"
   // dataHttp: string = "//localhost/server/";
-  ataHttpTest: string = "../backEnd/";
+  dataHttpTest: string = "../backEnd/";
   answerInfo = new dataInfo;
   answerGet: any[];
   filetosend: any

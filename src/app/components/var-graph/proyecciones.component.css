@@ -1,6 +1,6 @@
-/* .card-graphic-columns {
-   column-count: 3;
-  } */
+.card-graphic-columns {
+   column-count: 2;
+  }
 
 /* .var-control{
   column-count: auto;
