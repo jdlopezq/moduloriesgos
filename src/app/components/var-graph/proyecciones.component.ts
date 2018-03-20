@@ -9,6 +9,9 @@ import { Chart } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts/ng2-charts';
 import { empty } from 'rxjs/Observer';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import 'chart.piecelabel.js';
+import 'chartjs-plugin-datalabels'
+import 'chartjs-plugin-piechart-outlabels'
 
 
 @Component({
@@ -238,7 +241,7 @@ if (this.dataPure[0][0]==null) {
   // Doughnut
   public doughnutChartLabels: string[] = [];
   public doughnutChartData: number[] = [];
-  public doughnutChartType: string = 'doughnut';
+  public doughnutChartType: string = 'pie';
   public options: any = {
     
     layout: {
@@ -249,7 +252,31 @@ if (this.dataPure[0][0]==null) {
         bottom: 0
       }
     },
-    cutoutPercentage: 70,
+    plugins:{
+      datalabels:{
+        display:false,
+        anchor:'center',
+        aling:'start',
+      },
+
+      outlabels: {
+        
+        font: { resizable: true, minSize: 12, maxSize: 18 },
+        borderRadius: 5, // Border radius of Label
+        color: 'black', // Font color
+        display: true,
+        padding:10,
+        text: "%l (%p)",
+        textAlign: "center"
+    }
+    },
+    cutoutPercentage:70,
+    // pieceLabel: {
+    //   render: 'value',
+    //   arc: true,
+    //   fontColor: '#000',
+    //   position: 'outside'
+    // },
     legend: {
       
       position: "right",

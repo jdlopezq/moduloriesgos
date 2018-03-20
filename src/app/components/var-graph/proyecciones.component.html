@@ -156,8 +156,11 @@
         <h5 class="card-title text-left">{{graficas}}</h5>
         <div class="container">
 
-          <canvas baseChart #baseChart="base-chart" [data]="doughnutChartData[i]" [labels]="doughnutChartLabels[i]" [chartType]="doughnutChartType"
-            [options]="options"></canvas>
+          <canvas baseChart #baseChart="base-chart"  
+          [data]="doughnutChartData[i]" 
+          [labels]="doughnutChartLabels[i]" 
+          [chartType]="doughnutChartType"
+          [options]="options"></canvas>
 
         </div>
       </div>

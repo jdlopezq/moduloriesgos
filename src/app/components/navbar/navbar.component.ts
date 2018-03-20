@@ -45,11 +45,11 @@ logOut(){
  
 }
 
-reload(){
+// reload(){
 
-  location.reload();;
+//   location.reload();;
  
-}
+// }
 
 
 }

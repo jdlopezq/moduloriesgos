@@ -12,6 +12,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class TestComponent implements OnInit {
   private chart: AmChart;
+  private chart1: AmChart;
+  
 
   Scolor = "primary"
   dataDB = [];
@@ -83,9 +85,54 @@ data4=[{"status":"1","Total":"19421"},{"status":"3","Total":"10"},{"status":"4",
 
 
   ngAfterViewInit() {
-    
-    console.log(this.chart)
-    this.chart = this.AmCharts.makeChart('chartNumber',{
+
+
+
+    this.chart1 = this.AmCharts.makeChart('chartNumber1',{
+      "type": "pie",
+      "startDuration": 0,
+       "theme": "light",
+      "addClassNames": true,
+      "legend":{
+         "position":"right",
+        "marginRight":100,
+        "autoMargins":false
+      },
+      "innerRadius": "20%",
+      "defs": {
+        "filter": [{
+          "id": "shadow",
+          "width": "200%",
+          "height": "200%",
+          "feOffset": {
+            "result": "offOut",
+            "in": "SourceAlpha",
+            "dx": 0,
+            "dy": 0
+          },
+          "feGaussianBlur": {
+            "result": "blurOut",
+            "in": "offOut",
+            "stdDeviation": 5
+          },
+          "feBlend": {
+            "in": "SourceGraphic",
+            "in2": "blurOut",
+            "mode": "normal"
+          }
+        }]
+      },
+      "dataProvider": data,
+      "valueField": 'Total',
+      "titleField": 'status',
+      "export": {
+        "enabled": true
+      }
+    });
+
+
+   
+    this.chart = this.AmCharts.makeChart('chartNumber0',{
       "type": "pie",
       "startDuration": 0,
        "theme": "light",
@@ -147,18 +194,18 @@ data4=[{"status":"1","Total":"19421"},{"status":"3","Total":"10"},{"status":"4",
     console.log(this.chart)
   }
 
-  ngOnDestroy() {
-    if (this.chart) {
-      this.AmCharts.destroyChart(this.chart);
-    }
-  }
+  // ngOnDestroy() {
+  //   if (this.chart) {
+  //     this.AmCharts.destroyChart(this.chart);
+  //   }
+  // }
  
 }
 
 
 
 
-let data2=this.dataimpo
+
 
 
 const data=[{

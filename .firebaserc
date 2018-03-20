@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "riesgosmodulo",
-    "riesgomodulo": "riesgosmodulo",
-    
+    "modulo riesgos": "item-a2388",
+    "riesgomodulo": "riesgosmodulo"
   }
 }
