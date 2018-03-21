@@ -12,9 +12,9 @@ export class PhpService {
   graphResp: any
 
   constructor(private http: Http) { }
- //dataHttp: string = "//10.191.225.154/server/";
+ dataHttp: string = "//10.191.225.179/server/";
  // dataHttp:string="../assets/server/"
-  dataHttp:string="https://ancient-garden-46645.herokuapp.com/"
+  // dataHttp:string="https://ancient-garden-46645.herokuapp.com/"
  // dataHttp:string="//192.168.1.110/server/"
   dataHttpTest: string = "../backEnd/";
   answerInfo = new dataInfo;

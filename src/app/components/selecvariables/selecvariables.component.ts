@@ -165,6 +165,25 @@ console.log(this.cargavariablesAd)
   AgregarVariable() {
     console.log(this.cargavariablesAd)
     console.log(this.cargaVariables)
+if(this.cargaVariables.m1==true){
+  this.cargaVariables.m1=1
+}else{
+  this.cargaVariables.m1=0
+}
+if(this.cargaVariables.m2==true){
+  this.cargaVariables.m2=1
+}else{
+  this.cargaVariables.m2=0
+}
+if(this.cargaVariables.m3==true){
+  this.cargaVariables.m3=1
+}else{
+  this.cargaVariables.m3=0
+}
+
+
+
+
     this.dataImport.addItem(JSON.stringify(this.cargaVariables), "select.php")
       .subscribe(
         (res) => {
@@ -231,9 +250,9 @@ export class editItem {
 
 export class addItem {
   Name: string;
-  m1: boolean = false;
-  m2: boolean = false;
-  m3: boolean = false;
+  m1: any = false;
+  m2: any = false;
+  m3: any = false;
   code: string = '12';
 }
 

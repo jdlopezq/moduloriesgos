@@ -90,8 +90,9 @@ if (this.dataPure[0][0]==null) {
 
       this.doughnutChartData = this.totalVar
       this.doughnutChartLabels = this.nameVar
-      console.log(this.nameVar);
-      console.log(this.totalVar);
+     // console.log(this.nameVar);
+      //console.log(this.totalVar);
+      console.log(this.charts)
     })
 
 
@@ -213,11 +214,10 @@ if (this.dataPure[0][0]==null) {
           
           for (let i = 0; i < this.totalVar[index].length; i++) {
 
-
+                 console.log(i)
             if (this.totalVar[index][i] == null) {
-              this.nameVar[index][i]=this.nameVar[index][i]+" (Dato filtrado)"
-               //this.nameVar[index][i]="No incluido"
-               this.totalVar[index][i]=this.totalVar[index][i]
+              this.nameVar[index].splice(i,1)
+               this.totalVar[index].splice(i,1)
             }
 
           }
@@ -230,6 +230,8 @@ if (this.dataPure[0][0]==null) {
 
         }
       })
+      console.log(this.charts._results)
+      console.log(this.nameVar)
   }
 
 
@@ -254,31 +256,30 @@ if (this.dataPure[0][0]==null) {
     },
     plugins:{
       datalabels:{
-        display:false,
+        display:true,
         anchor:'center',
         aling:'start',
       },
 
       outlabels: {
-        
+        display:true,
         font: { resizable: true, minSize: 12, maxSize: 18 },
         borderRadius: 5, // Border radius of Label
-        color: 'black', // Font color
-        display: true,
-        padding:10,
-        text: "%l (%p)",
+        color: 'white', // Font color
+        padding:10, 
+        text: "%p",
         textAlign: "center"
     }
     },
     cutoutPercentage:70,
-    // pieceLabel: {
-    //   render: 'value',
-    //   arc: true,
-    //   fontColor: '#000',
-    //   position: 'outside'
-    // },
+    pieceLabel: {
+      render: 'label'  ,
+      fontColor: '#000',
+      arc:true,
+      position: 'outside'
+    },
     legend: {
-      
+      display:true,
       position: "right",
       labels: {
         fontColor: 'black'

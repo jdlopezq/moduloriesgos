@@ -31,9 +31,10 @@ export class LogscreenComponent implements OnInit {
     this.dataSend.addItem(JSON.stringify(this.login), "login.php").subscribe(
       (res) => {
         res;
+        console.log(res)
         console.log(this.login);
-        console.log(this.dataSend.answerInfo[1].info)
-        console.log(this.dataSend.answerInfo[0].rol)
+        console.log(this.dataSend.answerInfo.info)
+      //console.log(this.dataSend.answerInfo[0].rol)
         if (this.dataSend.answerInfo[1].info == "Datos Correctos." &&
           this.dataSend.answerInfo[0].rol == "Administrador") {
             sessionStorage.setItem('user', this.login.username)
@@ -61,5 +62,4 @@ export class LogscreenComponent implements OnInit {
 class User {
   username: string
   password: string
-  company: string="CRE"
 }
