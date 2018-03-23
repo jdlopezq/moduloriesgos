@@ -88,7 +88,7 @@ data4=[{"status":"1","Total":"19421"},{"status":"3","Total":"10"},{"status":"4",
 
 
 
-    this.chart1 = this.AmCharts.makeChart('chartNumber0',{
+    this.chart1 = this.AmCharts.makeChart('chartNumber',{
       "type": "pie",
       "startDuration": 0,
        "theme": "light",
@@ -132,7 +132,7 @@ data4=[{"status":"1","Total":"19421"},{"status":"3","Total":"10"},{"status":"4",
 
 
    
-    this.chart = this.AmCharts.makeChart('chartNumber0',{
+    this.chart = this.AmCharts.makeChart('chartNumber',{
       "type": "pie",
       "startDuration": 0,
        "theme": "light",

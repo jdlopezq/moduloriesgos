@@ -22,20 +22,21 @@ import {
     MatProgressBarModule,
     MatCardModule,
     MatStepperModule,
-    MatAutocompleteModule, 
- MatChipsModule,
- MatExpansionModule,
- MatTabsModule,
- MatProgressSpinnerModule,
- MatSidenavModule,
- MatDatepickerModule,
- MatNativeDateModule
- 
-    
-    
+    MatAutocompleteModule,
+    MatChipsModule,
+    MatExpansionModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
+
+
+
+
 } from '@angular/material';
-import {FormsModule, ReactiveFormsModule, } from '@angular/forms'
-import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms'
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
     imports: [MatButtonModule,
         MatButtonToggleModule,
@@ -57,7 +58,7 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSlideToggleModule,
         MatSnackBarModule,
         MatProgressBarModule,
-        MatStepperModule, 
+        MatStepperModule,
         ReactiveFormsModule,
         MatAutocompleteModule,
         MatExpansionModule,
@@ -66,7 +67,7 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSidenavModule,
         MatDatepickerModule,
         MatNativeDateModule
-       ],
+    ],
     exports: [MatButtonModule,
         MatButtonToggleModule,
         MatCheckboxModule,
@@ -87,7 +88,7 @@ import {MatMenuModule} from '@angular/material/menu';
         MatInputModule,
         MatSlideToggleModule,
         MatSnackBarModule,
-        MatProgressBarModule, 
+        MatProgressBarModule,
         MatCardModule,
         MatStepperModule,
         ReactiveFormsModule,
@@ -98,8 +99,8 @@ import {MatMenuModule} from '@angular/material/menu';
         MatSidenavModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        
-        
+
+
     ],
     providers: [],
 })

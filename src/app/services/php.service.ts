@@ -20,6 +20,7 @@ export class PhpService {
   answerInfo = new dataInfo;
   answerGet: any[];
   filetosend: any
+  logAnswer = new logInfo
 
 
 
@@ -60,12 +61,24 @@ export class PhpService {
       );
   }
 
+
+ logIn(info, page: string) {
+    return this.http.post(this.dataHttp + page, info)
+      .map((res) => {
+        res;
+        console.log(res)
+        this.logAnswer = res.json();
+      return this.answerInfo;
+      });
+  }
+
   addItem(info, page: string) {
     return this.http.post(this.dataHttp + page, info)
       .map((res) => {
         res;
+        console.log(res)
         this.answerInfo = res.json();
-        return this.answerInfo;
+      return this.answerInfo;
       });
   }
 
@@ -99,3 +112,11 @@ export class PhpService {
 export class dataInfo {
   info: string
 }
+export class logInfo {
+  info: string
+  id:string
+  rol:string
+}
+
+
+

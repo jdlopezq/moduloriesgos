@@ -28,16 +28,16 @@ export class LogscreenComponent implements OnInit {
    }
 
   SendUser() {
-    this.dataSend.addItem(JSON.stringify(this.login), "login.php").subscribe(
+    this.dataSend.logIn(JSON.stringify(this.login), "login.php").subscribe(
       (res) => {
         res;
-        console.log(res)
-        console.log(this.login);
-        console.log(this.dataSend.answerInfo.info)
-      //console.log(this.dataSend.answerInfo[0].rol)
-        if (this.dataSend.answerInfo[1].info == "Datos Correctos." &&
-          this.dataSend.answerInfo[0].rol == "Administrador") {
+       // console.log(this.login);
+       // console.log(this.dataSend.answerInfo.info)
+      console.log(this.dataSend.logAnswer)
+        if (this.dataSend.logAnswer.info == "Datos Correctos." &&
+          this.dataSend.logAnswer.rol == "Administrador") {
             sessionStorage.setItem('user', this.login.username)
+            sessionStorage.setItem('id', this.dataSend.logAnswer.id)
             console.log("logueado")
             this.goAdmin()
         } else if (this.dataSend.answerInfo[1].info == "Datos Correctos" &&
